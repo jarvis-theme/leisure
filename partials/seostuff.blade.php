@@ -12,3 +12,4 @@
 <meta name="DC.Subject" content="{{$keywords}}">
 <meta name="DC.Description" content="{{$description}}">
 <link rel="canonical" href="{{URL::full()}}">
+<link rel="leisure-theme" href="{{dirTemaToko()}}leisure/">

@@ -10,18 +10,18 @@
         {{ Theme::asset()->styles() }}          
     </head>
     <body>
-        {{ Theme::partial('header') }}
+        {{ Theme::partial('header') }}  
         <div class="section_container">
             <!--Mid Section Starts-->
             <section>
-                {{ Theme::place('content') }}
-                {{ Theme::partial('subscribe') }}
+                {{ Theme::place('content') }}   
+                {{ Theme::partial('subscribe') }}   
             </section>
         </div>
         {{ Theme::partial('footer') }}  
         {{ Theme::partial('defaultjs') }}   
-        {{ Theme::asset()->scripts() }} 
-        {{ Theme::asset()->container('footer')->scripts() }}    
+        <!-- {{ Theme::asset()->scripts() }}  -->
+        <!-- {{ Theme::asset()->container('footer')->scripts() }} -->
         {{ Theme::partial('analytic') }}    
     </body>
 </html>

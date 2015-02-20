@@ -1,5 +1,7 @@
 <div class="counter">
-    <a href="javascript:void(0);" class="minicart_link" > <span class="item"><b>{{Shpcart::wishlist()->total_items()}}</b> ITEM(s)</span></a>
+    <a href="javascript:void(0);" class="minicart_link" >
+    	<span class="item"><b>{{Shpcart::wishlist()->total_items()}}</b> ITEM(s)</span>
+    </a>
 </div>
 <div class="cart_drop"> <span class="darw"></span>
     <ul>
@@ -18,9 +20,6 @@
             <center><span class="price">Cart masih kosong!</span></center>
 			</li>
 		@endif
-    	
-        <!-- endforeach Item shop -->
-
-        
+        <!-- endforeach Item shop -->        
     </ul>
 </div>
