@@ -1,1 +1,1 @@
-{{$analytic}}
+	{{$analytic}}

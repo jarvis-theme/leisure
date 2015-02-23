@@ -7,7 +7,6 @@
             <!--Language Switcher Ends-->
             <!--Top Links Starts-->
             <ul class="top_links">
-
                 @if ( ! Sentry::check())
                     <li>{{HTML::link('member', 'Login')}}</li>
                     <li class="highlight"><a href="{{URL::to('member/create')}}" >Sign Up</a></li>
@@ -15,7 +14,6 @@
                     <li class="highlight">{{HTML::link('member', 'My Account')}}</li>
                     <li>{{HTML::link('logout', 'Logout')}}</li>
                 @endif
-
             </ul>
             <!--Top Links Ends-->
         </div>

@@ -21,17 +21,6 @@
 					</ul>
 				</li>
 				@endforeach	
-				<!-- <li>
-					<span>Posting Terbaru</span>
-					<ul>
-					@foreach ($blogBaru as $items)  
-						<li>
-							<a href="{{slugBlog($items)}}">{{$items->judul}}</a>
-							<div style="color: #A2A2A2;font-size: 9px;">diposting pada {{waktuTgl($items->created_at)}}</div><br>
-						</li>
-					@endforeach  
-					</ul>
-				</li> -->
 			</ul>
 			<div class="footer_customblock">
 			@if($kontak->alamat!='')

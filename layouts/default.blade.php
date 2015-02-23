@@ -7,7 +7,7 @@
         {{ Theme::partial('defaultcss') }}  
         <!--Google Webfont -->
         <link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
-        {{ Theme::asset()->styles() }}          
+        {{ Theme::asset()->styles() }}  
     </head>
     <body>
         {{ Theme::partial('header') }}  
@@ -20,8 +20,6 @@
         </div>
         {{ Theme::partial('footer') }}  
         {{ Theme::partial('defaultjs') }}   
-        <!-- {{ Theme::asset()->scripts() }}  -->
-        <!-- {{ Theme::asset()->container('footer')->scripts() }} -->
         {{ Theme::partial('analytic') }}    
     </body>
 </html>

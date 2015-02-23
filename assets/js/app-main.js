@@ -35,7 +35,7 @@ require.config({
 		// CONTROLLER
 		home            : dirTema+'assets/js/pages/home',
 		member          : dirTema+'assets/js/pages/member',
-		main            : dirTema+'assets/js/pages/main',
+		main            : dirTema+'assets/js/pages/default',
 		produk          : dirTema+'assets/js/pages/produk',
 	}
 });
