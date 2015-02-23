@@ -3,7 +3,7 @@
 		<div style="padding:10px 20px">
 			<ul class="footer_links">
 				@foreach($tautan as $key=>$group)	
-				<li ><span>{{$group->nama}}</span>                
+				<li><span>{{$group->nama}}</span>                
 					<ul>
 						@foreach($group->link as $key=>$link)	
 						<li>
@@ -20,11 +20,22 @@
 						@endforeach
 					</ul>
 				</li>
-				@endforeach              
+				@endforeach	
+				<!-- <li>
+					<span>Posting Terbaru</span>
+					<ul>
+					@foreach ($blogBaru as $items)  
+						<li>
+							<a href="{{slugBlog($items)}}">{{$items->judul}}</a>
+							<div style="color: #A2A2A2;font-size: 9px;">diposting pada {{waktuTgl($items->created_at)}}</div><br>
+						</li>
+					@endforeach  
+					</ul>
+				</li> -->
 			</ul>
 			<div class="footer_customblock">
 			@if($kontak->alamat!='')
-				<!-- <span>introducing </span> --><br>
+				<!-- <span>introducing </span><br> -->
 				<div class="contact_info">Alamat : 
 					<big><br>{{$kontak->alamat}}</big>
 				</div>
@@ -48,10 +59,11 @@
 			<div class="clear"></div>  
 		</div>    
 		<address>
-			Copyright &copy; {{date('Y')}} {{ Theme::place('title') }}. All Rights Reserved. Powered by <a style="text-decoration: none;" target="_blank" href="http://jarvis-store.com">Jarvis Store</a>
-		@foreach($bank as $value)
+			<p>Copyright &copy; {{date('Y')}} {{ Theme::place('title') }}. All Rights Reserved. Powered by <a style="text-decoration: none;" target="_blank" href="http://jarvis-store.com">Jarvis Store</a></p>
+			
+			@foreach($bank as $value)
 			<img style="" src="{{URL::to('img/'.$value->bankdefault->logo)}}" alt="" />
-		@endforeach
+			@endforeach
 		</address>        
 	</footer>
 <div>

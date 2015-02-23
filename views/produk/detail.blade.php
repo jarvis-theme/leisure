@@ -40,7 +40,12 @@
 		@endif
 		<form action="#" id='addorder'>
 		@if($setting->checkoutType!=2)
-			<div class="pr_price"> <big>{{ price($produk->hargaJual) }}</big> <small>{{ price($produk->hargaCoret) }}</small> </div>
+			<div class="pr_price">
+				<big>{{ price($produk->hargaJual) }}</big>
+				@if($produk->hargaCoret != 0)
+				<small>{{ price($produk->hargaCoret) }}</small>
+				@endif
+			</div>
 		@endif
 		@if(@$po)
 			@if($availablepo=='1')

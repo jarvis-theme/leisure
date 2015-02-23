@@ -51,6 +51,7 @@
 			<ul class="breadcrumb">
 				<li><a href="{{URL::to('produk')}}">Koleksi Produk Kami</a></li>
 			</ul>
+			@if(count($newproduk) > 0)
 			<!--Product List Starts-->
 			<div class="toolbar" style="text-align: center;">
 				<span style="font-weight: bold;">NEW</span>
@@ -79,6 +80,8 @@
 				</ul>
 			</div>
 			<!--Product List Ends-->
+			@endif
+			@if(count($featured) > 0)
 			<!--Product List Starts-->
 			<div class="toolbar" style="text-align: center;">
 				<span style="font-weight: bold;">FEATURED</span>
@@ -105,6 +108,7 @@
 				</ul>
 			</div>
 			<!--Product List Ends-->
+			@endif
 		</div>
 		<!--MAIN CONTENT ENDS-->
 	</section>

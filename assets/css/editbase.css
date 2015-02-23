@@ -17,6 +17,22 @@ header, nav, section, footer{ width:980px; margin:0px auto;}
 .navigation_container,
 .section_container,
 .footer_container{width:100%; clear:both;}
+.sideNavCategories ul hr{border: 1px solid rgb(243, 130, 86);border-color: #F38256;color: #F38256;}
+.sideNavCategories ul h5{margin: 15px 0px;font-size: 13px;}
+.sideNavCategories ul form input[type="submit"]{
+	margin: 10px 0px;
+	background: none repeat scroll 0% 0% #544F4B;
+	padding: 5px;
+	color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	clear: both;
+	border: 0px none;
+	cursor:pointer;
+}
+.sideNavCategories ul form input[type="submit"]:hover{
+	background: none repeat scroll 0% 0% #F38256;
+}
 
 /*-----------------------------------HEADER*/
 .header_container{ background:url(../themes/leisure/assets/img/top_bar_bg.png) repeat-x top;}

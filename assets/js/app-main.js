@@ -34,7 +34,7 @@ require.config({
 
 		// CONTROLLER
 		home            : dirTema+'assets/js/pages/home',
-		// member          : dirTema+'assets/js/pages/member',
+		member          : dirTema+'assets/js/pages/member',
 		main            : dirTema+'assets/js/pages/main',
 		produk          : dirTema+'assets/js/pages/produk',
 	}
@@ -50,7 +50,7 @@ require([
 	router.define('home', 'home@run');
 
 	// MEMBER
-	// router.define('member', 'member@run');
+	router.define('member', 'member@run');
 
 	// PRODUK
 	router.define('produk/*', 'produk@run');
