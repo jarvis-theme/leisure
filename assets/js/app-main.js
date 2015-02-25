@@ -9,6 +9,9 @@ require.config({
 		"flexslider" : {
 			deps : ['jquery'],
 		},
+		"form_elements" : {
+			deps : ['jquery'],
+		},
 		'jq_ui' : {
 			deps : ['jquery'],
 		},
@@ -50,7 +53,7 @@ require([
 	router.define('home', 'home@run');
 
 	// MEMBER
-	router.define('member', 'member@run');
+	router.define('member/*', 'member@run');
 
 	// PRODUK
 	router.define('produk/*', 'produk@run');

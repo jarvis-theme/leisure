@@ -1,4 +1,4 @@
-define(['jquery','flexslider'], function()
+define(['jquery','flexslider'], function($)
 {
 	return new function()
 	{
@@ -6,7 +6,7 @@ define(['jquery','flexslider'], function()
 		self.run = function()
 		{
 			//FLEXISLIDER
-			jQuery('.flexslider').flexslider({
+			$('.flexslider').flexslider({
 				animation: "slide",
 				start: function(slider){
 					$('body').removeClass('loading');
@@ -14,7 +14,7 @@ define(['jquery','flexslider'], function()
 			});			
 
 			//JCAROUSEL
-			jQuery('.first-and-second-carousel').jcarousel();
+			$('.first-and-second-carousel').jcarousel();
 		};
 	};
 });

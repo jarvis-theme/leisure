@@ -104,15 +104,12 @@
 		@endif
 		</form>
 		<div class="product_overview">
+			<iframe src="//www.facebook.com/plugins/share_button.php?href={{URL::to(slugProduk($produk))}}&amp;layout=button" scrolling="no" frameborder="0" style="border:none; overflow:hidden;height:20px;width:70px;" allowTransparency="true"></iframe>
+			<a class="twitter-share-button" href="https://twitter.com/share" data-count="none">Tweet </a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+		<div class="product_overview">
 			{{pluginTrustklik()}}
-			<!-- <h4>Quick Overview</h4>
-			<ul>
-				<li>Long sleeves with single button cuffs.</li>
-				<li>Cuffs can be rolled up and secured with button-tabs.</li>
-				<li>Standing collar with notched detailing.</li>
-				<li>Front button placket.</li>
-				<li>Hem is longer in back.</li>
-			</ul> -->
 		</div>
 	</div>
 	<!--Product Right Ends-->

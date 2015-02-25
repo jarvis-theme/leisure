@@ -8,20 +8,20 @@
 				<ul class="category departments">
 					<li class="header">Kategori</li>
 					@foreach($kategori as $key=>$menu)
-					<li class="menu_cont">
+						<li class="menu_cont">
 						@if($menu->parent=='0')
-						<a href="#">{{$menu->nama}}</a>
-						<!--SUbmenu Starts-->
-						<ul class="side_sub_menu">
+							<a href="#">{{$menu->nama}}</a>
+							<!--SUbmenu Starts-->
+							<ul class="side_sub_menu">
 							@foreach($kategori as $key=>$submenu)
-							@if($menu->id==$submenu->parent)
-							<li><a href="{{slugKategori($submenu)}}">{{$submenu->nama}}</a></li>
-							@endif
+								@if($menu->id==$submenu->parent)
+								<li><a href="{{slugKategori($submenu)}}">{{$submenu->nama}}</a></li>
+								@endif
 							@endforeach
-						</ul>
-						<!--SUbmenu Ends-->
-						@endif
-					</li>
+							</ul>
+							<!--SUbmenu Ends-->
+							@endif
+						</li>
 					@endforeach
 				</ul>
 				<ul class="category collection">
@@ -99,8 +99,10 @@
 						{{is_terlaris($myproduk, $kiri=1)}}
 						{{is_produkbaru($myproduk, $kiri=1)}}
 						{{is_outstok($myproduk, $kiri=1)}}
-						<a href="{{slugProduk($myproduk)}}" class="product_image">{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height: 216px;'))}}</a>
-						<div class="product_info">
+						<a href="{{slugProduk($myproduk)}}" class="product_image" style="min-height:222px;">
+							{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height: 216px;'))}}
+						</a>
+						<div class="product_info" style="min-height: 83px;">
 							<h3><a href="{{slugProduk($myproduk)}}">{{strtoupper($myproduk->nama)}}</a></h3>
 							<small>{{shortDescription($myproduk->deskripsi,80)}}</small>
 						</div>
