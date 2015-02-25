@@ -433,3 +433,28 @@ footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_t
 /*-----------------------------------FONTS HERE*/
 ul.primary_nav > li > a, .minicart span, h1, h2, h3, h4, h5, .product_info, .price_info, button.price_add, .footer_customblock, .product_rightcol .pr_price big, .product_rightcol .pr_price small, .product_rightcol small.pr_type, .product_rightcol .add_to_buttons button.add_cart, .message, .cart_drop .cart_bottom .subtotal_menu, ul.simpleTabsNavigation, .toggle_box .toggle_title
 {font-family: 'Istok Web', sans-serif; font-weight:400;}
+
+.find_us a {
+	text-decoration: none;
+}
+
+a.icon-facebook,a.icon-facebook1,a.icon-facebook2,
+a.icon-twitter,a.icon-twitter1,a.icon-twitter2,
+a.icon-google,
+a.icon-google-plus,
+a.icon-instagram,
+a.icon-path,
+a.icon-tumblr {
+  font-size: 33px;
+  color: #544F4B;
+}
+
+a.icon-facebook:hover,a.icon-facebook1:hover,a.icon-facebook2:hover,
+a.icon-twitter:hover,a.icon-twitter1:hover,a.icon-twitter2:hover,
+a.icon-google:hover,
+a.icon-google-plus:hover,
+a.icon-instagram:hover,
+a.icon-path:hover,
+a.icon-tumblr:hover {
+	color: #FFFFFF;
+}

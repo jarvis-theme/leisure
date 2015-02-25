@@ -9,5 +9,6 @@
 	@endif	
 	{{HTML::style(dirTemaToko().'leisure/assets/css/responsive.css')}}
 	{{HTML::style(dirTemaToko().'leisure/assets/css/bootstrap.min.css')}}
+	{{HTML::style(dirTemaToko().'leisure/assets/css/sosmed.css')}}
 	{{createFavicon($toko)}}
 	<!-- Other -->

@@ -2,10 +2,22 @@
     <div class="find_us">
         <h3>Find us on</h3>
         @if($sosial->fb)
-            <a class="facebook" target="_blank" href="{{$sosial->fb}}"></a>
+            <a class="icon-facebook" target="_blank" href="{{$sosial->fb}}"></a>
         @endif
         @if($sosial->tw)
-            <a class="twitter" target="_blank" href="{{$sosial->tw}}"></a>
+            <a class="icon-twitter" target="_blank" href="{{$sosial->tw}}"></a>
+        @endif
+        @if($sosial->gp)
+            <a class="icon-google-plus" target="_blank" href="{{$sosial->gp}}"></a>
+        @endif
+        @if($sosial->pt)
+            <a class="icon-pinterest" target="_blank" href="{{$sosial->pt}}"></a>
+        @endif
+        @if($sosial->tl)
+            <a class="icon-tumblr" target="_blank" href="{{$sosial->tl}}"></a>
+        @endif
+        @if($sosial->ig)
+            <a class="icon-instagram" target="_blank" href="{{$sosial->ig}}"></a>
         @endif
         <!-- <a class="rss" href="#"></a> -->
     </div>
