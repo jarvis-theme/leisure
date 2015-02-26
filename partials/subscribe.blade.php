@@ -8,7 +8,7 @@
             <a class="icon-twitter" target="_blank" href="{{$sosial->tw}}"></a>
         @endif
         @if($sosial->gp)
-            <a class="icon-google-plus" target="_blank" href="{{$sosial->gp}}"></a>
+            <a class="icon-googleplus" target="_blank" href="{{$sosial->gp}}"></a>
         @endif
         @if($sosial->pt)
             <a class="icon-pinterest" target="_blank" href="{{$sosial->pt}}"></a>
