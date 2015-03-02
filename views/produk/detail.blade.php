@@ -115,6 +115,8 @@
 	<!--Product Right Ends-->
 </div>
 <!--PRODUCT DETAIL ENDS-->
+
+@if(count($produklain) > 0)
 <!--Product List Starts-->
 <div class="products_list products_slider">
 	<h2 class="sub_title" style="padding-bottom: 20px; padding-top: 0;">Rekomendasi Lainnya</h2>
@@ -124,17 +126,20 @@
 			{{is_terlaris($myproduk)}}
 			{{is_produkbaru($myproduk)}}
 			{{is_outstok($myproduk)}}
-			<a href="{{slugProduk($myproduk)}}" class="product_image">
-				{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'height:220px'))}}
+			<a href="{{slugProduk($myproduk)}}" class="product_image" style="min-height: 222px;">
+				{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height:216px'))}}
 			</a>
-			<div class="product_info">
+			<div class="product_info" style="min-height: 83px;">
 				<h3 style="height: 28px;"><a href="{{URL::to(slugProduk($myproduk))}}">{{$myproduk->nama}}</a></h3>
 				<small>{{shortDescription($myproduk->deskripsi,100)}}</small>
 			</div>
 				
 			@if($setting->checkoutType!=2)
 			<div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->
-				<button onclick="window.location.href='{{slugProduk($myproduk)}}'" class="price_add" title="" type="button"><span class="pr_price">&nbsp;{{jadiRupiah($myproduk->hargaJual,$matauang)}}</span><span class="pr_add">Lihat</span></button>
+				<button onclick="window.location.href='{{slugProduk($myproduk)}}'" class="price_add" title="" type="button">
+					<span class="pr_price">&nbsp;{{jadiRupiah($myproduk->hargaJual,$matauang)}}</span>
+					<span class="pr_add">Lihat</span>
+				</button>
 			</div>
 			@endif
 			
@@ -146,3 +151,4 @@
 	</ul>
 </div>
 <!--Product List Ends-->
+@endif

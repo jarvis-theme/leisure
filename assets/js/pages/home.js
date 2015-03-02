@@ -1,4 +1,4 @@
-define(['jquery','flexslider'], function($)
+define(['jquery','flexslider','jcarousel'], function($)
 {
 	return new function()
 	{
