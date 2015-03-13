@@ -5,14 +5,18 @@
 		<!--SIDE NAV STARTS-->
 		<div id="side_nav">
 			<div class="sideNavCategories">
-				<ul style="border-bottom: solid 1px;border-bottom-color: #f38256; border-top: 0px;">
+				<ul>
 					{{pluginSidePowerup()}}
+				</ul>
+				<ul>
 					<li class="header">Banner</li>
-					@foreach(getBanner(1) as $banner)
-					<a target="_blank" href="{{URL::to($banner->url)}}"><img src="{{URL::to(getPrefixDomain().'/galeri/'.$banner->gambar)}}"/></a>
+					@foreach(vertical_banner() as $banner)
+					<a target="_blank" href="{{ $banner->url }}">
+						<img src="{{ banner_image_url($banner->gambar) }}"/>
+					</a>
 					@endforeach
 				</ul>
-				<ul style="border-bottom: solid 1px; border-bottom-color: #f38256; border-top: 0px;">
+				<ul>
 					<li class="header">Hubungi Kami</li>
 					@if($shop->ym)
 					{{ymyahoo($shop->ym)}}
@@ -28,7 +32,7 @@
 					<span style="line-height: 2;">BBM : <b>{{$shop->bb}}</b></span><br>
 					@endif
 				</ul>
-				<ul style="border-bottom: solid 1px;border-bottom-color: #f38256; border-top: 0px;">
+				<ul>
 					<li class="header">Testimonial</li>
 					<span>
 						<ul>
@@ -65,7 +69,7 @@
 							{{is_produkbaru($myproduk, $kiri=1)}}
 							{{is_outstok($myproduk, $kiri=1)}}
 							<a href="{{slugProduk($myproduk)}}" class="product_image">{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height: 217px;'))}}</a>
-							<div class="product_info">
+							<div class="product_info" style="min-height: 83px;">
 								<h3><a href="{{slugProduk($myproduk)}}">{{strtoupper(shortName($myproduk->nama,24))}}</a></h3>
 								<small>{{shortDescription($myproduk->deskripsi,40)}}</small>
 							</div>
@@ -94,9 +98,9 @@
 						{{is_produkbaru($myproduk, $kiri=1)}}
 						{{is_outstok($myproduk, $kiri=1)}}
 						<a href="{{slugProduk($myproduk)}}" class="product_image">{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height: 217px;'))}}</a>
-						<div class="product_info">
+						<div class="product_info" style="min-height: 83px;">
 							<h3><a href="{{slugProduk($myproduk)}}">{{strtoupper(shortName($myproduk->nama,24))}}</a></h3>
-							<small>{{shortDescription($myproduk->deskripsi,40)}}</small>
+							<small>{{shortDescription($myproduk->deskripsi,65)}}</small>
 						</div>
 						@if($setting->checkoutType==1)
 						<div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->

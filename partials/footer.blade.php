@@ -50,9 +50,19 @@
 		<address>
 			<p>Copyright &copy; {{date('Y')}} {{ Theme::place('title') }}. All Rights Reserved. Powered by <a style="text-decoration: none;" target="_blank" href="http://jarvis-store.com">Jarvis Store</a></p>
 			
-			@foreach($bank as $value)
-			<img style="" src="{{URL::to('img/'.$value->bankdefault->logo)}}" alt="" />
+			@foreach(list_banks() as $bank)
+			<img style="" src="{{bank_logo($bank)}}" alt="" />
 			@endforeach
+			@if(list_payments()[0]->aktif == 1)
+			<img src="{{URL::to('img/bank/paypal.png')}}" alt="support paypal" />
+			@endif
+			@if(list_payments()[2]->aktif == 1)
+			<img src="{{URL::to('img/bank/ipaymu.jpg')}}" alt="support ipaymu" />
+			@endif
+			@if(list_dokus()->status == 1)
+			<img src="{{URL::to('img/bank/doku.jpg')}}" alt="support doku myshortcart" />
+			@endif
+
 		</address>        
 	</footer>
 <div>

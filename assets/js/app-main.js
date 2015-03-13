@@ -19,6 +19,7 @@ require.config({
 			deps : ['jquery'],
 		},
 	},
+    "waitSeconds" : 60,
 
 	paths: {
 		// LIBRARY

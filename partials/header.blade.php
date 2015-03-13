@@ -50,29 +50,32 @@
     <nav style=" display: list-item;list-style: none; ">
         <ul class="primary_nav">
             <li class="active"><a href={{"'".URL::to("/")."'"}}>Home</a></li>
-            @foreach($katMenu as $key=>$menu)
+            @foreach(list_category() as $key=>$menu)
             <li>
                 @if($menu->parent=='0')
                 <a href={{slugKategori($menu)}}>{{$menu->nama}}</a>
-                <ul class="sub_menu">
-                    <!--SUbmenu Starts-->
-                    @foreach($anMenu as $key1=>$submenu)
-                    @if($submenu->parent==$menu->id)
-                    <li><a href={{slugKategori($submenu)}}>{{$submenu->nama}}</a>
-                        <ul>
-                            @foreach($anMenu as $key2=>$submenu2)
-                            @if($submenu->id==$submenu2->parent)
-                            <li><a href={{slugKategori($submenu2)}}>{{$submenu2->nama}}</a></li>
+                    @if(count($menu->anak) > 1)
+                    <ul class="sub_menu">
+                        <!--SUbmenu Starts-->
+                        @foreach(list_category() as $key1=>$submenu)
+                            @if($submenu->parent == $menu->id)
+                            <li>
+                                <a href="{{ slugKategori($submenu) }}"></a>{{ $submenu->nama }}
+                                <ul>
+                                @foreach(list_category() as $key2=>$submenu2)
+                                    @if($submenu->id == $submenu2->parent)        
+                                    <li><a href="{{ slugKategori($submenu2) }}">{{ $submenu2->nama }}</a></li>
+                                    @endif
+                                @endforeach
+                                </ul>
+                            </li>
                             @endif
-                            @endforeach
-                        </ul>
-                    </li>
+                        @endforeach
+                    </ul>
+                    <!--SUbmenu Ends-->
                     @endif
-                    @endforeach
-                </ul>
-                <!--SUbmenu Ends-->
+                @endif
             </li>
-            @endif
             @endforeach
         </ul>
         <div class="minicart" id='shoppingcartplace'>

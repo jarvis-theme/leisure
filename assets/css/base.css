@@ -17,22 +17,6 @@ header, nav, section, footer{ width:980px; margin:0px auto;}
 .navigation_container,
 .section_container,
 .footer_container{width:100%; clear:both;}
-.sideNavCategories ul hr{border: 1px solid rgb(243, 130, 86);border-color: #F38256;color: #F38256;}
-.sideNavCategories ul h5{margin: 15px 0px;font-size: 13px;}
-.sideNavCategories ul form > input[type="submit"]{
-	margin: 10px 0px;
-	background: none repeat scroll 0% 0% #544F4B;
-	padding: 5px;
-	color: #FFF;
-	font-size: 14px;
-	font-weight: bold;
-	clear: both;
-	border: 0px none;
-	cursor:pointer;
-}
-.sideNavCategories ul form > input[type="submit"]:hover{
-	background: none repeat scroll 0% 0% #F38256;
-}
 
 /*-----------------------------------HEADER*/
 .header_container{ background:url(../images/top_bar_bg.png) repeat-x top;}
@@ -144,7 +128,7 @@ ul.sub_menu > li > ul{border-top: solid 1px #5f5a56; margin-top:10px;}
 .product_rightcol div.selector select{ /*width:84px!important;*/}
 
 .product_rightcol .add_to_buttons{ display:inline-block; width:100%; padding:25px 0px;}
-.product_rightcol .add_to_buttons button.add_cart{ padding:17px 50px 17px 25px; font-size:13px; font-weight:bold!important; color:#fff; text-transform:uppercase; border:0px; cursor:pointer; background:url(../images/addtocart.png) no-repeat 217px center;}
+.product_rightcol .add_to_buttons button.add_cart{ padding:17px 60px 17px 25px; font-size:13px; font-weight:bold!important; color:#fff; text-transform:uppercase; border:0px; cursor:pointer; background:url(../images/addtocart.png) no-repeat 217px center;}
 .product_rightcol .add_to_buttons button.add_cart:hover{ background-color:#544f4b;-moz-transition:all 0.2s ease-out 0s; -webkit-transition: all 0.2s ease-out;}
 .product_rightcol .add_to_buttons span{ color:#aea8a3; font-style:italic; width:65px; display:inline-block; text-align:center; font-size:15px;}
 .product_rightcol .add_to_buttons ul{ display:inline-block;}
@@ -434,6 +418,7 @@ footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_t
 ul.primary_nav > li > a, .minicart span, h1, h2, h3, h4, h5, .product_info, .price_info, button.price_add, .footer_customblock, .product_rightcol .pr_price big, .product_rightcol .pr_price small, .product_rightcol small.pr_type, .product_rightcol .add_to_buttons button.add_cart, .message, .cart_drop .cart_bottom .subtotal_menu, ul.simpleTabsNavigation, .toggle_box .toggle_title
 {font-family: 'Istok Web', sans-serif; font-weight:400;}
 
+.product_image{height: 223px;}
 .find_us a {
 	text-decoration: none;
 }
@@ -455,4 +440,21 @@ a.icon-twitter:hover,
 a.icon-facebook:hover,
 a.icon-pinterest:hover {
 	color: #FFFFFF;
+}
+
+.sideNavCategories ul hr{border: none; margin: 0px;}
+.sideNavCategories ul h5{margin: 15px 0px;font-size: 13px;}
+.sideNavCategories ul form > input[type="submit"]{
+	margin: 10px 0px;
+	background: none repeat scroll 0% 0% #544F4B;
+	padding: 5px;
+	color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	clear: both;
+	border: 0px none;
+	cursor:pointer;
+}
+.sideNavCategories ul form > input[type="submit"]:hover{
+	background: none repeat scroll 0% 0% #F38256;
 }

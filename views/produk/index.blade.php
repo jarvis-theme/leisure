@@ -36,7 +36,9 @@
 		<div id="main_content">
 			<div class="category_banner">
 				@foreach(getBanner(2) as $banner)
-				<a href="{{URL::to($banner->url)}}"><img src="{{URL::to(getPrefixDomain().'/galeri/'.$banner->gambar)}}" width="100%"/></a>
+				<a href="{{ $banner->url }}" target="_blank">
+					<img src="{{URL::to(getPrefixDomain().'/galeri/'.$banner->gambar)}}" width="100%"/>
+				</a>
 				@endforeach
 			</div>	
 			<!--Toolbar-->
@@ -55,7 +57,7 @@
 					<a href="{{buatLink(URL::current(),array('view'=>'list'))}}" class="list" title="List View"></a>
 					<!-- <a class="list" href="#"></a> <a class="grid" href="#"></a> -->
 				</div>
-
+				<!--
 				<div style="width:100px;" class="show_no">
 					<label></label>
 					<select style="width: 112px;" id="show" data-rel="{{URL::current()}}">
@@ -63,6 +65,7 @@
 						<option value="24" {{Input::get('show')==24?'selected="selected"':''}}>24 ITEMS</option>
 					</select>
 				</div>
+				-->
 			</div>
 			<!--Toolbar-->
 
@@ -76,11 +79,11 @@
 						{{is_produkbaru($myproduk, $kiri=1)}}
 						{{is_outstok($myproduk, $kiri=1)}}
 						<a href="{{slugProduk($myproduk)}}" class="product_image">
-							{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height: 216px;'))}}
+							{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height: 216px; max-width: 190px; width: 190px;'))}}
 						</a>
-						<div class="product_info">
+						<div class="product_info" style="width: 500px; float: left; margin-left: 5px;">
 							<h3><a href="{{slugProduk($myproduk)}}">{{strtoupper($myproduk->nama)}}</a></h3>
-							<small>{{shortDescription($myproduk->deskripsi,100)}}</small><a class="black" href="{{slugProduk($myproduk)}}">Lihat Produk</a>
+							<small>{{shortDescription($myproduk->deskripsi,200)}}</small><a class="black" href="{{slugProduk($myproduk)}}">Lihat Produk</a>
 						</div>
 						<div class="price_info">
 							<button class="price_add" title="" onclick="window.location.href='{{slugProduk($myproduk)}}'" type="button"><span class="pr_price">{{jadiRupiah($myproduk->hargaJual)}}</span><span class="pr_add">Beli</span></button>
@@ -94,7 +97,7 @@
 			<!--Product List Starts-->
 			<div class="products_list products_slider">
 				<ul>
-					@foreach($produk as $myproduk)
+					@foreach(list_product(12) as $myproduk)
 					<li style="position:relative;">
 						{{is_terlaris($myproduk, $kiri=1)}}
 						{{is_produkbaru($myproduk, $kiri=1)}}
@@ -102,9 +105,9 @@
 						<a href="{{slugProduk($myproduk)}}" class="product_image" style="min-height:222px;">
 							{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height: 216px;'))}}
 						</a>
-						<div class="product_info" style="min-height: 83px;">
-							<h3><a href="{{slugProduk($myproduk)}}">{{strtoupper($myproduk->nama)}}</a></h3>
-							<small>{{shortDescription($myproduk->deskripsi,80)}}</small>
+						<div class="product_info">
+							<h3><a href="{{slugProduk($myproduk)}}">{{shortDescription(strtoupper($myproduk->nama), 25)}}</a></h3>
+							<small>{{shortDescription($myproduk->deskripsi,33)}}</small>
 						</div>
 						@if($setting->checkoutType!=2)
 						<div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->

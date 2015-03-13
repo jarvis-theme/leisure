@@ -185,5 +185,6 @@ define(['jquery','jq_ui','bootstrap','flexslider','fancybox','noty'], function($
 			tk.src = "http://www.trustklik.com/areviews/js/si-embed-insidediv.js";
 			(document.getElementsByTagName("body")[0] || document.getElementsByTagName("head")[0]).appendChild(tk);
 		};
+
 	};
 });

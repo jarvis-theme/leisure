@@ -6,9 +6,9 @@
 		@foreach($newproduk as $key=>$myproduk)
 		<li style="text-align: center;"> 
 			<a style="height: 225px" href="{{slugProduk($myproduk)}}" class="product_image"><img style="height: 225px" src={{URL::to(getPrefixDomain().'/produk/'.$myproduk->gambar1)}}></a>
-			<div class="product_info">
+			<div class="product_info" style="min-height: 83px;">
 				<h3 style="height: 28px;"><a href="{{slugProduk($myproduk)}}">{{$myproduk->nama}}</a></h3>
-				<small>{{shortDescription($myproduk->deskripsi,100)}}</small>
+				<small>{{shortDescription($myproduk->deskripsi,60)}}</small>
 			</div>
 			@if($setting->checkoutType!=2)
 			<div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->
@@ -38,9 +38,9 @@
 				<img style="max-height: 225px" src={{URL::to(getPrefixDomain().'/produk/'.$myproduk->gambar1)}}>
 			</a>
 
-			<div class="product_info" style="min-height: 115px;">
+			<div class="product_info" style="min-height: 85px;">
 				<h3 style="height: 28px;"><a href="{{slugProduk($myproduk)}}">{{$myproduk->nama}}</a></h3>
-				<small>{{shortDescription($myproduk->deskripsi,100)}}</small>
+				<small>{{shortDescription($myproduk->deskripsi,65)}}</small>
 			</div>
 
 			@if($setting->checkoutType!=2)
