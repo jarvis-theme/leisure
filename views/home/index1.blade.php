@@ -36,7 +36,7 @@
 					<li class="header">Testimonial</li>
 					<span>
 						<ul>
-							@foreach ($testimo as $items)
+							@foreach ($testimonial as $items)
 							<li>
 								<i>"{{$items->isi}}"</i><br />
 								<small style="line-height: 2;">oleh <b>{{$items->nama}}</b></small>
@@ -68,7 +68,9 @@
 							{{is_terlaris($myproduk, $kiri=1)}}
 							{{is_produkbaru($myproduk, $kiri=1)}}
 							{{is_outstok($myproduk, $kiri=1)}}
-							<a href="{{slugProduk($myproduk)}}" class="product_image">{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height: 217px;'))}}</a>
+							<a href="{{slugProduk($myproduk)}}" class="product_image">
+								{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 217px;'))}}
+							</a>
 							<div class="product_info" style="min-height: 83px;">
 								<h3><a href="{{slugProduk($myproduk)}}">{{strtoupper(shortName($myproduk->nama,24))}}</a></h3>
 								<small>{{shortDescription($myproduk->deskripsi,40)}}</small>
@@ -97,7 +99,9 @@
 						{{is_terlaris($myproduk, $kiri=1)}}
 						{{is_produkbaru($myproduk, $kiri=1)}}
 						{{is_outstok($myproduk, $kiri=1)}}
-						<a href="{{slugProduk($myproduk)}}" class="product_image">{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height: 217px;'))}}</a>
+						<a href="{{slugProduk($myproduk)}}" class="product_image">
+							{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 217px;'))}}
+						</a>
 						<div class="product_info" style="min-height: 83px;">
 							<h3><a href="{{slugProduk($myproduk)}}">{{strtoupper(shortName($myproduk->nama,24))}}</a></h3>
 							<small>{{shortDescription($myproduk->deskripsi,65)}}</small>

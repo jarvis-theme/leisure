@@ -39,7 +39,7 @@
 						<th class="align_left" width="25%">Detail Order</th>
 						<th class="align_center" width="15%"></th>
 					</tr>
-					@foreach ($order as $item)
+					@foreach (list_order() as $item)
 					<tr>
 						<td class="align_left" width="44%">
 							<a class="pr_name" href="#">ID: {{prefixOrder()}}{{$item->kodeOrder}}</a>
@@ -65,7 +65,7 @@
 						<td class="align_left">
 							<ul class="check_li">
 								@foreach ($item->detailorder as $detail)
-								<li>{{$detail->produk->nama}} {{$detail->opsiSkuId !=0 ? '('.$detail->opsisku->opsi1.($detail->opsisku->opsi2 != '' ? ' / '.$detail->opsisku->opsi2:'').($detail->opsisku->opsi3 !='' ? ' / '.$detail->opsisku->opsi3:'').')':''}} - {{$detail->qty}}</li>
+								<li>{{$detail->produk->nama}} {{$detail->opsiSkuId !=0 ? '('.$detail->opsisku["opsi1"].($detail->opsisku["opsi2"] != '' ? ' / '.$detail->opsisku["opsi2"]:'').($detail->opsisku["opsi3"] !='' ? ' / '.$detail->opsisku["opsi3"]:'').')':''}} - {{$detail->qty}}</li>
 								@endforeach
 							</ul>
 						</td>

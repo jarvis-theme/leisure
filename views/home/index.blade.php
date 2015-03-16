@@ -5,7 +5,9 @@
 	<ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
 		@foreach($newproduk as $key=>$myproduk)
 		<li style="text-align: center;"> 
-			<a style="height: 225px" href="{{slugProduk($myproduk)}}" class="product_image"><img style="height: 225px" src={{URL::to(getPrefixDomain().'/produk/'.$myproduk->gambar1)}}></a>
+			<a style="height: 225px" href="{{slugProduk($myproduk)}}" class="product_image">
+				<img style="height: 225px" src="{{URL::to(product_image_url($myproduk->gambar1))}}">
+			</a>
 			<div class="product_info" style="min-height: 83px;">
 				<h3 style="height: 28px;"><a href="{{slugProduk($myproduk)}}">{{$myproduk->nama}}</a></h3>
 				<small>{{shortDescription($myproduk->deskripsi,60)}}</small>
@@ -29,13 +31,13 @@
 <div class="products_list products_slider">
 	<h2 class="sub_title">Produk</h2>
 	<ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
-		@foreach($produk as $key=>$myproduk)
+		@foreach(list_product() as $key=>$myproduk)
 		<li style="text-align: center; position:relative;"> 
 			{{is_terlaris($myproduk)}}
 			{{is_produkbaru($myproduk)}}
 			{{is_outstok($myproduk)}}
 			<a style="height: 225px" href="{{slugProduk($myproduk)}}" class="product_image">
-				<img style="max-height: 225px" src={{URL::to(getPrefixDomain().'/produk/'.$myproduk->gambar1)}}>
+				<img style="max-height: 225px" src="{{URL::to(product_image_url($myproduk->gambar1))}}">
 			</a>
 
 			<div class="product_info" style="min-height: 85px;">

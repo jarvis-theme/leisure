@@ -7,26 +7,32 @@
 				<h1>{{$name}}</h1>
 				<ul class="category departments">
 					<li class="header">Kategori</li>
-					@foreach($kategori as $key=>$menu)
-						<li class="menu_cont">
+					@foreach(list_category() as $key=>$menu)
 						@if($menu->parent=='0')
-							<a href="#">{{$menu->nama}}</a>
-							<!--SUbmenu Starts-->
-							<ul class="side_sub_menu">
-							@foreach($kategori as $key=>$submenu)
-								@if($menu->id==$submenu->parent)
-								<li><a href="{{slugKategori($submenu)}}">{{$submenu->nama}}</a></li>
-								@endif
-							@endforeach
-							</ul>
-							<!--SUbmenu Ends-->
+							@if(count($menu->anak) == 0)
+							<li>
+								<a href="{{slugKategori($menu)}}" style="background-image: none;">{{$menu->nama}}</a>
+							</li>
+							@elseif(count($menu->anak) >= 1)
+							<li class="menu_cont">
+								<a href="{{slugKategori($menu)}}">{{$menu->nama}}</a>
+								<!--SUbmenu Starts-->
+								<ul class="side_sub_menu">
+								@foreach(list_category() as $key=>$submenu)
+									@if($menu->id==$submenu->parent)
+									<li><a href="{{slugKategori($submenu)}}">{{$submenu->nama}}</a></li>
+									@endif
+								@endforeach
+								</ul>
+								<!--SUbmenu Ends-->
+							</li>
 							@endif
-						</li>
+						@endif
 					@endforeach
 				</ul>
 				<ul class="category collection">
 					<li class="header">Koleksi</li>
-					@foreach($koleksi as $mykoleksi)
+					@foreach(list_koleksi() as $mykoleksi)
 					<li><a href="{{slugKoleksi($mykoleksi)}}">{{$mykoleksi->nama}}</a></li>
 					@endforeach
 				</ul>
@@ -35,9 +41,9 @@
 		<!--MAIN CONTENT ENDS-->
 		<div id="main_content">
 			<div class="category_banner">
-				@foreach(getBanner(2) as $banner)
+				@foreach(horizontal_banner() as $banner)
 				<a href="{{ $banner->url }}" target="_blank">
-					<img src="{{URL::to(getPrefixDomain().'/galeri/'.$banner->gambar)}}" width="100%"/>
+					<img src="{{ URL::to(banner_image_url($banner->gambar)) }}" width="100%"/>
 				</a>
 				@endforeach
 			</div>	
@@ -73,13 +79,13 @@
 			<!--Product List Starts-->
 			<div class="products_list_list">
 				<ul>
-					@foreach($produk as $myproduk)
+        			@foreach(list_product(12) as $myproduk)
 					<li style="position:relative;">
 						{{is_terlaris($myproduk, $kiri=1)}}
 						{{is_produkbaru($myproduk, $kiri=1)}}
 						{{is_outstok($myproduk, $kiri=1)}}
 						<a href="{{slugProduk($myproduk)}}" class="product_image">
-							{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height: 216px; max-width: 190px; width: 190px;'))}}
+							{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 216px; max-width: 190px; width: 190px;'))}}
 						</a>
 						<div class="product_info" style="width: 500px; float: left; margin-left: 5px;">
 							<h3><a href="{{slugProduk($myproduk)}}">{{strtoupper($myproduk->nama)}}</a></h3>
@@ -103,7 +109,7 @@
 						{{is_produkbaru($myproduk, $kiri=1)}}
 						{{is_outstok($myproduk, $kiri=1)}}
 						<a href="{{slugProduk($myproduk)}}" class="product_image" style="min-height:222px;">
-							{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height: 216px;'))}}
+							{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 216px;'))}}
 						</a>
 						<div class="product_info">
 							<h3><a href="{{slugProduk($myproduk)}}">{{shortDescription(strtoupper($myproduk->nama), 25)}}</a></h3>
