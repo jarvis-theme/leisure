@@ -59,8 +59,8 @@
 
 				<div class="viewby">
 					<label>View as :</label>
-					<a href="{{buatLink(URL::current(),array('view'=>'grid'))}}" class="grid" title="Grid View"></a>
-					<a href="{{buatLink(URL::current(),array('view'=>'list'))}}" class="list" title="List View"></a>
+					<a href="{{--buatLink(URL::current(),array('view'=>'grid'))--}}" class="grid" title="Grid View"></a>
+					<a href="{{--buatLink(URL::current(),array('view'=>'list'))--}}" class="list" title="List View"></a>
 					<!-- <a class="list" href="#"></a> <a class="grid" href="#"></a> -->
 				</div>
 				<!--
