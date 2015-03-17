@@ -59,9 +59,6 @@
 			@if(list_payments()[2]->aktif == 1)
 			<img src="{{URL::to('img/bank/ipaymu.jpg')}}" alt="support ipaymu" />
 			@endif
-			@if(list_dokus()->status == 1)
-			<img src="{{URL::to('img/bank/doku.jpg')}}" alt="support doku myshortcart" />
-			@endif
 
 		</address>        
 	</footer>
