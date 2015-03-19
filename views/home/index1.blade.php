@@ -5,9 +5,11 @@
 		<!--SIDE NAV STARTS-->
 		<div id="side_nav">
 			<div class="sideNavCategories">
+				@if(pluginSidePowerUp())
 				<ul>
 					{{pluginSidePowerup()}}
 				</ul>
+				@endif
 				<ul>
 					<li class="header">Banner</li>
 					@foreach(vertical_banner() as $banner)
@@ -77,7 +79,9 @@
 							</div>
 							@if($setting->checkoutType==1)
 							<div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->
-								<button onclick="window.location.href='{{slugProduk($myproduk)}}'" class="price_add" title="" type="button"><span style="margin-left: -10px;" class="pr_price">{{jadiRupiah($myproduk->hargaJual,$matauang)}}</span><span class="pr_add">Lihat</span></button>
+								<button onclick="window.location.href='{{slugProduk($myproduk)}}'" class="price_add" title="" type="button">
+									<span class="pr_price">{{jadiRupiah($myproduk->hargaJual,$matauang)}}</span><span class="pr_add">Lihat</span>
+									</button>
 							</div>
 							@endif
 						@endif
@@ -108,7 +112,7 @@
 						</div>
 						@if($setting->checkoutType==1)
 						<div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->
-							<button onclick="window.location.href='{{slugProduk($myproduk)}}'" class="price_add" title="" type="button"><span style="margin-left: -10px;" class="pr_price">{{jadiRupiah($myproduk->hargaJual,$matauang)}}</span><span class="pr_add">Lihat</span></button>
+							<button onclick="window.location.href='{{slugProduk($myproduk)}}'" class="price_add" title="" type="button"><span class="pr_price">{{jadiRupiah($myproduk->hargaJual,$matauang)}}</span><span class="pr_add">Lihat</span></button>
 						</div>
 						@endif
 					</li>

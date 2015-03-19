@@ -36,8 +36,8 @@
 			</section>
 			<aside id="sidebar">
 				<ul class="arrow_li side_nav">
-					@foreach($categoryList as $key=>$value)
-					<li><a href="{{URL::to('blog/category/'.generateSlug($value))}}">{{$value->nama}}</a></li>
+					@foreach(list_blog_category() as $key=>$value)
+					<li><a href="{{blog_category_url($value)}}">{{$value->nama}}</a></li>
 					@endforeach
 				</ul>
 

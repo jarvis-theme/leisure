@@ -8,7 +8,11 @@
 						@foreach($group->link as $key=>$link)	
 						<li>
 							@if($link->halaman=='1')
+								@if($link->linkTo == 'halaman/about-us')
+								<a href={{"'".URL::to(strtolower($link->linkTo))."'"}}>{{$link->nama}}</a>
+								@else
 								<a href={{"'".URL::to("halaman/".strtolower($link->linkTo))."'"}}>{{$link->nama}}</a>
+								@endif
 							@elseif($link->halaman=='2')
 								<a href={{"'".URL::to("blog/".strtolower($link->linkTo))."'"}}>{{$link->nama}}</a>
 							@elseif($link->url=='1')
@@ -59,8 +63,11 @@
 			@if(list_payments()[2]->aktif == 1)
 			<img src="{{URL::to('img/bank/ipaymu.jpg')}}" alt="support ipaymu" />
 			@endif
+			@if(count(list_dokus()) > 0 && list_dokus()->status == 1)
+			<img src="{{URL::to('img/bank/doku.jpg')}}" alt="support doku myshortcart" />
+			@endif
 
-		</address>        
+		</address>
 	</footer>
 <div>
 <div class="clear"></div>    

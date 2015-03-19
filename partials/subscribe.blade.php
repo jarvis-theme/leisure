@@ -26,7 +26,7 @@
         <small>Jangan lewatkan update terbaru dari toko kami dengan bergabung di mailing list kami – sign up to our newsletter now.</small>
         <form action="{{@$mailing->action}}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form newsletter" class="validate" target="_blank" novalidate>
             <input type="email" value="" placeholder="Enter your email" name="EMAIL" class="input-text required email" id="newsletter mce-EMAIL">
-            <button class="button" title="" type="submit" {{ @$mailing->action==''?'disabled="disabled"':'' }}></button>
+            <button class="button" title="" type="submit" {{ @$mailing->action==''?'disabled="disabled" style="opacity: 0.5; cursor: default;"':'' }}></button>
         </form>
     </div>
 </div>

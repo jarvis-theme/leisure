@@ -59,11 +59,11 @@
 
 				<div class="viewby">
 					<label>View as :</label>
-					<a href="{{--buatLink(URL::current(),array('view'=>'grid'))--}}" class="grid" title="Grid View"></a>
-					<a href="{{--buatLink(URL::current(),array('view'=>'list'))--}}" class="list" title="List View"></a>
+					<a href="{{buatLink(URL::current(),array('view'=>'grid'))}}" class="grid" title="Grid View"></a>
+					<a href="{{buatLink(URL::current(),array('view'=>'list'))}}" class="list" title="List View"></a>
 					<!-- <a class="list" href="#"></a> <a class="grid" href="#"></a> -->
 				</div>
-				<!--
+				
 				<div style="width:100px;" class="show_no">
 					<label></label>
 					<select style="width: 112px;" id="show" data-rel="{{URL::current()}}">
@@ -71,7 +71,7 @@
 						<option value="24" {{Input::get('show')==24?'selected="selected"':''}}>24 ITEMS</option>
 					</select>
 				</div>
-				-->
+				
 			</div>
 			<!--Toolbar-->
 
