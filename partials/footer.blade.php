@@ -16,7 +16,7 @@
 							@elseif($link->halaman=='2')
 								<a href={{"'".URL::to("blog/".strtolower($link->linkTo))."'"}}>{{$link->nama}}</a>
 							@elseif($link->url=='1')
-								<a href="{{strtolower($link->linkTo)}}">{{$link->nama}}</a>
+								<a href={{"'".URL::to(strtolower($link->linkTo))."'"}}>{{$link->nama}}</a>
 							@else
 								<a href={{"'".URL::to(strtolower($link->linkTo))."'"}}>{{$link->nama}}</a>
 							@endif
@@ -55,7 +55,7 @@
 			<p>Copyright &copy; {{date('Y')}} {{ Theme::place('title') }}. All Rights Reserved. Powered by <a style="text-decoration: none;" target="_blank" href="http://jarvis-store.com">Jarvis Store</a></p>
 			
 			@foreach(list_banks() as $bank)
-			<img style="" src="{{bank_logo($bank)}}" alt="" />
+			<img src="{{bank_logo($bank)}}" alt="{{$bank->name}}" />
 			@endforeach
 			@if(list_payments()[0]->aktif == 1)
 			<img src="{{URL::to('img/bank/paypal.png')}}" alt="support paypal" />

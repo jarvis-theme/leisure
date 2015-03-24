@@ -14,7 +14,7 @@ define(['jquery','jq_ui','bootstrap','flexslider','fancybox','noty'], function($
 			// tampilkan error noty
 			var msg = $('#message');
 			if(msg.length){
-				type = $(msg).attr('class');		
+				type = $(msg).attr('class');
 				text = $(msg).html();
 				noty({"text":text,"layout":"top","type":type});    
 			}

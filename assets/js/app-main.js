@@ -42,6 +42,7 @@ require.config({
 		member          : dirTema+'assets/js/pages/member',
 		main            : dirTema+'assets/js/pages/default',
 		produk          : dirTema+'assets/js/pages/produk',
+		// cart         	: dirTema+'assets/js/pages/cart',
 	}
 });
 require([
@@ -58,6 +59,7 @@ require([
 	router.define('member/*', 'member@run');
 
 	// PRODUK
+	// router.define('produk', 'cart@run');
 	router.define('produk/*', 'produk@run');
 	
 	router.run();

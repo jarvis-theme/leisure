@@ -7,7 +7,7 @@
             <!--Language Switcher Ends-->
             <!--Top Links Starts-->
             <ul class="top_links">
-                @if ( ! Sentry::check())
+                @if ( ! is_login() )
                     <li>{{HTML::link('member', 'Login')}}</li>
                     <li class="highlight"><a href="{{URL::to('member/create')}}" >Sign Up</a></li>
                 @else
@@ -86,38 +86,3 @@
     </nav>
     <!--Navigation Ends-->
 </div>
-
-<!-- 
-<div class="navigation_container">
-    <nav style=" display: list-item;list-style: none; ">
-        <ul class="primary_nav">
-            <li class="active"><a href={{"'".URL::to("/")."'"}}>Home</a></li>
-            @foreach($katMenu as $key=>$menu)
-            <li>
-                @if($menu->parent=='0')
-                <a href={{slugKategori($menu)}}>{{$menu->nama}}</a>
-                <ul class="sub_menu">
-                    @foreach($anMenu as $key1=>$submenu)
-                        @if($submenu->parent==$menu->id)
-                        <li>
-                            <a href={{slugKategori($submenu)}}>{{$submenu->nama}}</a>
-                            <ul>
-                                @foreach($anMenu as $key2=>$submenu2)
-                                    @if($submenu->id==$submenu2->parent)
-                                    <li><a href={{slugKategori($submenu2)}}>{{$submenu2->nama}}</a></li>
-                                    @endif
-                                @endforeach
-                            </ul>
-                        </li>
-                        @endif
-                    @endforeach
-                </ul>
-            </li>
-            @endif
-            @endforeach
-        </ul>
-        <div class="minicart" id='shoppingcartplace'>
-            {{$ShoppingCart}}
-        </div>
-    </nav>
-</div> 
