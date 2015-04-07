@@ -81,7 +81,7 @@
 			<!--Product List Starts-->
 			<div class="products_list_list">
 				<ul>
-        			@foreach(list_product(12) as $myproduk)
+        			@foreach(list_product(12, @$category, @$collection) as $myproduk)
 					<li style="position:relative;">
 						{{is_terlaris($myproduk, $kiri=1)}}
 						{{is_produkbaru($myproduk, $kiri=1)}}
