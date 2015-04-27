@@ -67,12 +67,12 @@
 				
 				<div style="width:100px;" class="show_no">
 					<label></label>
-					<!--
+					
 					<select style="width: 112px;" id="show" data-rel="{{URL::current()}}">
 						<option value="12" {{Input::get('show')==12?'selected="selected"':''}}>12 ITEMS</option>
 						<option value="24" {{Input::get('show')==24?'selected="selected"':''}}>24 ITEMS</option>
 					</select>
-					-->
+					
 				</div>
 				
 			</div>

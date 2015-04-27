@@ -30,7 +30,7 @@ require.config({
 		form_elements	: dirTema+'assets/js/lib/form_elements',
 		jcarousel		: dirTema+'assets/js/lib/jquery.jcarousel',
 		jq_ui			: 'js/jquery-ui',
-		jquery 			: ['//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min',dirTema+'assets/js/lib/jquery1.7.2.min'],
+		jquery 			: ['//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min',dirTema+'assets/js/lib/jquery-1.7.2.min'],
 		noty			: 'js/jquery.noty',
 		simpletabs		: dirTema+'assets/js/lib/simpletabs_1.3',
 

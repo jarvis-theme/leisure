@@ -5,7 +5,7 @@
 				<span class="highlight_text">Term of Service</span>
 				<div class="short-code-column">
 					<!-- <img src="images/girls_shopping.jpg" /> -->
-					{{$service->refund}}
+					{{$service->tos}}
 					<div style="border-bottom: solid 1px #EBEBEB; margin-bottom: 11px;"></div>
 				</div>
 				<span class="highlight_text">Refund Policy</span>
@@ -15,7 +15,7 @@
 				</div>
 				<span class="highlight_text">Privacy Policy</span>
 				<div class="short-code-column">
-					{{$service->tos}}
+					{{$service->privacy}}
 					<div style="border-bottom: solid 1px #EBEBEB; margin-bottom: 11px;"></div>
 				</div>
 			</section>
