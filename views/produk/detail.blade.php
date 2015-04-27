@@ -5,16 +5,19 @@
 <div id="product_detail">
 	<!--Product Left Starts-->
 	<div class="product_leftcol" style="text-align: center;">
-		{{HTML::image(getPrefixDomain().'/produk/'.$produk->gambar1)}} <span class="pr_info"></span>
+		{{HTML::image(product_image_url($produk->gambar1))}} <span class="pr_info"></span>
 		<ul id="flexslider-product" class="pr_gallery">
 			@if($produk->gambar1)
-			<li class="slides"><a href="{{URL::to(getPrefixDomain().'/produk/'.$produk->gambar1)}}">{{HTML::image(getPrefixDomain().'/produk/'.$produk->gambar1, 'gambar1', array('width' => '95', 'heigth' => '95'))}}</a></li>
+			<li class="slides"><a href="{{URL::to(product_image_url($produk->gambar1))}}">{{HTML::image(product_image_url($produk->gambar1,'thumb'), 'gambar1', array('width' => '95', 'heigth' => '95'))}}</a></li>
 			@endif
 			@if($produk->gambar2)
-			<li class="slides"><a href="{{URL::to(getPrefixDomain().'/produk/'.$produk->gambar2)}}">{{HTML::image(getPrefixDomain().'/produk/'.$produk->gambar2, 'gambar2', array('width' => '95', 'heigth' => '95'))}}</a></li>
+			<li class="slides"><a href="{{URL::to(product_image_url($produk->gambar2))}}">{{HTML::image(product_image_url($produk->gambar2,'thumb'), 'gambar2', array('width' => '95', 'heigth' => '95'))}}</a></li>
 			@endif
 			@if($produk->gambar3)
-			<li class="slides"><a href="{{URL::to(getPrefixDomain().'/produk/'.$produk->gambar3)}}">{{HTML::image(getPrefixDomain().'/produk/'.$produk->gambar3, 'gambar3', array('width' => '95', 'heigth' => '95'))}}</a></li>
+			<li class="slides"><a href="{{URL::to(product_image_url($produk->gambar3))}}">{{HTML::image(product_image_url($produk->gambar3,'thumb'), 'gambar3', array('width' => '95', 'heigth' => '95'))}}</a></li>
+			@endif
+			@if($produk->gambar4)
+			<li class="slides"><a href="{{URL::to(product_image_url($produk->gambar4))}}">{{HTML::image(product_image_url($produk->gambar4,'thumb'), 'gambar3', array('width' => '95', 'heigth' => '95'))}}</a></li>
 			@endif
 		</ul>
 	</div>
@@ -61,7 +64,7 @@
 							<option value=""> Pilih Opsi </option>
 							@foreach ($opsiproduk as $key => $opsi)
 							<option value="{{$opsi->id}}" {{ $opsi->stok==0 ? 'disabled':''}} >
-								{{$opsi->opsi1.($opsi->opsi2=='' ? '':' / '.$opsi->opsi2).($opsi->opsi3=='' ? '':' / '.$opsi->opsi3)}} {{jadiRupiah($opsi->harga)}}
+								{{$opsi->opsi1.($opsi->opsi2=='' ? '':' / '.$opsi->opsi2).($opsi->opsi3=='' ? '':' / '.$opsi->opsi3)}} {{price($opsi->harga)}}
 							</option>
 							@endforeach
 						</select>
@@ -90,7 +93,7 @@
 						<option value=""> Pilih Opsi </option>
 						@foreach ($opsiproduk as $key => $opsi)
 						<option value="{{$opsi->id}}" {{ $opsi->stok==0 ? 'disabled':''}} >
-							{{$opsi->opsi1.($opsi->opsi2=='' ? '':' / '.$opsi->opsi2).($opsi->opsi3=='' ? '':' / '.$opsi->opsi3)}} {{jadiRupiah($opsi->harga)}}
+							{{$opsi->opsi1.($opsi->opsi2=='' ? '':' / '.$opsi->opsi2).($opsi->opsi3=='' ? '':' / '.$opsi->opsi3)}} {{price($opsi->harga)}}
 						</option>
 						@endforeach
 					</select>
@@ -116,35 +119,31 @@
 </div>
 <!--PRODUCT DETAIL ENDS-->
 
-@if(count($produklain) > 0)
+@if(count(other_product($produk)) > 0)
 <!--Product List Starts-->
 <div class="products_list products_slider">
 	<h2 class="sub_title" style="padding-bottom: 20px; padding-top: 0;">Rekomendasi Lainnya</h2>
 	<ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
-		@foreach($produklain as $myproduk)
+		@foreach(other_product($produk) as $myproduk)
 		<li style="position:relative;">
 			{{is_terlaris($myproduk)}}
 			{{is_produkbaru($myproduk)}}
 			{{is_outstok($myproduk)}}
 			<a href="{{slugProduk($myproduk)}}" class="product_image" style="min-height: 222px;">
-				{{HTML::image(getPrefixDomain().'/produk/'.$myproduk->gambar1, $myproduk->nama, array('style' => 'max-height:216px'))}}
+				{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height:216px'))}}
 			</a>
 			<div class="product_info" style="min-height: 83px;">
-				<h3 style="height: 28px;"><a href="{{URL::to(slugProduk($myproduk))}}">{{$myproduk->nama}}</a></h3>
-				<small>{{shortDescription($myproduk->deskripsi,100)}}</small>
+				<h3 style="height: 28px;"><a href="{{URL::to(product_url($myproduk))}}">{{$myproduk->nama}}</a></h3>
+				<small>{{short_description($myproduk->deskripsi,100)}}</small>
 			</div>
 				
 			@if($setting->checkoutType!=2)
 			<div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->
 				<button onclick="window.location.href='{{slugProduk($myproduk)}}'" class="price_add" title="" type="button">
-					<span class="pr_price">&nbsp;{{jadiRupiah($myproduk->hargaJual,$matauang)}}</span>
+					<span class="pr_price">&nbsp;{{price($myproduk->hargaJual,$matauang)}}</span>
 					<span class="pr_add">Lihat</span>
 				</button>
 			</div>
-			@endif
-			
-			@if($setting->checkoutType==3)
-					
 			@endif
 		</li>
 		@endforeach

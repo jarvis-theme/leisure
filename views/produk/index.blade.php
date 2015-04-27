@@ -1,4 +1,5 @@
-﻿<div class="section_container">
+﻿{{--*/ $products =  ''/*--}}
+<div class="section_container">
 	<!--Mid Section Starts-->
 	<section>
 		<!--SIDE NAV STARTS-->
@@ -20,7 +21,7 @@
 								<ul class="side_sub_menu">
 								@foreach(list_category() as $key=>$submenu)
 									@if($menu->id==$submenu->parent)
-									<li><a href="{{slugKategori($submenu)}}">{{$submenu->nama}}</a></li>
+									<li><a href="{{category_url($submenu)}}">{{$submenu->nama}}</a></li>
 									@endif
 								@endforeach
 								</ul>
@@ -86,15 +87,15 @@
 						{{is_terlaris($myproduk, $kiri=1)}}
 						{{is_produkbaru($myproduk, $kiri=1)}}
 						{{is_outstok($myproduk, $kiri=1)}}
-						<a href="{{slugProduk($myproduk)}}" class="product_image">
+						<a href="{{product_url($myproduk)}}" class="product_image">
 							{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 216px; max-width: 190px; width: 190px;'))}}
 						</a>
 						<div class="product_info" style="width: 500px; float: left; margin-left: 5px;">
-							<h3><a href="{{slugProduk($myproduk)}}">{{strtoupper($myproduk->nama)}}</a></h3>
-							<small>{{shortDescription($myproduk->deskripsi,200)}}</small><a class="black" href="{{slugProduk($myproduk)}}">Lihat Produk</a>
+							<h3><a href="{{product_url($myproduk)}}">{{strtoupper($myproduk->nama)}}</a></h3>
+							<small>{{short_description($myproduk->deskripsi,200)}}</small><a class="black" href="{{product_url($myproduk)}}">Lihat Produk</a>
 						</div>
 						<div class="price_info">
-							<button class="price_add" title="" onclick="window.location.href='{{slugProduk($myproduk)}}'" type="button"><span class="pr_price">{{jadiRupiah($myproduk->hargaJual)}}</span><span class="pr_add">Beli</span></button>
+							<button class="price_add" title="" onclick="window.location.href='{{product_url($myproduk)}}'" type="button"><span class="pr_price">{{price($myproduk->hargaJual)}}</span><span class="pr_add">Beli</span></button>
 						</div>
 					</li>
 					@endforeach
@@ -105,21 +106,21 @@
 			<!--Product List Starts-->
 			<div class="products_list products_slider">
 				<ul>
-					@foreach(list_product(12) as $myproduk)
+					@foreach(list_product(12, @$category, @$collection) as $myproduk)
 					<li style="position:relative;">
 						{{is_terlaris($myproduk, $kiri=1)}}
 						{{is_produkbaru($myproduk, $kiri=1)}}
 						{{is_outstok($myproduk, $kiri=1)}}
-						<a href="{{slugProduk($myproduk)}}" class="product_image" style="min-height:222px;">
+						<a href="{{product_url($myproduk)}}" class="product_image" style="min-height:222px;">
 							{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 216px;'))}}
 						</a>
 						<div class="product_info">
-							<h3><a href="{{slugProduk($myproduk)}}">{{shortDescription(strtoupper($myproduk->nama), 25)}}</a></h3>
-							<small>{{shortDescription($myproduk->deskripsi,33)}}</small>
+							<h3><a href="{{product_url($myproduk)}}">{{short_description(strtoupper($myproduk->nama), 25)}}</a></h3>
+							<small>{{short_description($myproduk->deskripsi,33)}}</small>
 						</div>
 						@if($setting->checkoutType!=2)
 						<div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->
-							<button onclick="window.location.href='{{slugProduk($myproduk)}}'" class="price_add" title="" type="button"><span class="pr_price" style="width: auto;"> {{jadiRupiah($myproduk->hargaJual,$matauang)}}</span><span class="pr_add">Lihat</span></button>
+							<button onclick="window.location.href='{{product_url($myproduk)}}'" class="price_add" title="" type="button"><span class="pr_price" style="width: auto;"> {{price($myproduk->hargaJual)}}</span><span class="pr_add">Lihat</span></button>
 						</div>
 						@endif
 					</li>
@@ -129,7 +130,7 @@
 			<!--Product List Starts-->
 			@endif
 			<div class="show_no" style="margin-right: 42%;">
-				{{$produk->links()}}
+				{{list_product(12, @$category, @$collection)->links()}}
 			</div>
 		</div>
 	</section>

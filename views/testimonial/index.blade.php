@@ -18,7 +18,7 @@
 		<h1>{{$nama}}</h1>
 		<div class="page_sidebar">
 			<section id="main_content">
-				@foreach($testimonial as $key=>$value)
+				@foreach(list_testimonial() as $key=>$value)
 				<a href="#"><span style="padding-bottom: 11px;" class="highlight_text">{{$value->nama}}</span></a>
 				<p><i class="date">{{waktuTgl($value->created_at)}}</i></p>
 				<div class="short-code-column">
@@ -27,7 +27,7 @@
 					<div style="border-bottom: solid 1px #EBEBEB; margin-bottom: 11px;"></div>
 				</div>
 				@endforeach
-				{{$testimonial->links()}}
+				{{list_testimonial()->links()}}
 			</section>
 			<aside id="sidebar">
 				<ul class="arrow_li side_nav">
