@@ -2,21 +2,15 @@
 <div id="banner_section">
     <div class="flexslider">
         <ul class="slides">
+
+            @foreach(slideshow() as $slide)
             <li> 
-                <img style="max-height: 435px;" src="{{URL::to(getPrefixDomain().'/galeri/banner-width1.jpg')}}" />
+                <img style="max-height: 435px;" src="{{ url(slide_image_url($slide->gambar)) }}" />
                 <!--<div class="flex-caption">
                     <h3>Explore the summer collection!</h3>
                 </div>-->
             </li>
-            <li>
-                <img style="max-height: 435px;" src="{{URL::to(getPrefixDomain().'/galeri/banner-width2.jpg')}}" />
-                <!--<div class="flex-caption">
-                    <h3>Shop now!</h3>
-                </div> -->
-            </li>
-            <li>
-                <img style="max-height: 435px;" src="{{URL::to(getPrefixDomain().'/galeri/banner-width3.jpg')}}" />
-            </li>
+            @endforeach
         </ul>
     </div>
     <!-- <div class="promo_banner">
