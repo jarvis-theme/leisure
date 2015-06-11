@@ -92,14 +92,14 @@
 			</div>
 			<!--Product List Ends-->
 			@endif
-			@if(count(featured_product()) > 0)
+			@if(count(list_product()) > 0)
 			<!--Product List Starts-->
 			<div class="toolbar" style="text-align: center;">
-				<span style="font-weight: bold;">FEATURED</span>
+				<span style="font-weight: bold;">Our Product</span>
 			</div>
 			<div class="products_list products_slider">
 				<ul>
-					@foreach(featured_product() as $myproduk)
+					@foreach(list_product() as $myproduk)
 					<li style="position:relative;">
 						{{is_terlaris($myproduk, $kiri=1)}}
 						{{is_produkbaru($myproduk, $kiri=1)}}
