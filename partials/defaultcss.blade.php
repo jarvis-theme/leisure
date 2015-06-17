@@ -1,14 +1,14 @@
 	<!-- Default css-->
-	{{HTML::style(dirTemaToko().'leisure/assets/css/styles.css')}}
+	{{generate_theme_css('leisure/assets/css/styles.css')}}
 	@if($tema->isiCss=='')
 
-	{{HTML::style(dirTemaToko().'leisure/assets/css/base.css')}}
+	{{generate_theme_css('leisure/assets/css/base.css')}}
 	@else
 
-	{{HTML::style(dirTemaToko().'leisure/assets/css/editbase.css')}}
+	{{generate_theme_css('leisure/assets/css/editbase.css')}}
 	@endif	
-	{{HTML::style(dirTemaToko().'leisure/assets/css/responsive.css')}}
-	{{HTML::style(dirTemaToko().'leisure/assets/css/bootstrap.min.css')}}
-	{{HTML::style(dirTemaToko().'leisure/assets/css/sosmed.css')}}
+	{{generate_theme_css('leisure/assets/css/responsive.css')}}
+	{{generate_theme_css('leisure/assets/css/bootstrap.min.css')}}
+	{{generate_theme_css('leisure/assets/css/sosmed.css')}}
 	{{createFavicon($toko)}}
 	<!-- Other -->

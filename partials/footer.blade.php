@@ -9,16 +9,16 @@
 						<li>
 							@if($link->halaman=='1')
 								@if($link->linkTo == 'halaman/about-us')
-								<a href={{"'".URL::to(strtolower($link->linkTo))."'"}}>{{$link->nama}}</a>
+								<a href='{{url(strtolower($link->linkTo))}}'>{{$link->nama}}</a>
 								@else
-								<a href={{"'".URL::to("halaman/".strtolower($link->linkTo))."'"}}>{{$link->nama}}</a>
+								<a href='{{url("halaman/".strtolower($link->linkTo))}}'>{{$link->nama}}</a>
 								@endif
 							@elseif($link->halaman=='2')
-								<a href={{"'".URL::to("blog/".strtolower($link->linkTo))."'"}}>{{$link->nama}}</a>
+								<a href='{{url("blog/".strtolower($link->linkTo))}}'>{{$link->nama}}</a>
 							@elseif($link->url=='1')
-								<a href={{"'".URL::to(strtolower($link->linkTo))."'"}}>{{$link->nama}}</a>
+								<a href='{{url(strtolower($link->linkTo))}}'>{{$link->nama}}</a>
 							@else
-								<a href={{"'".URL::to(strtolower($link->linkTo))."'"}}>{{$link->nama}}</a>
+								<a href='{{url(strtolower($link->linkTo))}}'>{{$link->nama}}</a>
 							@endif
 						</li>
 						@endforeach
@@ -54,19 +54,17 @@
 		<address>
 			<p>Copyright &copy; {{date('Y')}} {{ Theme::place('title') }}. All Rights Reserved. Powered by <a style="text-decoration: none;" target="_blank" href="http://jarvis-store.com">Jarvis Store</a></p>
 			
-			@foreach(list_banks() as $bank)
+			@foreach(list_banks() as $bank)	
 			<img src="{{bank_logo($bank)}}" alt="{{$bank->name}}" />
 			@endforeach
-			@if(list_payments()[0]->aktif == 1)
-			<img src="{{URL::to('img/bank/paypal.png')}}" alt="support paypal" />
-			@endif
-			@if(list_payments()[2]->aktif == 1)
-			<img src="{{URL::to('img/bank/ipaymu.jpg')}}" alt="support ipaymu" />
-			@endif
-			@if(count(list_dokus()) > 0 && list_dokus()->status == 1)
-			<img src="{{URL::to('img/bank/doku.jpg')}}" alt="support doku myshortcart" />
-			@endif
-
+			@foreach(list_payments() as $pay)	
+                @if($pay->nama == 'ipaymu' && $pay->aktif == 1)	
+                <img src="{{url('img/bank/ipaymu.jpg')}}" alt="ipaymu" />
+                @endif
+            @endforeach
+            @if(count(list_dokus()) > 0 && list_dokus()->status == 1)	
+                <img src="{{url('img/bank/doku.jpg')}}" alt="doku myshortcart" />
+            @endif
 		</address>
 	</footer>
 <div>

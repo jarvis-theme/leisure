@@ -13,7 +13,7 @@
 					<span class="price">{{ $cart['qty'] }} Item(s)</span>
 				</li>
 				<div class="cart_bottom">
-				<a href="{{URL::to('checkout')}}">Checkout</a></div>
+				<a href="{{url('checkout')}}">Checkout</a></div>
 			@endforeach
 		@else
 			<li>

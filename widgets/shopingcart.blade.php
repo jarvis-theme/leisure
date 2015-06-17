@@ -1,7 +1,7 @@
 <div class="counter">
     <a href="javascript:void(0);" class="minicart_link" >
     	<span class="item"><b>{{Shpcart::cart()->total_items()}}</b> ITEM /</span>
-    	<span class="price"><b>{{ jadiRupiah(Shpcart::cart()->total() )}}</b></span>
+    	<span class="price"><b>{{ price(Shpcart::cart()->total() )}}</b></span>
 	</a>
 </div>
 <div class="cart_drop">
@@ -13,13 +13,13 @@
     		<li>
     			<!-- <img src="images/mini_c_item1.png"> -->
     			<a href="#">{{$cart['name']}}</a>
-    			<span class="price">{{ jadiRupiah($cart['qty'] * $cart['price'])}}</span>
+    			<span class="price">{{ price($cart['qty'] * $cart['price'])}}</span>
 			</li>
 			<div class="cart_bottom">
 				<div class="subtotal_menu">
-					<small>Subtotal:</small><big>{{ jadiRupiah(Shpcart::cart()->total() )}}</big>
+					<small>Subtotal:</small><big>{{ price(Shpcart::cart()->total() )}}</big>
 				</div>
-				<a href="{{URL::to('checkout')}}">Cart</a>
+				<a href="{{url('checkout')}}">Cart</a>
 			</div>
 			@endforeach
 		@else

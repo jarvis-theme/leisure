@@ -8,16 +8,16 @@
 		{{HTML::image(product_image_url($produk->gambar1))}} <span class="pr_info"></span>
 		<ul id="flexslider-product" class="pr_gallery">
 			@if($produk->gambar1)
-			<li class="slides"><a href="{{URL::to(product_image_url($produk->gambar1))}}">{{HTML::image(product_image_url($produk->gambar1,'thumb'), 'gambar1', array('width' => '95', 'heigth' => '95'))}}</a></li>
+			<li class="slides"><a href="{{url(product_image_url($produk->gambar1))}}">{{HTML::image(product_image_url($produk->gambar1,'thumb'), 'gambar1', array('width' => '95', 'heigth' => '95'))}}</a></li>
 			@endif
 			@if($produk->gambar2)
-			<li class="slides"><a href="{{URL::to(product_image_url($produk->gambar2))}}">{{HTML::image(product_image_url($produk->gambar2,'thumb'), 'gambar2', array('width' => '95', 'heigth' => '95'))}}</a></li>
+			<li class="slides"><a href="{{url(product_image_url($produk->gambar2))}}">{{HTML::image(product_image_url($produk->gambar2,'thumb'), 'gambar2', array('width' => '95', 'heigth' => '95'))}}</a></li>
 			@endif
 			@if($produk->gambar3)
-			<li class="slides"><a href="{{URL::to(product_image_url($produk->gambar3))}}">{{HTML::image(product_image_url($produk->gambar3,'thumb'), 'gambar3', array('width' => '95', 'heigth' => '95'))}}</a></li>
+			<li class="slides"><a href="{{url(product_image_url($produk->gambar3))}}">{{HTML::image(product_image_url($produk->gambar3,'thumb'), 'gambar3', array('width' => '95', 'heigth' => '95'))}}</a></li>
 			@endif
 			@if($produk->gambar4)
-			<li class="slides"><a href="{{URL::to(product_image_url($produk->gambar4))}}">{{HTML::image(product_image_url($produk->gambar4,'thumb'), 'gambar3', array('width' => '95', 'heigth' => '95'))}}</a></li>
+			<li class="slides"><a href="{{url(product_image_url($produk->gambar4))}}">{{HTML::image(product_image_url($produk->gambar4,'thumb'), 'gambar3', array('width' => '95', 'heigth' => '95'))}}</a></li>
 			@endif
 		</ul>
 	</div>
@@ -107,7 +107,7 @@
 		@endif
 		</form>
 		<div class="product_overview">
-			<iframe src="//www.facebook.com/plugins/share_button.php?href={{URL::to(slugProduk($produk))}}&amp;layout=button" scrolling="no" frameborder="0" style="border:none; overflow:hidden;height:20px;width:70px;" allowTransparency="true"></iframe>
+			<iframe src="//www.facebook.com/plugins/share_button.php?href={{url(slugProduk($produk))}}&amp;layout=button" scrolling="no" frameborder="0" style="border:none; overflow:hidden;height:20px;width:70px;" allowTransparency="true"></iframe>
 			<a class="twitter-share-button" href="https://twitter.com/share" data-count="none">Tweet </a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		</div>
@@ -133,7 +133,7 @@
 				{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height:216px'))}}
 			</a>
 			<div class="product_info" style="min-height: 83px;">
-				<h3 style="height: 28px;"><a href="{{URL::to(product_url($myproduk))}}">{{$myproduk->nama}}</a></h3>
+				<h3 style="height: 28px;"><a href="{{url(product_url($myproduk))}}">{{$myproduk->nama}}</a></h3>
 				<small>{{short_description($myproduk->deskripsi,100)}}</small>
 			</div>
 				

@@ -2,9 +2,12 @@ var dirTema = document.getElementsByTagName('link')[1].getAttribute('href');
 
 require.config({
 	baseUrl: '/',
+    waitSeconds : 20,
+    urlArgs: "v=001",
+
 	shim: {
 		"bootstrap"	: {
-			deps: ['jquery'],
+			deps: ['jquery','jq_ui'],
 		},
 		"flexslider" : {
 			deps : ['jquery'],
@@ -12,17 +15,17 @@ require.config({
 		"form_elements" : {
 			deps : ['jquery'],
 		},
-		'jq_ui' : {
-			deps : ['jquery'],
-		},
 		"noty" : {
 			deps : ['jquery'],
 		},
+		'jq_ui' : {
+			deps : ['jquery'],
+		},
 	},
-    "waitSeconds" : 20,
 
 	paths: {
 		// LIBRARY
+		jquery 			: ['//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min',dirTema+'assets/js/lib/jquery-1.7.2.min'],
 		bootstrap 		: ['//maxcdn.bootstrapcdn.com/bootstrap/2.2.1/js/bootstrap.min','js/bootstrap.min'],
 		cart			: 'js/cart',
 		flexslider		: dirTema+'assets/js/lib/jquery.flexslider',
@@ -30,7 +33,6 @@ require.config({
 		form_elements	: dirTema+'assets/js/lib/form_elements',
 		jcarousel		: dirTema+'assets/js/lib/jquery.jcarousel',
 		jq_ui			: 'js/jquery-ui',
-		jquery 			: ['//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min',dirTema+'assets/js/lib/jquery-1.7.2.min'],
 		noty			: 'js/jquery.noty',
 		simpletabs		: dirTema+'assets/js/lib/simpletabs_1.3',
 

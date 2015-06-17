@@ -1,4 +1,4 @@
-@if(count($newproducts) > 0)
+@if(count(new_product()) > 0)
 <!--New Product List Starts-->
 <div class="products_list products_slider">
 	<h2 class="sub_title">Produk Baru</h2>

@@ -10,27 +10,20 @@
 					</span>
 				</p>
 				<div class="short-code-column">
-					<!-- <img src="images/girls_shopping.jpg" /> -->
 					{{$detailblog->isi}}
 				</div>
 				<div style="border-bottom: solid 1px #EBEBEB; margin-bottom: 11px;"></div>
 				<br>
 				{{$fbscript}}
-				{{fbcommentbox(URL::to("blog/".$detailblog->slug), '640px', '5', 'light')}}
+				{{fbcommentbox(blog_url($detailblog), '640px', '5', 'light')}}
 				<br>
 				<div class="navigate comments clearfix">
 					@if(isset($prev))
-					<!-- <div class="pull-left"><a href="{{$prev->slug}}"></a></div>-->
-					<p style="text-align: right"><a href="{{$prev->slug}}" style="text-decoration: none; font-weight: bolder; color:black;">&larr; Prev post</a></p> 
-					@else
-					<div class="pull-right"></div>
+					<p style="float:left"><a href="{{$prev->slug}}" style="text-decoration: none; font-weight: bolder; color:black;">&larr; Prev post</a></p>
 					@endif
 
 					@if(isset($next))
-					<!-- <div style="text-align: right" class="pull-right"><a href="{{$next->slug}}">Next post &rarr;</a></div> -->
-					<p style="text-align: right"><a href="{{$next->slug}}" style="text-decoration: none; font-weight: bolder; color:black;">Next post &rarr;</a></p>
-					@else
-					<div class="pull-right"></div>
+					<p style="float:right"><a href="{{$next->slug}}" style="text-decoration: none; font-weight: bolder; color:black;">Next post &rarr;</a></p>
 					@endif
 				</div>
 			</section>

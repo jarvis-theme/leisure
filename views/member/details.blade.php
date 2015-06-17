@@ -1,30 +1,29 @@
+@if($errors->all())
+<div class="alert alert-error">
+	We encountered the following errors:<br>
+	<ul>
+		@foreach($errors->all() as $message)
+		<li>{{ $message }}</li>
+		@endforeach
+	</ul>
+</div>
+@endif
+
+@if(Session::has('error'))
+<div class="alert alert-error" id="message" style="display:none">
+	<p>Password lama anda tidak benar, silakan coba lagi.</p>
+</div>
+@endif
+
+@if(Session::has('success'))
+<div class="success" id='message' style='display:none'>
+	<p>Informasi anda berhasil di update.</p>
+</div>
+@endif
+	
 	<div id="" class="full_page">
 		<h1>Member Area</h1>
 		<!--member STARTS-->
-		@if($errors->all())
-		<div class="alert alert-error">
-			We encountered the following errors:
-			<br>
-			<ul>
-				@foreach($errors->all() as $message)
-				<li>{{ $message }}</li>
-				@endforeach
-			</ul>
-		</div>
-		@endif
-
-		@if(Session::has('error'))
-		<div class="alert alert-error">
-			<p>Password lama anda tidak benar, silakan coba lagi.</p>
-		</div>
-		@endif
-
-		@if(Session::has('success'))
-		<div class="success" id='message' style='display:none'>
-			<p>Informasi anda berhasil di update.</p>
-		</div>
-		@endif
-
 		<div class="simpleTabs">
 			<ul class="simpleTabsNavigation">
 				<li><a href="#">History Transaksi</a></li>

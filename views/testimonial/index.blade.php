@@ -33,7 +33,7 @@
 				<ul class="arrow_li side_nav">
 					<li><b>Buat Testimonial</b></li>
 				</ul>
-				<form action="{{URL::to('testimoni')}}" method="post">
+				<form action="{{url('testimoni')}}" method="post">
 					<label>Nama</label><br><input style="border: solid 1px #e1e1e1; padding: 4px;width: 94%;" type="text" name="nama" class="input-text" required><br><br>
 					<label>Testimonial</label><br><textarea style="border: solid 1px #e1e1e1; padding: 4px;width: 94%;" name="testimonial" class="textarea" required></textarea><br><br>
 					<input type="submit" style="float:right" class="subbutton brown_btn" value="Kirim Testimonial">

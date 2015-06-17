@@ -6,6 +6,7 @@
 		<div id="side_nav">
 			<div class="sideNavCategories">
 				<h1>{{$name}}</h1>
+				@if(count(list_category()) > 0)
 				<ul class="category departments">
 					<li class="header">Kategori</li>
 					@foreach(list_category() as $key=>$menu)
@@ -31,6 +32,7 @@
 						@endif
 					@endforeach
 				</ul>
+				@endif
 				<ul class="category collection">
 					<li class="header">Koleksi</li>
 					@foreach(list_koleksi() as $mykoleksi)
@@ -82,11 +84,17 @@
 			<!--Product List Starts-->
 			<div class="products_list_list">
 				<ul>
-        			@foreach(list_product(12, @$category, @$collection) as $myproduk)
+        			@foreach(list_product(Input::get('show'), @$category, @$collection) as $myproduk)
 					<li style="position:relative;">
-						{{is_terlaris($myproduk, $kiri=1)}}
-						{{is_produkbaru($myproduk, $kiri=1)}}
-						{{is_outstok($myproduk, $kiri=1)}}
+						@if(is_outstok($myproduk))    
+                            {{is_outstok($myproduk, $kiri=1)}}
+                        @else
+                            @if(is_produkbaru($myproduk))
+                                {{is_produkbaru($myproduk, $kiri=1)}}
+                            @elseif(is_terlaris($myproduk))
+                                {{is_terlaris($myproduk, $kiri=1)}}
+                            @endif
+                        @endif
 						<a href="{{product_url($myproduk)}}" class="product_image">
 							{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 216px; max-width: 190px; width: 190px;'))}}
 						</a>
@@ -106,17 +114,23 @@
 			<!--Product List Starts-->
 			<div class="products_list products_slider">
 				<ul>
-					@foreach(list_product(12, @$category, @$collection) as $myproduk)
+					@foreach(list_product(Input::get('show'), @$category, @$collection) as $myproduk)
 					<li style="position:relative;">
-						{{is_terlaris($myproduk, $kiri=1)}}
-						{{is_produkbaru($myproduk, $kiri=1)}}
-						{{is_outstok($myproduk, $kiri=1)}}
+						@if(is_outstok($myproduk))    
+                            {{is_outstok($myproduk, $kiri=1)}}
+                        @else
+                            @if(is_produkbaru($myproduk))
+                                {{is_produkbaru($myproduk, $kiri=1)}}
+                            @elseif(is_terlaris($myproduk))
+                                {{is_terlaris($myproduk, $kiri=1)}}
+                            @endif
+                        @endif
 						<a href="{{product_url($myproduk)}}" class="product_image" style="min-height:222px;">
 							{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 216px;'))}}
 						</a>
 						<div class="product_info">
-							<h3><a href="{{product_url($myproduk)}}">{{short_description(strtoupper($myproduk->nama), 25)}}</a></h3>
-							<small>{{short_description($myproduk->deskripsi,33)}}</small>
+							<h3><a href="{{product_url($myproduk)}}">{{short_description(strtoupper($myproduk->nama), 23)}}</a></h3>
+							<small>{{short_description($myproduk->deskripsi,30)}}</small>
 						</div>
 						@if($setting->checkoutType!=2)
 						<div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->
@@ -130,7 +144,7 @@
 			<!--Product List Starts-->
 			@endif
 			<div class="show_no" style="margin-right: 42%;">
-				{{list_product(12, @$category, @$collection)->links()}}
+				{{list_product(Input::get('show'), @$category, @$collection)->links()}}
 			</div>
 		</div>
 	</section>

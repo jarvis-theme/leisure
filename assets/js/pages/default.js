@@ -1,4 +1,4 @@
-define(['jquery','bootstrap','form_elements'], function($)
+define(['jquery','bootstrap','form_elements','noty'], function($)
 {
 	return new function(){
 		var self = this;
