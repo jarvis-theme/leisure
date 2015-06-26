@@ -72,8 +72,8 @@
 					
 					<select style="width: 112px;" id="show" data-rel="{{URL::current()}}">
 						<option value="">Show Product</option>
-						<option value="2" {{Input::get('show')==2?'selected="selected"':''}}>12 ITEMS</option>
-						<option value="4" {{Input::get('show')==4?'selected="selected"':''}}>24 ITEMS</option>
+						<option value="12" {{Input::get('show')==12?'selected="selected"':''}}>12 ITEMS</option>
+						<option value="24" {{Input::get('show')==24?'selected="selected"':''}}>24 ITEMS</option>
 					</select>
 				</div>
 			</div>
