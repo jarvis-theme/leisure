@@ -71,12 +71,11 @@
 					<label></label>
 					
 					<select style="width: 112px;" id="show" data-rel="{{URL::current()}}">
-						<option value="12" {{Input::get('show')==12?'selected="selected"':''}}>12 ITEMS</option>
-						<option value="24" {{Input::get('show')==24?'selected="selected"':''}}>24 ITEMS</option>
+						<option value="">Show Product</option>
+						<option value="2" {{Input::get('show')==2?'selected="selected"':''}}>12 ITEMS</option>
+						<option value="4" {{Input::get('show')==4?'selected="selected"':''}}>24 ITEMS</option>
 					</select>
-					
 				</div>
-				
 			</div>
 			<!--Toolbar-->
 
@@ -144,7 +143,7 @@
 			<!--Product List Starts-->
 			@endif
 			<div class="show_no" style="margin-right: 42%;">
-				{{list_product(Input::get('show'), @$category, @$collection)->links()}}
+				{{list_product(Input::get('show'), @$category, @$collection)->appends(array('show' => Input::get('show')))->links()}}
 			</div>
 		</div>
 	</section>
