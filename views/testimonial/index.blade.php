@@ -24,7 +24,7 @@
 				<div class="short-code-column">
 					<!-- <img src="images/girls_shopping.jpg" /> -->
 					&#187;{{($value->isi)}}
-					<div style="border-bottom: solid 1px #EBEBEB; margin-bottom: 11px;"></div>
+					<div id="borders"></div>
 				</div>
 				@endforeach
 				{{list_testimonial()->links()}}
@@ -34,8 +34,8 @@
 					<li><b>Buat Testimonial</b></li>
 				</ul>
 				<form action="{{url('testimoni')}}" method="post">
-					<label>Nama</label><br><input style="border: solid 1px #e1e1e1; padding: 4px;width: 94%;" type="text" name="nama" class="input-text" required><br><br>
-					<label>Testimonial</label><br><textarea style="border: solid 1px #e1e1e1; padding: 4px;width: 94%;" name="testimonial" class="textarea" required></textarea><br><br>
+					<label>Nama</label><br><input id="testimoni" type="text" name="nama" class="input-text" required><br><br>
+					<label>Testimonial</label><br><textarea id="testimoni" name="testimonial" class="textarea" required></textarea><br><br>
 					<input type="submit" style="float:right" class="subbutton brown_btn" value="Kirim Testimonial">
 					<br><br>
 				</form>

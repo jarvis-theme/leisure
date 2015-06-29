@@ -13,16 +13,27 @@
 						@if($menu->parent=='0')
 							@if(count($menu->anak) == 0)
 							<li>
-								<a href="{{slugKategori($menu)}}" style="background-image: none;">{{$menu->nama}}</a>
+								<a href="{{category_url($menu)}}" style="background-image: none;">{{$menu->nama}}</a>
 							</li>
 							@elseif(count($menu->anak) >= 1)
 							<li class="menu_cont">
-								<a href="{{slugKategori($menu)}}">{{$menu->nama}}</a>
+								<a href="{{category_url($menu)}}">{{$menu->nama}}</a>
 								<!--SUbmenu Starts-->
 								<ul class="side_sub_menu">
 								@foreach(list_category() as $key=>$submenu)
 									@if($menu->id==$submenu->parent)
-									<li><a href="{{category_url($submenu)}}">{{$submenu->nama}}</a></li>
+									<li>
+										<a href="{{category_url($submenu)}}">{{$submenu->nama}}</a>
+                                		@if($submenu->anak->count() != 0)
+										<ul class="side_sub_menu2">
+											@foreach($submenu->anak as $submenu2)
+                                    		@if($submenu2->parent == $submenu->id)
+                                    		<li><a href="{{category_url($submenu2)}}">{{$submenu2->nama}}</a></li>
+                                    		@endif
+											@endforeach
+										</ul>
+										@endif
+									</li>
 									@endif
 								@endforeach
 								</ul>
@@ -36,7 +47,7 @@
 				<ul class="category collection">
 					<li class="header">Koleksi</li>
 					@foreach(list_koleksi() as $mykoleksi)
-					<li><a href="{{slugKoleksi($mykoleksi)}}">{{$mykoleksi->nama}}</a></li>
+					<li><a href="{{koleksi_url($mykoleksi)}}">{{$mykoleksi->nama}}</a></li>
 					@endforeach
 				</ul>
 			</div>
@@ -133,7 +144,7 @@
 						</div>
 						@if($setting->checkoutType!=2)
 						<div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->
-							<button onclick="window.location.href='{{product_url($myproduk)}}'" class="price_add" title="" type="button"><span class="pr_price" style="width: auto;"> {{price($myproduk->hargaJual)}}</span><span class="pr_add">Lihat</span></button>
+							<button onclick="window.location.href='{{product_url($myproduk)}}'" class="price_add" title="" type="button"><span class="pr_price"> {{price($myproduk->hargaJual)}}</span><span class="pr_add">Lihat</span></button>
 						</div>
 						@endif
 					</li>

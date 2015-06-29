@@ -36,8 +36,9 @@
 				<div class="checkout_steps">
 					<ol id="checkoutSteps">
 						<li class="section allow active" id="opc-login">
-							<div class="step-title"> <span class="number">1</span>
-								<h2>Checkout Method</h2>
+							<div class="step-title">
+								<!-- <span class="number">1</span> -->
+								<h2>Login Area</h2>
 							</div>
 							<div id="checkout-step-login">
 								<div class="col2-set">
@@ -91,7 +92,7 @@
 							<!-- </form> -->
 							</div>
 						</li>
-						<li>
+						<!-- <li>
 							<div class="step-title"> <span class="number">2</span>
 								<h2>Billing Information</h2>
 							</div>
@@ -110,11 +111,11 @@
 							<div class="step-title"> <span class="number">5</span>
 								<h2>Order Preview</h2>
 							</div>
-						</li>
+						</li> -->
 					</ol>
 				</div>
 				<!--CHECKOUT STEPS ENDS-->
-				<div class="col_right">
+				<!-- <div class="col_right">
 					<div class="block-progress">
 						<div class="block-title">Your Checkout Progress</div>
 						<ul>
@@ -125,7 +126,7 @@
 						</ul>
 					</div>
 					<div class="right_promo">
-						<!-- <img src="images/side_promo_banner.jpg"> -->
+						<img src="images/side_promo_banner.jpg">
 					</div>
-				</div>
+				</div> -->
 			</div>

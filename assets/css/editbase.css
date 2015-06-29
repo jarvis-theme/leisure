@@ -81,8 +81,8 @@ ul.sub_menu > li:first-child:hover {border-bottom: 1px solid #f38256;}
 .products_list .product_info h3 a{color:#000000; text-decoration:none;}
 .products_list .product_info small{ color:#a2a2a2; font-size:13px; line-height:16px;}
 .products_list .price_info button{ float:right; background:none;border:0px; padding:0px; height:32px; line-height:100%; overflow:hidden; cursor:pointer;}
-.products_list .price_info button .pr_price{ background:#544f4b;  padding:10px; color:#fff; font-size:14px; font-weight:bold; float:left; clear:both; width:83%; text-transform:uppercase;}
-.products_list .price_info button .pr_add{ padding:10px; color:#fff; font-size:11px; font-weight:bold; text-transform:uppercase;  float:left; clear:both; width: 83%; margin-top:0px;}
+.products_list .price_info button .pr_price{ background:#544f4b;  padding:10px; color:#fff; font-size:14px; font-weight:bold; float:left; clear:both; width:100%; text-transform:uppercase;margin-right: 20px;}
+.products_list .price_info button .pr_add{ padding:10px; color:#fff; font-size:11px; font-weight:bold; text-transform:uppercase;  float:left; clear:both; width: 100%; margin-top:0px;}
 .products_list li:hover .pr_add{ margin-top:-32px;-moz-transition:all 0.3s ease-out 0s; -webkit-transition: all 0.3s ease-out;}
 .products_list .price_info a{ color:#a2a2a2; text-decoration:none; font-size:11px; display:inline-block; padding-top:10px;}
 
@@ -172,7 +172,7 @@ ul.simpleTabsNavigation li a{ background:#F3F3F3; color:#544F4B; font-weight:bol
 .subscribe_block h3{ color:#4b4642; font-size:18px; font-weight:normal; text-shadow:0px 1px 0px #d5cfca; line-height:30px;}
 .subscribe_block .find_us{ float:left; width:295px; margin-left:40px; padding:15px 0px; border-right:solid 1px #a29c97; box-shadow:1px 0px 0px #c8c6c4;}
 .subscribe_block .find_us h3{float:left; padding-right:25px;}
-.subscribe_block .find_us a{ width:33px; height:33px; display:inline-block; margin-right:2px; background: no-repeat center bottom ;-moz-transition:all 0.2s ease-out 0s; -webkit-transition: all 0.2s ease-out;}
+.subscribe_block .find_us a{ width:33px; height:33px; display:inline-block; margin-right:2px; background: no-repeat center bottom ;-moz-transition:all 0.2s ease-out 0s; -webkit-transition: all 0.2s ease-out;text-decoration: none;}
 .subscribe_block .find_us a:hover{ background: center top}
 .subscribe_block .find_us a.twitter{ background-image:url(../images/twitter.png) ;}
 .subscribe_block .find_us a.facebook{ background-image:url(../images/facebook.png);}
@@ -405,15 +405,15 @@ h2.sub_title{ font-size:18px; color:#312e2b; font-weight:normal; padding-bottom:
 .flex-caption h3{ text-transform:uppercase; font-size:22px; line-height:30px; font-weight:bold;}
 
 /*-----------------------------------COLOR THEME HERE*/
-.navigation_container, .products_list li .product_info, ul.sub_menu > li > ul > li:hover, #product_detail, .col_right .block-title, .twitter_feed{ border-bottom-color:#588ff5;}
+.navigation_container, .products_list li .product_info, ul.sub_menu > li > ul > li:hover, #product_detail, .col_right .block-title, .twitter_feed{ border-bottom-color:#f38256;}
 header .top_links > li.highlight a,
-nav .primary_nav li.active > a, .products_list .price_info button .pr_add, .products_list_list li .price_info button .pr_add, .cart_drop .cart_bottom a{ background:#588ff5;}
+nav .primary_nav li.active > a, .products_list .price_info button .pr_add, .products_list_list li .price_info button .pr_add, .cart_drop .cart_bottom a{ background:#f38256;}
 nav .minicart span b,
-footer .footer_customblock .shipping_info span, ul.breadcrumb li.active a, .product_rightcol .pr_price big, footer .footer_links li a:hover, #shopping-cart-table tr td span.pr_info, #totals-table .total, .cart_drop ul li span.price, .cart_drop .cart_bottom .subtotal_menu big, ul.simpleTabsNavigation li a.current, .side_nav li a:hover, .twitter_feed a{color:#588ff5;}
-footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_tax .shipping_tax, .checkout_discount, .cart_drop, ul.simpleTabsNavigation li a.current {border-top-color:#588ff5;}
-.flexslider .flex-direction-nav li a:hover, nav .primary_nav > li > a:hover, nav .primary_nav > li:hover > a, .product_rightcol .add_to_buttons button.add_cart, .action_buttonbar button.checkout, #shopping-cart-table tr td a.remove:hover, .sideNavCategories > ul.departments > li > a:hover, .sideNavCategories > ul.departments > li > a.active, span.highlight_text{ background-color:#588ff5;}
-.products_list li:hover img, .products_list_list li:hover img{ border-color:#588ff5}
-.flex-caption{ border-left-color:#588ff5}
+footer .footer_customblock .shipping_info span, ul.breadcrumb li.active a, .product_rightcol .pr_price big, footer .footer_links li a:hover, #shopping-cart-table tr td span.pr_info, #totals-table .total, .cart_drop ul li span.price, .cart_drop .cart_bottom .subtotal_menu big, ul.simpleTabsNavigation li a.current, .side_nav li a:hover, .twitter_feed a{color:#f38256;}
+footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_tax .shipping_tax, .checkout_discount, .cart_drop, ul.simpleTabsNavigation li a.current {border-top-color:#f38256;}
+.flexslider .flex-direction-nav li a:hover, nav .primary_nav > li > a:hover, nav .primary_nav > li:hover > a, .product_rightcol .add_to_buttons button.add_cart, .action_buttonbar button.checkout, #shopping-cart-table tr td a.remove:hover, .sideNavCategories > ul.departments > li > a:hover, .sideNavCategories > ul.departments > li > a.active, span.highlight_text{ background-color:#f38256;}
+.products_list li:hover img, .products_list_list li:hover img{ border-color:#f38256}
+.flex-caption{ border-left-color:#f38256}
 
 /*-----------------------------------FONTS HERE*/
 ul.primary_nav > li > a, .minicart span, h1, h2, h3, h4, h5, .product_info, .price_info, button.price_add, .footer_customblock, .product_rightcol .pr_price big, .product_rightcol .pr_price small, .product_rightcol small.pr_type, .product_rightcol .add_to_buttons button.add_cart, .message, .cart_drop .cart_bottom .subtotal_menu, ul.simpleTabsNavigation, .toggle_box .toggle_title
@@ -458,4 +458,18 @@ a.icon-pinterest:hover {
 }
 .sideNavCategories ul form > input[type="submit"]:hover{
 	background: none repeat scroll 0% 0% #F38256;
+}
+.fb_reset {display: inline-block;}
+.fb-share-button {margin-left: 5px;}
+#read-blog { text-decoration: none; font-weight: bolder; color:black; }
+#borders { border-bottom: solid 1px #EBEBEB; margin-bottom: 11px; }
+#navigate-post { text-decoration: none; font-weight: bolder; color:black; }
+#recommend { padding-bottom: 20px; padding-top: 0; }
+#testimoni { border: solid 1px #e1e1e1; padding: 4px;width: 94%; }
+.side_sub_menu2 { padding: 10px 10px 0; }
+#brandshop { padding: 25px 0px 20px 0px;color: #3D3B3B;text-decoration: none;text-transform: uppercase;font-weight: light;font-size: 32px; }
+.mobile-navigation { display:none; margin: 0 auto; position: static; }
+.responsive-nav{display: hidden;}
+@media screen and (max-width: 600px) {
+	.responsive-nav{display: inline-block;}
 }

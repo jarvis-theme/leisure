@@ -12,18 +12,18 @@
 				<div class="short-code-column">
 					{{$detailblog->isi}}
 				</div>
-				<div style="border-bottom: solid 1px #EBEBEB; margin-bottom: 11px;"></div>
+				<div id="border-blog"></div>
 				<br>
 				{{$fbscript}}
 				{{fbcommentbox(blog_url($detailblog), '640px', '5', 'light')}}
 				<br>
 				<div class="navigate comments clearfix">
 					@if(isset($prev))
-					<p style="float:left"><a href="{{$prev->slug}}" style="text-decoration: none; font-weight: bolder; color:black;">&larr; Prev post</a></p>
+					<p style="float:left"><a href="{{$prev->slug}}" id="navigate-post">&larr; Prev post</a></p>
 					@endif
 
 					@if(isset($next))
-					<p style="float:right"><a href="{{$next->slug}}" style="text-decoration: none; font-weight: bolder; color:black;">Next post &rarr;</a></p>
+					<p style="float:right"><a href="{{$next->slug}}" id="navigate-post">Next post &rarr;</a></p>
 					@endif
 				</div>
 			</section>

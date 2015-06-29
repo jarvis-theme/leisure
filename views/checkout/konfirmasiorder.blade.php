@@ -91,9 +91,9 @@
 										@elseif($order->status==2)
 										<span class="label label-info">Pembayaran diterima</span>
 										@elseif($order->status==3)
-										<span class="label label-info">Terkirim</span>
+										<span class="label label-success">Terkirim</span>
 										@elseif($order->status==4)
-										<span class="label label-info">Batal</span>
+										<span class="label label-default">Batal</span>
 										@endif
 									@else 
 										@if($order->status==0)
@@ -107,9 +107,9 @@
 										@elseif($order->status==4)
 										<span class="label label-info">Pembayaran lunas</span>
 										@elseif($order->status==5)
-										<span class="label label-info">Terkirim</span>
+										<span class="label label-success">Terkirim</span>
 										@elseif($order->status==6)
-										<span class="label label-info">Batal</span>
+										<span class="label label-default">Batal</span>
 										@elseif($order->status==7)
 										<span class="label label-info">Konfirmasi Pelunasan diterima</span>
 										@endif

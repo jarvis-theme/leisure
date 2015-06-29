@@ -54,9 +54,9 @@
 							@elseif($item->status==2)
 							<span class="label label-info">Pembayaran diterima</span>
 							@elseif($item->status==3)
-							<span class="label label-info">Terkirim</span>
+							<span class="label label-success">Terkirim</span>
 							@elseif($item->status==4)
-							<span class="label label-info">Batal</span>
+							<span class="label label-default">Batal</span>
 							@endif
 							<!-- <span class="price oranje">BARANG TERKIRIM </span> --><br><br>
 						</td>
@@ -93,7 +93,7 @@
 							@elseif($item->status==1)
 							<span class="label label-important">Inquiry diterima</span>
 							@elseif($item->status==2)
-							<span class="label label-info">Batal</span>
+							<span class="label label-default">Batal</span>
 							@endif
 						</td>
 						<td class="align_center"><a href="#" class="edit"></a></td>
@@ -141,9 +141,9 @@
 							@elseif($item->status==4)
 							<span class="label label-info">Pembayaran lunas</span>
 							@elseif($item->status==5)
-							<span class="label label-info">Terkirim</span>
+							<span class="label label-success">Terkirim</span>
 							@elseif($item->status==6)
-							<span class="label label-info">Batal</span>
+							<span class="label label-default">Batal</span>
 							@elseif($item->status==7)
 							<span class="label label-info">Konfirmasi Pelunasan diterima</span>
 							@endif

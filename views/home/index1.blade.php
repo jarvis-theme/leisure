@@ -58,19 +58,25 @@
 				<li><a href="{{URL::to('produk')}}">Koleksi Produk Kami</a></li>
 			</ul>
 			{{--*/ $newproducts = new_product() /*--}}
-			@if(count($newproducts) > 0)
+			@if(count(new_product()) > 0)
 			<!--Product List Starts-->
 			<div class="toolbar" style="text-align: center;">
 				<span style="font-weight: bold;">NEW</span>
 			</div>
 			<div class="products_list products_slider">
 				<ul>
-					@foreach($newproducts as $key=>$myproduk)
-						@if($key<3)
+					@foreach(new_product() as $key=>$myproduk)
+						@if($key < 3)
 						<li style="position:relative;">
-							{{is_terlaris($myproduk, $kiri=1)}}
-							{{is_produkbaru($myproduk, $kiri=1)}}
+							@if(is_outstok($myproduk))
 							{{is_outstok($myproduk, $kiri=1)}}
+							@else
+								@if(is_terlaris($myproduk))
+									{{is_terlaris($myproduk, $kiri=1)}}
+								@elseif(is_produkbaru($myproduk))
+									{{is_produkbaru($myproduk, $kiri=1)}}
+								@endif
+							@endif
 							<a href="{{product_url($myproduk)}}" class="product_image">
 								{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 217px;'))}}
 							</a>
@@ -82,7 +88,7 @@
 							<div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->
 								<button onclick="window.location.href='{{product_url($myproduk)}}'" class="price_add" title="" type="button">
 									<span class="pr_price">{{price($myproduk->hargaJual,$matauang)}}</span><span class="pr_add">Lihat</span>
-									</button>
+								</button>
 							</div>
 							@endif
 						@endif
@@ -101,9 +107,16 @@
 				<ul>
 					@foreach(list_product() as $myproduk)
 					<li style="position:relative;">
-						{{is_terlaris($myproduk, $kiri=1)}}
-						{{is_produkbaru($myproduk, $kiri=1)}}
+						@if(is_outstok($myproduk))
 						{{is_outstok($myproduk, $kiri=1)}}
+						@else
+							@if(is_terlaris($myproduk))
+								{{is_terlaris($myproduk, $kiri=1)}}
+							@elseif(is_produkbaru($myproduk))
+								{{is_produkbaru($myproduk, $kiri=1)}}
+							@endif
+						@endif
+
 						<a href="{{product_url($myproduk)}}" class="product_image">
 							{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 217px;'))}}
 						</a>

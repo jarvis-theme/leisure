@@ -107,9 +107,7 @@
 		@endif
 		</form>
 		<div class="product_overview">
-			<iframe src="//www.facebook.com/plugins/share_button.php?href={{url(slugProduk($produk))}}&amp;layout=button" scrolling="no" frameborder="0" style="border:none; overflow:hidden;height:20px;width:70px;" allowTransparency="true"></iframe>
-			<a class="twitter-share-button" href="https://twitter.com/share" data-count="none">Tweet </a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            {{sosialShare(url(product_url($produk)))}}
 		</div>
 		<div class="product_overview">
 			{{pluginTrustklik()}}
@@ -122,13 +120,19 @@
 @if(count(other_product($produk)) > 0)
 <!--Product List Starts-->
 <div class="products_list products_slider">
-	<h2 class="sub_title" style="padding-bottom: 20px; padding-top: 0;">Rekomendasi Lainnya</h2>
+	<h2 class="sub_title" id="recommend">Rekomendasi Lainnya</h2>
 	<ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
 		@foreach(other_product($produk) as $myproduk)
 		<li style="position:relative;">
-			{{is_terlaris($myproduk)}}
-			{{is_produkbaru($myproduk)}}
+			@if(is_outstok($myproduk))
 			{{is_outstok($myproduk)}}
+			@else
+				@if(is_terlaris($myproduk))
+					{{is_terlaris($myproduk)}}
+				@elseif(is_produkbaru($myproduk))
+					{{is_produkbaru($myproduk)}}
+				@endif
+			@endif
 			<a href="{{slugProduk($myproduk)}}" class="product_image" style="min-height: 222px;">
 				{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height:216px'))}}
 			</a>

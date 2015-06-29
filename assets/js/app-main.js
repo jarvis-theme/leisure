@@ -3,7 +3,7 @@ var dirTema = document.getElementsByTagName('link')[1].getAttribute('href');
 require.config({
 	baseUrl: '/',
     waitSeconds : 20,
-    urlArgs: "v=001",
+    urlArgs: "v=002",
 
 	shim: {
 		"bootstrap"	: {
@@ -25,8 +25,8 @@ require.config({
 
 	paths: {
 		// LIBRARY
-		jquery 			: ['//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min',dirTema+'assets/js/lib/jquery-1.7.2.min'],
-		bootstrap 		: ['//maxcdn.bootstrapcdn.com/bootstrap/2.2.1/js/bootstrap.min','js/bootstrap.min'],
+		jquery 			: ['//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min'],
+		bootstrap 		: ['//maxcdn.bootstrapcdn.com/bootstrap/2.2.1/js/bootstrap.min'],
 		cart			: 'js/cart',
 		flexslider		: dirTema+'assets/js/lib/jquery.flexslider',
 		fancybox		: dirTema+'assets/js/lib/jquery.fancybox',

@@ -14,12 +14,11 @@
         </ul>
     </div>
     <!-- <div class="promo_banner">
-        <div class="home_banner"><a href="#"><img style="max-height: 140px; width: 100%;" src="{{URL::to(getPrefixDomain().'/galeri/banner-width1.jpg')}}"></a></div>
-        <div class="home_banner"><a href="#"><img style="max-height: 140px; width: 100%;" src="{{URL::to(getPrefixDomain().'/galeri/banner-width2.jpg')}}"></a></div>
-        <div class="home_banner"><a href="#"><img style="max-height: 140px; width: 100%;" src="{{URL::to(getPrefixDomain().'/galeri/banner-width3.jpg')}}"></a></div>
+        @foreach(slideshow() as $slides)
+        <div class="home_banner"><a href="#"><img style="max-height: 140px; width: 100%;" src="{{URL::to(slide_image_url($slides->gambar))}}"></a></div>
     </div> -->
 </div>
 <!--Banner Ends
-@foreach(getBanner(2) as $banner)
-    <a href="{{URL::to($banner->url)}}"><img src="{{URL::to(getPrefixDomain().'/galeri/'.$banner->gambar)}}"/></a>
+@foreach(horizontal_banner() as $banner)
+    <a href="{{URL::to($banner->url)}}"><img src="{{URL::to(banner_image_url($banner->gambar))}}"/></a>
 @endforeach-->

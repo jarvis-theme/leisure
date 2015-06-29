@@ -1,4 +1,4 @@
-define(['jquery','jq_ui','bootstrap','flexslider','fancybox','noty'], function($)
+define(['jquery','jq_ui','bootstrap','flexslider','fancybox'], function($)
 {
 	return new function()
 	{
@@ -10,14 +10,6 @@ define(['jquery','jq_ui','bootstrap','flexslider','fancybox','noty'], function($
 			deletecartdialog();
 			addToCartButton();
 			plugin_trustklik();
-
-			// tampilkan error noty
-			var msg = $('#message');
-			if(msg.length){
-				type = $(msg).attr('class');
-				text = $(msg).html();
-				noty({"text":text,"layout":"top","type":type});    
-			}
 			
 			// Fancybox function
 			$('#flexslider-product .slides a').fancybox();

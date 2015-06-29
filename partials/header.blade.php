@@ -27,18 +27,20 @@
         @else
             <h1 class="logo">
                 <a style="text-decoration:none" href="{{url('home')}}">
-                    <h1 style="padding: 25px 0px 20px 0px;color: #3D3B3B;text-decoration: none;text-transform: uppercase;font-weight: light;font-size: 32px;">{{ Theme::place('title') }}</h1>
+                    <h1 id="brandshop">{{ Theme::place('title') }}</h1>
                 </a>
             </h1>
         @endif
         <!--Logo Ends-->
         <!--Responsive NAV-->            
-        <div class="responsive-nav" style="display:none; margin: 0 auto; position: static;">
+        <div class="responsive-nav mobile-navigation">
             <select onchange="if(this.options[this.selectedIndex].value != ''){window.top.location.href=this.options[this.selectedIndex].value}">
                 <option selected="" value="">Menu...</option>
-                
-                <option value="{{--category_url($link)--}}"> {{--$link->nama--}}</option>
-                
+                @if(count(list_category()) > 0)
+                @foreach(list_category() as $link)
+                <option value="{{category_url($link)}}"> {{$link->nama}}</option>
+                @endforeach
+                @endif
             </select>
         </div>
         <!--Responsive NAV-->

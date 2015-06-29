@@ -33,9 +33,15 @@
 	<ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
 		@foreach(list_product() as $key=>$myproduk)
 		<li style="text-align: center; position:relative;"> 
-			{{is_terlaris($myproduk)}}
-			{{is_produkbaru($myproduk)}}
+			@if(is_outstok($myproduk))
 			{{is_outstok($myproduk)}}
+			@else
+				@if(is_terlaris($myproduk))
+					{{is_terlaris($myproduk)}}
+				@elseif(is_produkbaru($myproduk))
+					{{is_produkbaru($myproduk)}}
+				@endif
+			@endif
 			<a style="height: 225px" href="{{product_url($myproduk)}}" class="product_image">
 				<img style="max-height: 225px" src="{{URL::to(product_image_url($myproduk->gambar1))}}">
 			</a>

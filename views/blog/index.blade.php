@@ -7,8 +7,8 @@
 				<i class="icon-calendar"></i>- {{waktuTgl($value->updated_at)}}
 				<div class="short-code-column">
 					&#187; {{blogIndex($value->isi,250)}}
-					<p style="text-align: right"><a href="{{blog_url($value)}}" style="text-decoration: none; font-weight: bolder; color:black;">Read More →</a></p>
-					<div style="border-bottom: solid 1px #EBEBEB; margin-bottom: 11px;"></div>
+					<p style="text-align: right"><a href="{{blog_url($value)}}" id="read-blog">Read More →</a></p>
+					<div id="borders"></div>
 				</div>
 				@endforeach
 				{{list_blog(null,@$blog_category)->links()}}

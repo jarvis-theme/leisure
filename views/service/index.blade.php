@@ -6,17 +6,17 @@
 				<div class="short-code-column">
 					<!-- <img src="images/girls_shopping.jpg" /> -->
 					{{$service->tos}}
-					<div style="border-bottom: solid 1px #EBEBEB; margin-bottom: 11px;"></div>
+					<div id="borders"></div>
 				</div>
 				<span class="highlight_text">Refund Policy</span>
 				<div class="short-code-column">
 					{{$service->refund}}
-					<div style="border-bottom: solid 1px #EBEBEB; margin-bottom: 11px;"></div>
+					<div id="borders"></div>
 				</div>
 				<span class="highlight_text">Privacy Policy</span>
 				<div class="short-code-column">
 					{{$service->privacy}}
-					<div style="border-bottom: solid 1px #EBEBEB; margin-bottom: 11px;"></div>
+					<div id="borders"></div>
 				</div>
 			</section>
 			<aside id="sidebar">            	                
