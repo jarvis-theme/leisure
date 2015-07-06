@@ -5,8 +5,8 @@
 	<ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
 		@foreach(new_product() as $key => $myproduk)
 		<li style="text-align: center;"> 
-			<a style="height: 225px" href="{{product_url($myproduk)}}" class="product_image">
-				<img style="height: 225px" src="{{URL::to(product_image_url($myproduk->gambar1,'medium'))}}">
+			<a href="{{product_url($myproduk)}}" class="product_image">
+				<img src="{{URL::to(product_image_url($myproduk->gambar1,'medium'))}}">
 			</a>
 			<div class="product_info" style="min-height: 83px;">
 				<h3 style="height: 28px;"><a href="{{product_url($myproduk)}}">{{$myproduk->nama}}</a></h3>
@@ -42,8 +42,8 @@
 					{{is_produkbaru($myproduk)}}
 				@endif
 			@endif
-			<a style="height: 225px" href="{{product_url($myproduk)}}" class="product_image">
-				<img style="max-height: 225px" src="{{URL::to(product_image_url($myproduk->gambar1))}}">
+			<a href="{{product_url($myproduk)}}" class="product_image">
+				<img src="{{URL::to(product_image_url($myproduk->gambar1,'medium'))}}">
 			</a>
 
 			<div class="product_info" style="min-height: 85px;">

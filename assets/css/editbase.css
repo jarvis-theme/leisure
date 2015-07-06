@@ -92,6 +92,8 @@ ul.sub_menu > li:first-child:hover {border-bottom: 1px solid #f38256;}
 .products_list_list li:first-child{border:none; padding-top:0px;}
 .products_list_list a.product_image{float:left;}
 .products_list_list a.product_image img{ border:solid 2px #fff; height:190px;}
+.products_list_list a.thumb-product{float:left;}
+.products_list_list a.thumb-product img{ border:solid 2px #fff;}
 .products_list_list li:hover img{-moz-transition:all 0.3s ease-out 0s; -webkit-transition: all 0.3s ease-out;}
 .products_list_list .product_info{ margin-bottom:10px; padding-bottom:12px; border-bottom:solid 1px #EAEAEA; float:right; width:560px;}
 .products_list_list .price_info{float:right; width:560px;}
@@ -285,7 +287,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 
 /*Checkout Steps*/
 .checkout_steps{ width:730px; float:left; line-height:18px;}
-.checkout_steps .step-title{ padding:14px; font-size:15px; text-transform:uppercase; }
+.checkout_steps .step-title{ padding:14px; font-size:15px; text-transform:uppercase; width: 91.2%; }
 .checkout_steps .step-title h2{font-size:16px; text-transform:uppercase; display:inline-block; }
 .checkout_steps .step-title span{ display:inline-block; width:20px; text-align:center; padding-right:12px;}
 .checkout_steps > ol > li{border-top:solid 1px #e7ded5; margin-top:-1px;}
@@ -473,3 +475,123 @@ a.icon-pinterest:hover {
 @media screen and (max-width: 600px) {
 	.responsive-nav{display: inline-block;}
 }
+@media (min-width: 601px) {
+	.step-title { width: 96.3% !important; }
+	#checkout-step-login { width: 90%; }
+}
+.label {
+  display: inline;
+  padding: .25em .6em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  cursor: default;
+}
+
+.label[href]:hover,
+.label[href]:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.label-default {
+  background-color: #999999;
+}
+
+.label-default[href]:hover,
+.label-default[href]:focus {
+  background-color: #808080;
+}
+
+.label-danger {
+  background-color: #d9534f;
+}
+
+.label-danger[href]:hover,
+.label-danger[href]:focus {
+  background-color: #c9302c;
+}
+
+.label-success {
+  background-color: #5cb85c;
+}
+
+.label-success[href]:hover,
+.label-success[href]:focus {
+  background-color: #449d44;
+}
+
+.label-warning {
+  background-color: #f0ad4e;
+}
+
+.label-warning[href]:hover,
+.label-warning[href]:focus {
+  background-color: #ec971f;
+}
+
+.label-info {
+  background-color: #5bc0de;
+}
+
+.label-info[href]:hover,
+.label-info[href]:focus {
+  background-color: #31b0d5;
+}
+.table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+@media screen and (max-width: 767px) {
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ddd;
+  }
+  .table-responsive > .table {
+    margin-bottom: 0;
+  }
+  .table-responsive > .table > thead > tr > th,
+  .table-responsive > .table > tbody > tr > th,
+  .table-responsive > .table > tfoot > tr > th,
+  .table-responsive > .table > thead > tr > td,
+  .table-responsive > .table > tbody > tr > td,
+  .table-responsive > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+  .table-responsive > .table-bordered {
+    border: 0;
+  }
+  .table-responsive > .table-bordered > thead > tr > th:first-child,
+  .table-responsive > .table-bordered > tbody > tr > th:first-child,
+  .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+  .table-responsive > .table-bordered > thead > tr > td:first-child,
+  .table-responsive > .table-bordered > tbody > tr > td:first-child,
+  .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+    border-left: 0;
+  }
+  .table-responsive > .table-bordered > thead > tr > th:last-child,
+  .table-responsive > .table-bordered > tbody > tr > th:last-child,
+  .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+  .table-responsive > .table-bordered > thead > tr > td:last-child,
+  .table-responsive > .table-bordered > tbody > tr > td:last-child,
+  .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+    border-right: 0;
+  }
+  .table-responsive > .table-bordered > tbody > tr:last-child > th,
+  .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+  .table-responsive > .table-bordered > tbody > tr:last-child > td,
+  .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+    border-bottom: 0;
+  }
+}
+.form-login { width: 50%; float: right;}
+#checkout-step-login > .col2-set > .col-1 > .buttons-set { margin: 20px 0; }

@@ -5,8 +5,8 @@
 			<div class="products_list_list">
 				<ul>
 					@foreach($hasilpro as $myproduk)
-					<li style="border-top:0px;">
-						<a href="{{url(product_url($myproduk))}}" class="product_image">{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 94px;'))}}</a>
+					<li>
+						<a href="{{url(product_url($myproduk))}}" class="thumb-product">{{HTML::image(product_image_url($myproduk->gambar1,'thumb'), $myproduk->nama)}}</a>
 						<div class="product_info" style="float:left; margin-left:1%;">
 							<h3><a href="{{url(product_url($myproduk))}}">{{strtoupper($myproduk->nama)}}</a></h3>
 							<small>{{shortDescription($myproduk->deskripsi,100)}}</small><a class="black" href="{{url(product_url($myproduk))}}">Lihat Produk</a>

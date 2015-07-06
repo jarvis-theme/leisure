@@ -23,7 +23,7 @@
                                     {{Form::open(array('url'=>'konfirmasipreorder','method'=>'post','class'=>'form-inline'))}}
                                     @endif
 
-                                    <input type="text" class="input-large" placeholder="Kode Order" name='kodeorder'>
+                                    <input type="text" class="input-large" placeholder="Kode Order" name='kodeorder' required>
                                     <button type="submit" class="btn theme"><i class="icon-check"></i> Cari Kode</button>
                                     {{Form::close()}}
                                 </div><br>

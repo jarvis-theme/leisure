@@ -22,8 +22,7 @@
 				<a href="#"><span style="padding-bottom: 11px;" class="highlight_text">{{$value->nama}}</span></a>
 				<p><i class="date">{{waktuTgl($value->created_at)}}</i></p>
 				<div class="short-code-column">
-					<!-- <img src="images/girls_shopping.jpg" /> -->
-					&#187;{{($value->isi)}}
+					&#187; {{($value->isi)}}
 					<div id="borders"></div>
 				</div>
 				@endforeach

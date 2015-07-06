@@ -19,7 +19,7 @@
 				<div class="checkout_steps" style="width: 100%;">
 					<ol id="checkoutSteps">
 						<li class="section allow active" id="opc-login">
-							<div class="step-title" style="width: 96%;">
+							<div class="step-title">
 								<!-- <span class="number">1</span> -->
 								<h2>Login Area</h2>
 							</div>
@@ -32,8 +32,13 @@
 											<li>Cepat dan Mudah dalam bertransaksi</li>
 											<li>Mudah untuk mengetahui Order Histori dan Status</li>
 										</ul>
+										<div class="buttons-set">
+											<button onClick="parent.location='{{URL::to('member/create')}}'" class="button brown_btn" type="button">Daftar</button>
+											<br><br>
+										</div>
+										<br><br>
 									</div>
-									<div class="col-2">
+									<div class="col-2 form-login">
 										<h3>Login</h3>
 										<form class="form-horizontal" action="{{URL::to('member/login')}}" method="post">
 											<fieldset>
@@ -54,20 +59,19 @@
 													</li>
 												</ul>
 												<br/><br/>
+												<div class="buttons-set"> 
+													<a class="fl_right" href="{{URL::to('member/forget-password')}}">Lupa password?</a>
+													<button  class="button brown_btn" type="submit">Login</button>
+												</div>
 											</fieldset>
 										</div>
 									</div>
 									<div class="col2-set">
 										<div class="col-1">
-											<div class="buttons-set">
-												<button onClick="parent.location='{{URL::to('member/create')}}'" class="button brown_btn" type="button">Daftar</button>
-											</div>
+											
 										</div>
 										<div class="col-2">
-											<div class="buttons-set"> 
-												<a class="fl_right" href="{{URL::to('member/forget-password')}}">Lupa password?</a>
-												<button  class="button brown_btn" type="submit">Login</button>
-											</div>
+											
 										</div>
 									</div>
 								</form>

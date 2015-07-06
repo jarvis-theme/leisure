@@ -106,7 +106,7 @@
                             @endif
                         @endif
 						<a href="{{product_url($myproduk)}}" class="product_image">
-							{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 216px; max-width: 190px; width: 190px;'))}}
+							{{HTML::image(product_image_url($myproduk->gambar1, 'medium'), $myproduk->nama)}}
 						</a>
 						<div class="product_info" style="width: 500px; float: left; margin-left: 5px;">
 							<h3><a href="{{product_url($myproduk)}}">{{strtoupper($myproduk->nama)}}</a></h3>
@@ -135,8 +135,8 @@
                                 {{is_terlaris($myproduk, $kiri=1)}}
                             @endif
                         @endif
-						<a href="{{product_url($myproduk)}}" class="product_image" style="min-height:222px;">
-							{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 216px;'))}}
+						<a href="{{product_url($myproduk)}}" class="product_image">
+							{{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}}
 						</a>
 						<div class="product_info">
 							<h3><a href="{{product_url($myproduk)}}">{{short_description(strtoupper($myproduk->nama), 23)}}</a></h3>

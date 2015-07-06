@@ -5,19 +5,22 @@
 <div id="product_detail">
 	<!--Product Left Starts-->
 	<div class="product_leftcol" style="text-align: center;">
-		{{HTML::image(product_image_url($produk->gambar1))}} <span class="pr_info"></span>
+		<div id="flexslider-product">
+			<span class="slides">
+			<a href="{{url(product_image_url($produk->gambar1,'large'))}}">
+				{{HTML::image(product_image_url($produk->gambar1,'large'))}} <span class="pr_info"></span>
+			</a>
+			</span>
+		</div>
 		<ul id="flexslider-product" class="pr_gallery">
-			@if($produk->gambar1)
-			<li class="slides"><a href="{{url(product_image_url($produk->gambar1))}}">{{HTML::image(product_image_url($produk->gambar1,'thumb'), 'gambar1', array('width' => '95', 'heigth' => '95'))}}</a></li>
-			@endif
 			@if($produk->gambar2)
-			<li class="slides"><a href="{{url(product_image_url($produk->gambar2))}}">{{HTML::image(product_image_url($produk->gambar2,'thumb'), 'gambar2', array('width' => '95', 'heigth' => '95'))}}</a></li>
+			<li class="slides"><a href="{{url(product_image_url($produk->gambar2,'large'))}}">{{HTML::image(product_image_url($produk->gambar2,'thumb'), 'gambar2', array('width' => '95', 'heigth' => '95'))}}</a></li>
 			@endif
 			@if($produk->gambar3)
-			<li class="slides"><a href="{{url(product_image_url($produk->gambar3))}}">{{HTML::image(product_image_url($produk->gambar3,'thumb'), 'gambar3', array('width' => '95', 'heigth' => '95'))}}</a></li>
+			<li class="slides"><a href="{{url(product_image_url($produk->gambar3,'large'))}}">{{HTML::image(product_image_url($produk->gambar3,'thumb'), 'gambar3', array('width' => '95', 'heigth' => '95'))}}</a></li>
 			@endif
 			@if($produk->gambar4)
-			<li class="slides"><a href="{{url(product_image_url($produk->gambar4))}}">{{HTML::image(product_image_url($produk->gambar4,'thumb'), 'gambar3', array('width' => '95', 'heigth' => '95'))}}</a></li>
+			<li class="slides"><a href="{{url(product_image_url($produk->gambar4,'large'))}}">{{HTML::image(product_image_url($produk->gambar4,'thumb'), 'gambar4', array('width' => '95', 'heigth' => '95'))}}</a></li>
 			@endif
 		</ul>
 	</div>
@@ -133,8 +136,8 @@
 					{{is_produkbaru($myproduk)}}
 				@endif
 			@endif
-			<a href="{{slugProduk($myproduk)}}" class="product_image" style="min-height: 222px;">
-				{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height:216px'))}}
+			<a href="{{slugProduk($myproduk)}}" class="product_image">
+				{{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}}
 			</a>
 			<div class="product_info" style="min-height: 83px;">
 				<h3 style="height: 28px;"><a href="{{url(product_url($myproduk))}}">{{$myproduk->nama}}</a></h3>

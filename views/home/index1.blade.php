@@ -78,7 +78,7 @@
 								@endif
 							@endif
 							<a href="{{product_url($myproduk)}}" class="product_image">
-								{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 217px;'))}}
+								{{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}}
 							</a>
 							<div class="product_info" style="min-height: 83px;">
 								<h3><a href="{{product_url($myproduk)}}">{{strtoupper(shortName($myproduk->nama,24))}}</a></h3>
@@ -118,7 +118,7 @@
 						@endif
 
 						<a href="{{product_url($myproduk)}}" class="product_image">
-							{{HTML::image(product_image_url($myproduk->gambar1), $myproduk->nama, array('style' => 'max-height: 217px;'))}}
+							{{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}}
 						</a>
 						<div class="product_info" style="min-height: 83px;">
 							<h3><a href="{{product_url($myproduk)}}">{{strtoupper(shortName($myproduk->nama,24))}}</a></h3>

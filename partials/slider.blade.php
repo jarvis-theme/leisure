@@ -16,6 +16,7 @@
     <!-- <div class="promo_banner">
         @foreach(slideshow() as $slides)
         <div class="home_banner"><a href="#"><img style="max-height: 140px; width: 100%;" src="{{URL::to(slide_image_url($slides->gambar))}}"></a></div>
+        @endforeach
     </div> -->
 </div>
 <!--Banner Ends

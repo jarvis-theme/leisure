@@ -33,7 +33,7 @@
 			<div class="full_page">
 				<h1>Member Area</h1>
 				<!--CHECKOUT STEPS STARTS-->
-				<div class="checkout_steps">
+				<div class="checkout_steps" style="width: 100%">
 					<ol id="checkoutSteps">
 						<li class="section allow active" id="opc-login">
 							<div class="step-title">

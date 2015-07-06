@@ -22,7 +22,7 @@
 
             <div class="full_page">
                 <h1>Konfirmasi</h1>
-                <div class="">
+                <div class="table-responsive">
 	            	<center>
 	                	<table class="data-table cart-table" id="shopping-cart-table" cellpadding="0" cellspacing="0">
 				            <tr>
@@ -42,14 +42,14 @@
 										{{prefixOrder().$order->kodePreorder}}
 									@endif
 								</td>
-								<td>
+								<td class="align_center vline">
 									@if($checkouttype==1)
 										{{waktu($order->tanggalOrder)}}
 									@else
 										{{waktu($order->tanggalPreorder)}}
 									@endif
 								</td>
-								<td>
+								<td class="align_center vline">
 									<ul>
 										<li>
 											@if ($checkouttype==1)
@@ -64,7 +64,7 @@
 										</li>
 									</ul>
 								</td>
-								<td>{{price($order->total)}}</td>
+								<td class="align_center vline">{{price($order->total)}}</td>
 								<td class="align_center vline">
 									@if($checkouttype==1)
 									- {{price($order->total)}}
@@ -128,7 +128,7 @@
                             <div class="step-title">
                                 <h2>Konfirmasi Form</h2>
                             </div>
-                            <div id="checkout-step-login" style="width: 96.3%;">
+                            <div id="checkout-step-login">
                                 <div class="action_buttonbar">
 						            <div class="well">
 						            	@if($checkouttype==1)
@@ -147,13 +147,13 @@
 										<div class="control-group">
 											<label class="control-label" for="inputEmail"> No Rekening</label>
 											<div class="controls">
-											  	<input type="text" class="span6" name='noRekPengirim' value='{{Input::old("noRekPengirim")}}' required>
+											  	<input type="number" class="span6" name='noRekPengirim' value='{{Input::old("noRekPengirim")}}' required>
 											</div>
 										</div>
 										<div class="control-group">
 											<label class="control-label" for="inputEmail"> Rekening Tujuan</label>
 											<div class="controls" style="width: 40%;">
-												<select name='bank' style="width: 100%;">
+												<select name='bank' style="width: 100%;" required>
 													<option value=''>-- Pilih Bank Tujuan --</option>
 													@foreach ($banktrans as $bank)
 														<option value="{{$bank->id}}">{{$bank->bankdefault->nama}} - {{$bank->noRekening}} - A/n {{$bank->atasNama}}</option>
