@@ -1,39 +1,15 @@
-@if($errors->all())
-<div class="alert alert-error">
-	We encountered the following errors:<br>
-	<ul>
-		@foreach($errors->all() as $message)
-		<li>{{ $message }}</li>
-		@endforeach
-	</ul>
-</div>
-@endif
-
-@if(Session::has('error'))
-<div class="alert alert-error" id="message" style="display:none">
-	<p>Password lama anda tidak benar, silakan coba lagi.</p>
-</div>
-@endif
-
-@if(Session::has('success'))
-<div class="success" id='message' style='display:none'>
-	<p>Informasi anda berhasil di update.</p>
-</div>
-@endif
-	
-	<div id="" class="full_page">
+	<div class="full_page">
 		<h1>Member Area</h1>
-		<!--member STARTS-->
 		<div class="simpleTabs">
 			<ul class="simpleTabsNavigation">
 				<li><a href="#">History Transaksi</a></li>
-				<li><a href="#">profil</a></li>
+				<li><a href="#">Profil</a></li>
 			</ul>
 			<div class="simpleTabsContent">
 			@if($setting->checkoutType==1)
 				<table class="data-table cart-table" id="shopping-cart-table" cellpadding="0" cellspacing="0">
 					<tr>
-						<th >Tentang</th>
+						<th>Tentang</th>
 						<th class="align_center" width="6%"></th>
 						<th class="align_left" width="25%">Detail Order</th>
 						<th class="align_center" width="15%"></th>
@@ -41,7 +17,7 @@
 					@foreach (list_order() as $item)
 					<tr>
 						<td class="align_left" width="44%">
-							<a class="pr_name" href="#">ID: {{prefixOrder()}}{{$item->kodeOrder}}</a>
+							<a class="pr_name" href="#">ID: {{prefixOrder().$item->kodeOrder}}</a>
 							<span class="pr_info">Tanggal Order: {{waktu($item->tanggalOrder)}}</span><br><br>
 							<span class="price">Total: {{ price($item->total)}}</span><br><br>
 							<span class="price">No Resi: {{ $item->noResi}}</span><br><br>
@@ -58,7 +34,8 @@
 							@elseif($item->status==4)
 							<span class="label label-default">Batal</span>
 							@endif
-							<!-- <span class="price oranje">BARANG TERKIRIM </span> --><br><br>
+							<!-- <span class="price oranje">BARANG TERKIRIM </span> -->
+							<br><br>
 						</td>
 						<td class="align_center"><a href="#" class="edit"></a></td>
 						<td class="align_left">
@@ -85,7 +62,7 @@
 					@foreach ($inquiry as $item)
 					<tr>
 						<td class="align_left" width="44%">
-							<a class="pr_name" href="#">ID: {{prefixOrder()}}{{$item->kodeInquiry}}</a>
+							<a class="pr_name" href="#">ID: {{prefixOrder().$item->kodeInquiry}}</a>
 							<span class="pr_info">Tanggal Pesan: {{waktu($item->created_at)}}</span><br><br>
 							<span class="price">STATUS: </span>
 							@if($item->status==0)
@@ -108,24 +85,22 @@
 					@endforeach
 					@if ($inquiry->count()==0)
 					<tr>
-						<td colspan="2">
-							Inquiry anda masih kosong.
-						</td>
+						<td colspan="2">Inquiry anda masih kosong.</td>
 					</tr>
 					@endif
 				</table>
 			@elseif($setting->checkoutType==3)
 				<table class="data-table cart-table" id="shopping-cart-table" cellpadding="0" cellspacing="0">
 					<tr>
-						<th >Tentang</th>
+						<th>Tentang</th>
 						<th class="align_center" width="6%"></th>
 						<th class="align_left" width="25%">Detail Pre-order</th>
 						<th class="align_center" width="15%"></th>
 					</tr>
-					@foreach ($order as $item)
+					@foreach (list_order() as $item)
 					<tr>
 						<td class="align_left" width="44%">
-							<a class="pr_name" href="#">ID: {{prefixOrder()}}{{$item->kodePreorder}}</a>
+							<a class="pr_name" href="#">ID: {{prefixOrder().$item->kodePreorder}}</a>
 							<span class="pr_info">Tanggal Order: {{waktu($item->tanggalPreorder)}}</span><br><br>
 							<span class="price">Total: {{ price($item->total)}}</span><br><br>
 							<span class="price">No Resi: {{ $item->noResi}}</span><br><br>
@@ -147,7 +122,8 @@
 							@elseif($item->status==7)
 							<span class="label label-info">Konfirmasi Pelunasan diterima</span>
 							@endif
-							<!-- <span class="price oranje">BARANG TERKIRIM </span> --><br><br>
+							<!-- <span class="price oranje">BARANG TERKIRIM </span> -->
+							<br><br>
 						</td>
 						<td class="align_center"><a href="#" class="edit"></a></td>
 						<td class="align_left">
@@ -194,7 +170,7 @@
 										<li>
 											<label class="required" for="login-password">Note</label>
 											<div class="input-box">
-												<textarea style="height:100px;" name='catatan'>{{$user->catatan}}</textarea>
+												<textarea class="note" name='catatan'>{{$user->catatan}}</textarea>
 											</div>
 										</li>
 									</ul><br/>								
@@ -212,21 +188,21 @@
 										<li>
 											<label class="required" for="login-password">Negara</label>
 											<div class="input-box">
-												{{Form::select('negara',array('' => '-- Pilih Negara --') + $negara , ($user ? $user->negara :(Input::old("negara")? Input::old("negara") :"")), array('required'=>'', 'id'=>'negara', 'style'=>'width:100%'))}}
+												{{Form::select('negara',array('' => '-- Pilih Negara --') + $negara , ($user ? $user->negara :(Input::old("negara")? Input::old("negara") :"")), array('required'=>'', 'id'=>'negara'))}}
 											</div>
 										</li>
 										<li>
 											<div class="clear"></div>
 											<label class="required" for="login-password">Provinsi</label>
 											<div class="input-box">
-												{{Form::select('provinsi',array('' => '-- Pilih Provinsi --') + $provinsi , ($user ? $user->provinsi :(Input::old("provinsi")? Input::old("provinsi") :"")),array('required'=>'','id'=>'provinsi', 'style'=>'width:100%'))}}
+												{{Form::select('provinsi',array('' => '-- Pilih Provinsi --') + $provinsi , ($user ? $user->provinsi :(Input::old("provinsi")? Input::old("provinsi") :"")),array('required'=>'','id'=>'provinsi'))}}
 											</div>
 										</li>
 										<li>
 											<div class="clear"></div>
 											<label class="required" for="login-password">Kota</label>
 											<div class="input-box">
-												{{Form::select('kota',array('' => '-- Pilih Kota --') + $kota , ($user ? $user->kota :(Input::old("kota")? Input::old("kota") :"")),array('required'=>'','id'=>'kota', 'style'=>'width:100%'))}}
+												{{Form::select('kota',array('' => '-- Pilih Kota --') + $kota , ($user ? $user->kota :(Input::old("kota")? Input::old("kota") :"")),array('required'=>'','id'=>'kota'))}}
 											</div>
 										</li>
 										<li>
@@ -262,7 +238,7 @@
 											</div>
 										</li>
 										<li>
-											<label class="required" for="login-password">Confirm Password Baru</label>
+											<label class="required" for="login-password">Konfirmasi Password Baru</label>
 											<div class="input-box">
 												<input type="password" name='password_confirmation' class="input-text">
 											</div>

@@ -1,12 +1,9 @@
-	<div id="" class="full_page">
+	<div class="full_page">
 		<h1>{{$data->judul}}</h1>        
 		<div class="page_sidebar">
 			<section id="main_content">
 				<!-- <span class="highlight_text">{{--$data->up--}}</span> -->
-				<div class="short-code-column">
-					<!-- <img src="images/girls_shopping.jpg" /> -->
-					{{$data->isi}}
-				</div>
+				<div class="short-code-column">{{$data->isi}}</div>
 			</section>
 			<aside id="sidebar">            	                
 				<ul class="arrow_li side_nav">

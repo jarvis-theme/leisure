@@ -82,7 +82,7 @@
 
 	header .language_switch a{ padding:3px 4px;}
 	header .top_links > li a{ padding:16px 4px; font-size:11px;}
-	header h1.logo { width: 265px;; margin:auto; float:none; padding:0px;}
+	header h1.logo { width: 265px;; margin:auto; float:none; padding:0px;text-align: center;}
 	nav .primary_nav{ display:none;}
 	.header_container{ padding-bottom:20px;}
 	header .header_search{ margin:auto;}
@@ -131,7 +131,7 @@
 	/*Cart*/
 	.checkout_tax .shipping_tax, .checkout_tax .checkout_discount{ width:310px;}
 	.message{ padding:12px 12px 12px 75px;}
-	.action_buttonbar{ padding:5px;}
+	.action_buttonbar{ padding:5px;margin-top: 20px;}
 
 	#shopping-cart-table td:first-child{ width:1%;}
 	#shopping-cart-table td img{ display:none;}

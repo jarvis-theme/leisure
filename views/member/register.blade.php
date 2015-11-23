@@ -1,24 +1,5 @@
-@if($errors->all())
-<div class="error" id='message' style='display:none'>
-  Kami menemukan error berikut:
-  <br>
-  <ul>
-    @foreach($errors->all() as $message)
-    <li>{{ $message }}</li>
-    @endforeach
-  </ul>
-</div>
-@endif
-
-@if(Session::has('success'))
-<div class="success" id='message' style='display:none'>
-  Selamat anda telah terdaftar.      
-</div>
-@endif
-
-    <div id="" class="full_page">
+    <div class="full_page">
         <h1>REGISTRASI MEMBER</h1>
-        <!--REGISTER STARTS-->
         <div id="checkout-step-login">
             {{Form::open(array('url'=>'member','method'=>'post','class'=>'form-horizontal'))}}
                 <div class="col2-set">
@@ -44,7 +25,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <label class="required" for="login-password">Confirm Password</label>
+                                    <label class="required" for="login-password">Konfirmasi Password</label>
                                     <div class="input-box">
                                         <input type="password" name="password_confirmation" required class="input-text">
                                     </div>
@@ -53,7 +34,7 @@
                                     <label class="required" for="login-password">Captcha</label>
                                     <div class="input-box">
                                         {{ HTML::image(Captcha::img(), 'Captcha image') }}<br><br>
-                                        <input type="text" name='captcha' placeholder="Masukan Kode yang tertera di atas" required class="input-text">
+                                        <input type="text" name='captcha' placeholder="Masukan Kode yang tertera di atas" class="input-text" required>
                                     </div>
                                 </li>
                             </ul>
@@ -100,7 +81,7 @@
                                     <div class="clear"></div>
                                     <label class="required" for="login-password">Kodepos</label>
                                     <div class="input-box">
-                                        <input type="text" name='kodepos' value='{{Input::old("kodepos")}}' class="input-text">
+                                        <input type="number" name='kodepos' value='{{Input::old("kodepos")}}' class="input-text">
                                     </div>
                                 </li>
                             </ul>
@@ -110,7 +91,7 @@
 
                 <div class="clear"></div><br>
 
-                <input style="width: auto;" type="checkbox" required name='readme' value="1"> Saya telah membaca dan menyetujui <a style="text-decoration: none; color:rgb(243, 130, 86);" target="_blank" href="{{URL::to('service')}}">(Persyaratan Member)</a>
+                <input class="autowidth" type="checkbox" name="readme" value="1" required> Saya telah membaca dan menyetujui <a class="rules" target="_blank" href="{{URL::to('service')}}">(Persyaratan Member)</a>
 
                 <div class="clear"></div><br>
 

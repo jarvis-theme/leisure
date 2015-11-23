@@ -199,7 +199,7 @@ footer .footer_customblock .shipping_info{ line-height:22px; font-size:14px; col
 footer .footer_customblock .shipping_info big{ text-transform:uppercase; font-size:16px; font-weight:bold;}
 footer .footer_customblock .contact_info big{font-size:16px; font-weight:bold; color:#000;}
 footer address{ display:inline-block; width:100%; border-top:solid 1px #d6d6d6; font-size:11px; color:#544f4b; padding:25px 0px; margin-top:15px; line-height:25px;}
-footer address img{ float:right;}
+/*footer address img{ float:right;}*/
 
 /*-----------------------------------MAIN CONTENT*/
 #main_content{ width:760px; float:right; margin-top:17px;}
@@ -366,29 +366,13 @@ img{ max-width:100%;}
 
 /*Forms*/
 div.selector {
-    border:solid 1px #d7d7d7; padding:3px; /*width:130px;*/
-    float: left;
-    padding-left: 10px;
-	height:16px;
-    position: relative;
-    width: 80%;
-	/*width:112px;*/
-	background-color:#fff;
+    border:solid 1px #d7d7d7; padding:3px; float: left; padding-left: 10px; height:16px; position: relative; width: 80%; background-color:#fff;
 }
 
 div.selector select {
-    cursor: pointer;
-     font-size:11px; color:#818181; 
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 125px;
-	height:22px;
+    cursor: pointer; font-size:11px; color:#818181; left: 0; position: absolute; top: 0; width: 125px; height:22px;
 }
-div.selector select option{
-	padding:5px;
-	border:none;
-}
+div.selector select option{padding:5px; border:none}
 div.selector span {
     background: url(../images/arrow.png) no-repeat scroll right -106px transparent;
     cursor: pointer;
@@ -422,9 +406,7 @@ ul.primary_nav > li > a, .minicart span, h1, h2, h3, h4, h5, .product_info, .pri
 {font-family: 'Istok Web', sans-serif; font-weight:400;}
 
 .product_image{height: 223px;}
-.find_us a {
-	text-decoration: none;
-}
+.find_us a { text-decoration: none; }
 
 a.icon-instagram,
 a.icon-googleplus,
@@ -432,8 +414,7 @@ a.icon-tumblr,
 a.icon-twitter,
 a.icon-facebook,
 a.icon-pinterest {
-  font-size: 33px;
-  color: #544F4B;
+  font-size: 33px; color: #544F4B
 }
 
 a.icon-instagram:hover,
@@ -462,7 +443,7 @@ a.icon-pinterest:hover {
 	background: none repeat scroll 0% 0% #F38256;
 }
 .fb_reset {display: inline-block;}
-.fb-share-button {margin-left: 5px;}
+.fb-share-button {margin-left: 5px;top: -2px !important;}
 #read-blog { text-decoration: none; font-weight: bolder; color:black; }
 #borders { border-bottom: solid 1px #EBEBEB; margin-bottom: 11px; }
 #navigate-post { text-decoration: none; font-weight: bolder; color:black; }
@@ -495,9 +476,7 @@ a.icon-pinterest:hover {
 
 .label[href]:hover,
 .label[href]:focus {
-  color: #ffffff;
-  text-decoration: none;
-  cursor: pointer;
+  color: #ffffff; text-decoration: none; cursor: pointer;
 }
 
 .label-default {
@@ -545,16 +524,11 @@ a.icon-pinterest:hover {
   background-color: #31b0d5;
 }
 .table-responsive {
-  min-height: .01%;
-  overflow-x: auto;
+  min-height: .01%; overflow-x: auto
 }
 @media screen and (max-width: 767px) {
   .table-responsive {
-    width: 100%;
-    margin-bottom: 15px;
-    overflow-y: hidden;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ddd;
+    width: 100%; margin-bottom: 15px; overflow-y: hidden; -ms-overflow-style: -ms-autohiding-scrollbar;border: 1px solid #ddd
   }
   .table-responsive > .table {
     margin-bottom: 0;
@@ -595,3 +569,20 @@ a.icon-pinterest:hover {
 }
 .form-login { width: 50%; float: right;}
 #checkout-step-login > .col2-set > .col-1 > .buttons-set { margin: 20px 0; }
+@media only screen and (max-width: 600px) { 
+	.responsive-nav { top: 115px !important; }
+}
+.gbr-slide{max-height: 435px;}
+.checkout_steps{width: 100%}
+
+.centering{text-align: center}
+.mail{text-decoration: none; color:black;}.menu-footer{padding:10px 20px}footer address a{text-decoration: none;}
+.gbr-logo{max-height: 100px}.logo-text{text-decoration:none}.side-nav{display: list-item;list-style: none}
+#title-blog{padding-bottom: 11px}.short-code-column > p{text-align: right}
+.pull-left{float:left}.pull-right{float:right}#list-banks{width: 40%}#list-banks > select{width: 100%}.contact_page{width: 100%}
+.product_info{min-height: 83px}.produk_info h3{height: 28px}.home-product{text-align: center; position:relative}
+.side-info{line-height: 2}b > a{float:right;text-decoration: none}.toolbar{text-align: center}.toolbar > span {font-weight: bold}.home-item{position:relative}
+.note{height:100px}.input-box select{width: 100% !important}.nobackground{background-image: none}.itemselect{width: 112px}
+#detailprod{width: 500px; float: left; margin-left: 5px}#linkpages{margin-right: 42%}#opsiprod{width:52%}#relateprod{position:relative}
+#searchprod{float:left; margin-left:1%}#halsearch{padding-bottom: 11px;}#noresult{text-align: center; border: 0}
+.autowidth{width: auto}.rules{text-decoration: none; color:#F38256}

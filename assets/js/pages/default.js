@@ -1,4 +1,4 @@
-define(['jquery','bootstrap','form_elements','noty'], function($)
+define(['jquery','simpletabs','bootstrap','form_elements'], function($, Simpletabs)
 {
 	return new function(){
 		var self = this;
@@ -32,14 +32,6 @@ define(['jquery','bootstrap','form_elements','noty'], function($)
 			});
 
 			showOption();
-
-			// tampilkan error noty
-			var msg = $('#message');
-			if(msg.length){
-				type = $(msg).attr('class');
-				text = $(msg).html();
-				noty({"text":text,"layout":"top","type":type});    
-			}
 	    }
 
 	    var showOption = function(){

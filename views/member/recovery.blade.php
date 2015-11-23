@@ -1,39 +1,6 @@
-@if(Session::has('errorlogin'))
-<div class="error" id='message' style='display:none'>
-	<p>Maaf, email atau password anda salah.</p>
-</div>
-@endif
-@if(Session::has('error'))
-<div class="error" id='message' style='display:none'>
-	{{Session::get('error')}}!!!
-</div>
-@endif
-@if(Session::has('errorrecovery'))
-<div class="error" id='message' style='display:none'>
-	<p>Maaf, email anda tidak ditemukan.</p>
-</div>
-@endif
-@if(Session::has('forget'))
-<div class="success" id='message' style='display:none'>
-	<p>Cek email untuk me-reset password anda!</p>
-</div>  
-@endif
-@if(Session::has('error'))
-<div class="error" id='message' style='display:none'>
-	<p>{{Session::get('error')}}</p>
-</div>  
-@endif
-@if($errors->all())
-<div class="error" id='message' style='display:none'>
-	@foreach($errors->all() as $message)
-	<p>{{ $message }}</p>
-	@endforeach
-</div>  
-@endif
 			<div class="full_page">
 				<h1>Member Area</h1>
-				<!--CHECKOUT STEPS STARTS-->
-				<div class="checkout_steps" style="width: 100%">
+				<div class="checkout_steps contact_page">
 					<ol id="checkoutSteps">
 						<li class="section allow active" id="opc-login">
 							<div class="step-title">
@@ -52,7 +19,6 @@
 									</div>
 									<div class="col-2">
 										<h3>Masukan Password Baru Anda</h3>
-										<!-- <form class="form-horizontal" action="{{url('member/forgetpassword')}}" method="post"> -->
 										{{Form::open(array('url' => 'member/recovery/'.$id.'/'.$code, 'class' => 'form-horizontal'))}}
 											<fieldset>
 												<ul class="form-list">
@@ -89,7 +55,6 @@
 									</div>
 								</div>
 							{{Form::close()}}
-							<!-- </form> -->
 							</div>
 						</li>
 						<!-- <li>

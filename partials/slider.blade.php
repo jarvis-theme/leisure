@@ -1,11 +1,11 @@
-<!--Banner Starts-->
 <div id="banner_section">
     <div class="flexslider">
         <ul class="slides">
-
             @foreach(slideshow() as $slide)
             <li> 
-                <img style="max-height: 435px;" src="{{ url(slide_image_url($slide->gambar)) }}" />
+                <a href="{{$slide->text=='' ? '#' : $slide->text}}">
+                    <img class="gbr-slide" src="{{ url(slide_image_url($slide->gambar)) }}" alt="Slide" />
+                </a>
                 <!--<div class="flex-caption">
                     <h3>Explore the summer collection!</h3>
                 </div>-->
@@ -13,11 +13,6 @@
             @endforeach
         </ul>
     </div>
-    <!-- <div class="promo_banner">
-        @foreach(slideshow() as $slides)
-        <div class="home_banner"><a href="#"><img style="max-height: 140px; width: 100%;" src="{{URL::to(slide_image_url($slides->gambar))}}"></a></div>
-        @endforeach
-    </div> -->
 </div>
 <!--Banner Ends
 @foreach(horizontal_banner() as $banner)

@@ -1,11 +1,11 @@
-	<div id="" class="full_page">
+	<div class="full_page">
 		<h1>{{$detailblog->judul}}</h1>
 		<div class="page_sidebar">
 			<section id="main_content">
 				<span class="highlight_text">{{$detailblog->kategori->nama}}</span>
 				<p>
 					<span class="date">
-						<i class="icon-calendar"></i> {{date("d M Y", strtotime($detailblog->updated_at))}}
+						<i class="icon-calendar"></i> {{date("d M Y", strtotime($detailblog->created_at))}}
 						<i class="icon-tag"></i><a href="#"></a>
 					</span>
 				</p>
@@ -19,11 +19,14 @@
 				<br>
 				<div class="navigate comments clearfix">
 					@if(isset($prev))
-					<p style="float:left"><a href="{{$prev->slug}}" id="navigate-post">&larr; Prev post</a></p>
+					<p class="pull-left">
+						<a href="{{blog_url(prev_blog($detailblog))}}" id="navigate-post">&larr; Artikel Sebelumnya</a>
+					</p>
 					@endif
-
 					@if(isset($next))
-					<p style="float:right"><a href="{{$next->slug}}" id="navigate-post">Next post &rarr;</a></p>
+					<p class="pull-right">
+						<a href="{{blog_url(next_blog($detailblog))}}" id="navigate-post">Artikel Selanjutnya &rarr;</a>
+					</p>
 					@endif
 				</div>
 			</section>
@@ -33,8 +36,7 @@
 					<li><a href="{{blog_category_url($value)}}">{{$value->nama}}</a></li>
 					@endforeach
 				</ul>
-
-				<div class="twitter_feed"> </div>
+				<div class="twitter_feed"></div>
 			</aside>
 		</div>
 	</div>
