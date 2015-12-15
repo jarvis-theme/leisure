@@ -8,7 +8,7 @@
 					<li>
 						<a href="{{url(product_url($myproduk))}}" class="thumb-product">{{HTML::image(product_image_url($myproduk->gambar1,'thumb'), $myproduk->nama)}}</a>
 						<div class="product_info" id="searchprod">
-							<h3><a href="{{url(product_url($myproduk))}}">{{strtoupper($myproduk->nama)}}</a></h3>
+							<h3><a href="{{url(product_url($myproduk))}}">{{strtoupper(short_description($myproduk->nama,50))}}</a></h3>
 							<small>{{shortDescription($myproduk->deskripsi,100)}}</small><a class="black" href="{{url(product_url($myproduk))}}">Lihat Produk</a>
 						</div>
 					</li>
@@ -21,6 +21,7 @@
 				<a href="{{url('halaman/'.$myhal->slug)}}"><span id="halsearch" class="highlight_text">{{$myhal->judul}}</span></a>
 				<div class="short-code-column">
 					<li>{{shortDescription($myhal->isi,100)}}</li>
+					<br>
 					<div id="borders"></div>
 				</div>
 				@endforeach
@@ -30,6 +31,7 @@
 				<a href="{{url(blog_url($myblog))}}"><span id="halsearch" class="highlight_text">{{$myblog->judul}}</span></a>
 				<div class="short-code-column">
 					<li>{{shortDescription($myblog->isi,100)}}</li>
+					<br>
 					<div id="borders"></div>
 				</div>
 				@endforeach

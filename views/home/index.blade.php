@@ -5,10 +5,10 @@
         @foreach(new_product() as $key => $myproduk)
         <li class="centering"> 
             <a href="{{product_url($myproduk)}}" class="product_image">
-                <img src="{{URL::to(product_image_url($myproduk->gambar1,'medium'))}}" alt="Produk Terbaru" title="{{$myproduk->nama}}">
+                <img src="{{URL::to(product_image_url($myproduk->gambar1,'medium'))}}" alt="{{$myproduk->nama}}" title="{{$myproduk->nama}}">
             </a>
             <div class="product_info">
-                <h3><a href="{{product_url($myproduk)}}">{{$myproduk->nama}}</a></h3>
+                <h3><a href="{{product_url($myproduk)}}">{{short_description($myproduk->nama, 50)}}</a></h3>
                 <small>{{short_description($myproduk->deskripsi,60)}}</small>
             </div>
             @if($setting->checkoutType!=2)
@@ -41,7 +41,7 @@
                 <img src="{{URL::to(product_image_url($myproduk->gambar1,'medium'))}}" alt="{{$myproduk->nama}}">
             </a>
             <div class="product_info">
-                <h3><a href="{{product_url($myproduk)}}">{{$myproduk->nama}}</a></h3>
+                <h3><a href="{{product_url($myproduk)}}">{{short_description($myproduk->nama,50)}}</a></h3>
                 <small>{{short_description($myproduk->deskripsi,65)}}</small>
             </div>
             @if($setting->checkoutType!=2)

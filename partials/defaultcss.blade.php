@@ -11,6 +11,7 @@
 	@else
 	{{generate_theme_css('leisure/assets/css/editbase.css')}}
 	@endif	
+	
 	{{generate_theme_css('leisure/assets/css/responsive.css')}}
 	{{generate_theme_css('leisure/assets/css/bootstrap.min.css')}}
 	{{generate_theme_css('leisure/assets/css/sosmed.css')}}

@@ -15,7 +15,6 @@
                             @elseif(count($menu->anak) >= 1)
                             <li class="menu_cont">
                                 <a href="{{category_url($menu)}}">{{$menu->nama}}</a>
-                                <!--SUbmenu Starts-->
                                 <ul class="side_sub_menu">
                                 @foreach(list_category() as $key=>$submenu)
                                     @if($menu->id==$submenu->parent)
@@ -72,7 +71,7 @@
                     <a href="{{buatLink(URL::current(),array('view'=>'list'))}}" class="list" title="List View"></a>
                 </div>
                 
-                <div class="show_no contact_page">
+                <div class="show_no opsi-item">
                     <label></label>
                     
                     <select class="itemselect" id="show" data-rel="{{URL::current()}}">
@@ -103,7 +102,7 @@
                             <small>{{short_description($myproduk->deskripsi,200)}}</small><a class="black" href="{{product_url($myproduk)}}">Lihat Produk</a>
                         </div>
                         <div class="price_info">
-                            <button class="price_add" title="" onclick="window.location.href='{{product_url($myproduk)}}'" type="button"><span class="pr_price">{{price($myproduk->hargaJual)}}</span><span class="pr_add">Beli</span></button>
+                            <button class="price_add" onclick="window.location.href='{{product_url($myproduk)}}'" type="button"><span class="pr_price">{{price($myproduk->hargaJual)}}</span><span class="pr_add">Beli</span></button>
                         </div>
                     </li>
                     @endforeach

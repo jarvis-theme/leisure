@@ -15,26 +15,26 @@
                                 <li>
                                     <label class="required" for="login-password">Email</label>
                                     <div class="input-box">
-                                        <input type="text" name='email' value='{{Input::old("email")}}' required class="input-text">
+                                        <input type="text" name='email' value='{{Input::old("email")}}' class="input-text" required>
                                     </div>
                                 </li>
                                 <li>
                                     <label class="required" for="login-password">Password</label>
                                     <div class="input-box">
-                                        <input type="password" name="password" required class="input-text">
+                                        <input type="password" name="password" class="input-text" required>
                                     </div>
                                 </li>
                                 <li>
                                     <label class="required" for="login-password">Konfirmasi Password</label>
                                     <div class="input-box">
-                                        <input type="password" name="password_confirmation" required class="input-text">
+                                        <input type="password" name="password_confirmation" class="input-text" required>
                                     </div>
                                 </li>
                                 <li>
                                     <label class="required" for="login-password">Captcha</label>
                                     <div class="input-box">
                                         {{ HTML::image(Captcha::img(), 'Captcha image') }}<br><br>
-                                        <input type="text" name='captcha' placeholder="Masukan Kode yang tertera di atas" class="input-text" required>
+                                        <input type="text" name="captcha" placeholder="Masukan kode yang tertera di atas" class="input-text" required>
                                     </div>
                                 </li>
                             </ul>
@@ -60,28 +60,28 @@
                                 <li>
                                     <label class="required" for="login-password">Negara</label>
                                     <div class="input-box">
-                                        {{Form::select('negara',array('' => '-- Pilih Negara --') + $negara , Input::old("negara"), array('required', "style"=>"width: 100%;", "name"=>"negara", "id"=>"negara", "data-rel"=>"chosen", "onchange"=>"searchProvinsi(this.value)"))}}
+                                        {{Form::select('negara',array('' => '-- Pilih Negara --') + $negara, Input::old("negara"), array('required', "style"=>"width: 100%", "name"=>"negara", "id"=>"negara", "data-rel"=>"chosen", "onchange"=>"searchProvinsi(this.value)"))}}
                                     </div>
                                 </li>
                                 <li>
                                     <div class="clear"></div>
                                     <label class="required" for="login-password">Provinsi</label>
                                     <div class="input-box" id="provinsiPlace">
-                                        {{Form::select('provinsi',array('' => '-- Pilih Provinsi --'), Input::old("provinsi"),array('required', "style"=>"width: 100%;", "name"=>"provinsi", "id"=>"provinsi", "data-rel"=>"chosen", "onchange"=>"searchKabupaten(this.value)"))}}
+                                        {{Form::select('provinsi',array('' => '-- Pilih Provinsi --') + $provinsi, Input::old("provinsi"),array('required', "style"=>"width: 100%", "name"=>"provinsi", "id"=>"provinsi", "data-rel"=>"chosen", "onchange"=>"searchKabupaten(this.value)"))}}
                                     </div>
                                 </li>
                                 <li>
                                     <div class="clear"></div>
                                     <label class="required" for="login-password">Kota</label>
                                     <div class="input-box" id="kotaPlace">
-                                        {{Form::select('kota',array('' => '-- Pilih Kota --'), Input::old("kota"),array("style"=>"width: 100%;", "required", "name"=>"kota", "id"=>"kota", "data-rel"=>"chosen"))}}
+                                        {{Form::select('kota',array('' => '-- Pilih Kota --') + $kota, Input::old("kota"),array("style"=>"width: 100%;", "required", "name"=>"kota", "id"=>"kota", "data-rel"=>"chosen"))}}
                                     </div>
                                 </li>
                                 <li>
                                     <div class="clear"></div>
                                     <label class="required" for="login-password">Kodepos</label>
                                     <div class="input-box">
-                                        <input type="number" name='kodepos' value='{{Input::old("kodepos")}}' class="input-text">
+                                        <input type="number" name="kodepos" value="{{Input::old("kodepos")}}" class="input-text">
                                     </div>
                                 </li>
                             </ul>

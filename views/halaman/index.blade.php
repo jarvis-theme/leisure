@@ -7,10 +7,10 @@
 			</section>
 			<aside id="sidebar">            	                
 				<ul class="arrow_li side_nav">
-					<li><a href="{{URL::to('halaman/about-us')}}">Tentang Kami</a></li>
-					<li><a href="{{URL::to('produk')}}">Produk Kami</a></li>
+					<li><a href="{{URL::to('produk')}}">Koleksi Produk</a></li>
 					<li><a href="{{URL::to('testimoni')}}">Testimonial</a></li>
 					<li><a href="{{URL::to('service')}}">Syarat dan Ketentuan</a></li>
+					<li><a href="{{URL::to('konfirmasiorder')}}">Konfirmasi Pembayaran</a></li>
 				</ul>
 				<div class="twitter_feed"> </div>
 			</aside>

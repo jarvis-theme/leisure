@@ -51,6 +51,7 @@
 					</tr>
 					@endforeach
 				</table>
+				<div>{{list_order()->links()}}</div>
 			@elseif($setting->checkoutType==2)
 				<table class="data-table cart-table" id="shopping-cart-table" cellpadding="0" cellspacing="0">
 					<tr>

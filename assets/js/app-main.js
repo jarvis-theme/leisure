@@ -40,8 +40,8 @@ require.config({
 
 	paths: {
 		// LIBRARY
-		jquery 			: '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min',
-		bootstrap 		: '//maxcdn.bootstrapcdn.com/bootstrap/2.2.1/js/bootstrap.min',
+		jquery 			: ['//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min', dirTema+'/assets/js/lib/jquery-1.7.2.min'],
+		bootstrap 		: ['//maxcdn.bootstrapcdn.com/bootstrap/2.2.1/js/bootstrap.min', dirTema+'/assets/js/lib/bootstrap.min'],
 		cart			: 'js/shop_cart',
 		jq_ui			: 'js/jquery-ui',
 		noty			: 'js/jquery.noty',
@@ -59,7 +59,6 @@ require.config({
 		home            : dirTema+'/assets/js/pages/home',
 		main            : dirTema+'/assets/js/pages/default',
 		produk          : dirTema+'/assets/js/pages/produk',
-		member          : dirTema+'/assets/js/pages/member',
 	}
 });
 require([
@@ -67,7 +66,8 @@ require([
 	'bootstrap',
 	'main',
 	'cart',
-], function(router,b,main,cart)
+	'simpletabs'
+], function(router,b,main,cart,Simpletabs)
 {
 	// HOME
 	router.define('/','home@run');

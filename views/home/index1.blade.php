@@ -6,11 +6,11 @@
 				<ul>{{pluginSidePowerup()}}</ul>
 				@endif
 				<ul>
-					<li class="header">Banner</li>
+					<!-- <li class="header">Banner</li> -->
 					@foreach(vertical_banner() as $banner)
 					<a target="_blank" href="{{ $banner->url }}">
 						<img src="{{ banner_image_url($banner->gambar) }}" alt="Info Promo" />
-					</a>
+					</a><br>
 					@endforeach
 				</ul>
 				<ul>
@@ -60,12 +60,10 @@
 						<li class="home-item">
 							@if(is_outstok($myproduk))
 							{{is_outstok($myproduk, $kiri=1)}}
-							@else
-								@if(is_terlaris($myproduk))
-									{{is_terlaris($myproduk, $kiri=1)}}
-								@elseif(is_produkbaru($myproduk))
-									{{is_produkbaru($myproduk, $kiri=1)}}
-								@endif
+							@elseif(is_terlaris($myproduk))
+							{{is_terlaris($myproduk, $kiri=1)}}
+							@elseif(is_produkbaru($myproduk))
+							{{is_produkbaru($myproduk, $kiri=1)}}
 							@endif
 							<a href="{{product_url($myproduk)}}" class="product_image">
 								{{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}}
@@ -77,7 +75,7 @@
 							@if($setting->checkoutType==1)
 							<div class="price_info">
 								<button onclick="window.location.href='{{product_url($myproduk)}}'" class="price_add" title="Lihat" type="button">
-									<span class="pr_price">{{price($myproduk->hargaJual,$matauang)}}</span><span class="pr_add">Lihat</span>
+									<span class="pr_price">{{price($myproduk->hargaJual)}}</span><span class="pr_add">Lihat</span>
 								</button>
 							</div>
 							@endif
@@ -91,6 +89,7 @@
 			<div class="toolbar"><span>Produk Kami</span></div>
 			<div class="products_list products_slider">
 				<ul>
+					{{-- */ $i = 1 /* --}}
 					@foreach(home_product() as $myproduk)
 					<li class="home-item">
 						@if(is_outstok($myproduk))
@@ -110,10 +109,14 @@
 						</div>
 						@if($setting->checkoutType==1)
 						<div class="price_info">
-							<button onclick="window.location.href='{{product_url($myproduk)}}'" class="price_add" title="Lihat" type="button"><span class="pr_price">{{price($myproduk->hargaJual,$matauang)}}</span><span class="pr_add">Lihat</span></button>
+							<button onclick="window.location.href='{{product_url($myproduk)}}'" class="price_add" title="Lihat" type="button"><span class="pr_price">{{price($myproduk->hargaJual)}}</span><span class="pr_add">Lihat</span></button>
 						</div>
 						@endif
 					</li>
+					@if($i % 3 == 0)
+					<div class="clr"></div>
+					@endif
+					{{-- */ $i++ /* --}}
 					@endforeach
 				</ul>
 			</div>

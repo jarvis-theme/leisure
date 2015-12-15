@@ -56,7 +56,7 @@ return array(
         'bestseller'=>5,
         'featured'=>5,
         'blog'=>5,
-        'testimonial'=>4,
+        'testimonial'=>5,
     ),
     'banner' => true,
     'themesColor' => array('type'=> 'false', 'warnaDef'=>'main-color:#f38256', 'color'=>false),

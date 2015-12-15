@@ -1,4 +1,4 @@
-define(['jquery','simpletabs','bootstrap','form_elements'], function($, Simpletabs)
+define(['jquery','form_elements','easing','jcarousel'], function($)
 {
 	return new function(){
 		var self = this;

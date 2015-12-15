@@ -91,7 +91,7 @@
 						</ul>
 					</div>
 					<div class="right_promo">
-						<img src="images/side_promo_banner.jpg">
+						<img src="images/side_promo_banner.jpg" alt="Info Promo">
 					</div>
 				</div> -->
 			</div>

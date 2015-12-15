@@ -131,7 +131,7 @@
                 {{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}}
             </a>
             <div class="product_info">
-                <h3><a href="{{url(product_url($myproduk))}}">{{$myproduk->nama}}</a></h3>
+                <h3><a href="{{url(product_url($myproduk))}}">{{short_description($myproduk->nama,30)}}</a></h3>
                 <small>{{short_description($myproduk->deskripsi,100)}}</small>
             </div>
                 

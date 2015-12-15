@@ -11,7 +11,7 @@
     		@foreach (Shpcart::cart()->contents() as $key => $cart)
     		<li>
     			<a href="#">{{$cart['name']}}</a>
-    			<span class="price">{{ price($cart['qty'] * $cart['price'])}}</span>
+    			<span class="price pull-right">{{ price($cart['qty'] * $cart['price'])}}</span>
 			</li>
 			@endforeach
 			<div class="cart_bottom">

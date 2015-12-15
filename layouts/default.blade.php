@@ -15,6 +15,8 @@
         </div>
         {{ Theme::partial('footer') }}  
         {{ Theme::partial('defaultjs') }}   
+        {{-- Theme::asset()->scripts() --}}
+        {{-- Theme::asset()->container('footer')->scripts() --}}
         {{ Theme::partial('analytic') }}    
     </body>
 </html>
