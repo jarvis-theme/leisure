@@ -66,8 +66,7 @@ require([
 	'bootstrap',
 	'main',
 	'cart',
-	'simpletabs'
-], function(router,b,main,cart,Simpletabs)
+], function(router,b,main,cart)
 {
 	// HOME
 	router.define('/','home@run');

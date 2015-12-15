@@ -1,11 +1,11 @@
 	<div class="full_page">
 		<h1>Member Area</h1>
-		<div class="simpleTabs">
-			<ul class="simpleTabsNavigation">
-				<li><a href="#">History Transaksi</a></li>
-				<li><a href="#">Profil</a></li>
-			</ul>
-			<div class="simpleTabsContent">
+		<ul id="myTab" class="nav nav-tabs">
+			<li class="active"><a href="#history" data-toggle="tab">History Transaksi</a></li>
+			<li><a href="#profil" data-toggle="tab">Profil</a></li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane active" id="history">
 			@if($setting->checkoutType==1)
 				<table class="data-table cart-table" id="shopping-cart-table" cellpadding="0" cellspacing="0">
 					<tr>
@@ -143,7 +143,7 @@
 			@endif	
 			</div>
 
-			<div class="simpleTabsContent">
+			<div class="tab-pane" id="profil">
 				<div id="checkout-step-login">
 					{{Form::open(array('url'=>'member/update','method'=>'put','class'=>'form-horizontal'))}}
 						<div class="col2-set">

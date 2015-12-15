@@ -583,7 +583,7 @@ a.icon-pinterest:hover {
 .pull-left{float:left}.pull-right{float:right}#list-banks{width: 40%}#list-banks > select{width: 100%}.contact_page{width: 100%}
 .product_info{min-height: 83px}.produk_info h3{height: 28px}.home-product{text-align: center; position:relative}
 .side-info{line-height: 2}b > a{float:right;text-decoration: none}.toolbar{text-align: center}.toolbar > span {font-weight: bold}.home-item{position:relative}
-.note{height:100px}.input-box select{width: 100% !important}.nobackground{background-image: none}.itemselect{width: 112px}
+.note{height:100px}.input-box select{width: 100% !important}.nobackground{background-image: none !important}.itemselect{width: 112px}
 #detailprod{width: 500px; float: left; margin-left: 5px}#linkpages{margin-right: 42%}#opsiprod{width:52%}#relateprod{position:relative}
 #searchprod{float:left; margin-left:1%; width: 90% !important}#halsearch{padding-bottom: 11px;}#noresult{text-align: center; border: 0}
 .autowidth{width: auto !important}.rules{text-decoration: none; color:#F38256}.clr{clear: both}.relateprod{position: relative}
