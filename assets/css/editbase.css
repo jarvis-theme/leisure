@@ -587,4 +587,4 @@ a.icon-pinterest:hover {
 #detailprod{width: 500px; float: left; margin-left: 5px}#linkpages{margin-right: 42%}#opsiprod{width:52%}#relateprod{position:relative}
 #searchprod{float:left; margin-left:1%; width: 90% !important}#halsearch{padding-bottom: 11px;}#noresult{text-align: center; border: 0}
 .autowidth{width: auto !important}.rules{text-decoration: none; color:#F38256}.clr{clear: both}.relateprod{position: relative}
-.opsi-item{width: 140px}#lod{margin-left: 100%; padding-left: 10px;}
+.opsi-item{width: 140px !important}#lod{margin-left: 100%; padding-left: 10px;}
