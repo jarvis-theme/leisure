@@ -31,10 +31,10 @@ define(['jquery','form_elements','easing','jcarousel'], function($)
 				$(this).siblings('.side_sub_menu').slideUp(300);
 			});
 
-			showOption();
-	    }
+			// showOption();
+		}
 
-	    var showOption = function(){
+		var showOption = function(){
 			$('#show').change(function(){
 				id=this.value;		
 				link = $(this).attr('data-rel');
@@ -73,14 +73,14 @@ define(['jquery','form_elements','easing','jcarousel'], function($)
 			});
 		};
 		var getQueryVariable = function() {
-		    var query = window.location.search.substring(1);
-		    var vars = query.split('&');
-		    var rs = new Array();
-		    for (var i = 0; i < vars.length; i++) {
-		        var pair = vars[i].split('=');
-		        rs[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
-		    }
-		    return rs;
+			var query = window.location.search.substring(1);
+			var vars = query.split('&');
+			var rs = new Array();
+			for (var i = 0; i < vars.length; i++) {
+				var pair = vars[i].split('=');
+				rs[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+			}
+			return rs;
 		};
 	}
 });

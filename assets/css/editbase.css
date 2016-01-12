@@ -384,7 +384,8 @@ div.selector span {
     top: 0;
     width: 100%;
 	color:#818181;
-	left: 5px
+	left: 5px;
+	text-align: left
 }
 
 /*TYPOGRAPHY*/

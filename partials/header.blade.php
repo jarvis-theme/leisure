@@ -12,7 +12,7 @@
                 @endif
             </ul>
         </div>
-        @if(@getimagesize( url(logo_image_url()) ))
+        @if( logo_image_url() )
         <h1 class="logo">
             <a href="{{url('home')}}">
                 {{HTML::image(logo_image_url(),'Logo',array("class"=>"gbr-logo"))}}
