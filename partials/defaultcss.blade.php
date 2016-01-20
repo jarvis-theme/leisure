@@ -15,4 +15,4 @@
 	{{generate_theme_css('leisure/assets/css/responsive.css')}}
 	{{generate_theme_css('leisure/assets/css/bootstrap.min.css')}}
 	{{generate_theme_css('leisure/assets/css/sosmed.css')}}
-	<link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
