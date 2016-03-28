@@ -1,7 +1,7 @@
 <div class="header_container">
     <header>
         <div class="top_bar clear">
-            <div class="language_switch"> <a class="active" href="#" title="BAHASA">ID</a> <!-- <a href="#" title="ENGLISH">EN</a> --> </div>
+            <!-- <div class="language_switch"> <a class="active" href="#" title="BAHASA">ID</a> <a href="#" title="ENGLISH">EN</a> </div> -->
             <ul class="top_links">
                 @if ( ! is_login() )
                 <li>{{HTML::link('member', 'Login')}}</li>
@@ -15,7 +15,7 @@
         @if( logo_image_url() )
         <h1 class="logo">
             <a href="{{url('home')}}">
-                {{HTML::image(logo_image_url(),'Logo',array("class"=>"gbr-logo"))}}
+                {{HTML::image(logo_image_url(),'Logo '.Theme::place('title'),array("class"=>"gbr-logo"))}}
             </a>
         </h1>
         @else
@@ -55,13 +55,13 @@
                 <a href="{{category_url($menu)}}">{{$menu->nama}}</a>
                     @if(count($menu->anak) >= 1)
                     <ul class="sub_menu">
-                        @foreach(list_category() as $key1=>$submenu)
+                        @foreach($menu->anak as $key1=>$submenu)
                             @if($submenu->parent == $menu->id)
                             <li>
                                 <a href="{{ category_url($submenu) }}">{{ $submenu->nama }}</a>
                                 @if(count($submenu->anak) >= 1)
                                     <ul>
-                                    @foreach(list_category() as $key2=>$submenu2)
+                                    @foreach($submenu->anak as $key2=>$submenu2)
                                         @if($submenu->id == $submenu2->parent)        
                                         <li><a href="{{ category_url($submenu2) }}">{{ $submenu2->nama }}</a></li>
                                         @endif

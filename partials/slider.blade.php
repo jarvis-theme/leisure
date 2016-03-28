@@ -3,16 +3,18 @@
         <ul class="slides">
             @foreach(slideshow() as $slide)
             <li>
-                @if($slide->text == '')
-                <a href="#">
+                @if(!empty($slide->url))
+                <a href="{{filter_link_url($slide->url)}}" target="_blank">
                 @else
-                <a href="{{filter_link_url($slide->text)}}" target="_blank">
+                <a href="#">
                 @endif
-                    <img class="gbr-slide" src="{{ slide_image_url($slide->gambar) }}" alt="Slide" />
+                    <img class="gbr-slide" src="{{ slide_image_url($slide->gambar) }}" alt="{{$slide->title}}" />
                 </a>
-                <!--<div class="flex-caption">
-                    <h3>Explore the summer collection!</h3>
-                </div>-->
+                @if(!empty($slide->text))
+                <div class="flex-caption">
+                    <h3>{{$slide->text}}</h3>
+                </div>
+                @endif
             </li>
             @endforeach
         </ul>

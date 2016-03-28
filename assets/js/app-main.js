@@ -3,7 +3,7 @@ var dirTema = document.querySelector("meta[name='theme_path']").getAttribute('co
 require.config({
 	baseUrl: '/',
     waitSeconds : 60,
-    urlArgs: "v=010",
+    urlArgs: "v=011",
 
 	shim: {
 		"bootstrap"	: {

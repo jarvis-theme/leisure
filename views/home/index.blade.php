@@ -14,7 +14,7 @@
             @if($setting->checkoutType!=2)
             <div class="price_info">
                 <button onclick="window.location.href='{{product_url($myproduk)}}'" class="price_add" title="Lihat" type="button">
-                    <span class="pr_price">&nbsp;{{price($myproduk->hargaJual,$matauang)}}</span>
+                    <span class="pr_price">&nbsp;{{price($myproduk->hargaJual)}}</span>
                     <span class="pr_add">Lihat</span>
                 </button>
             </div>
@@ -47,7 +47,7 @@
             @if($setting->checkoutType!=2)
             <div class="price_info">
                 <button onclick="window.location.href='{{product_url($myproduk)}}'" class="price_add" title="Lihat" type="button">
-                    <span class="pr_price">&nbsp;{{price($myproduk->hargaJual,$matauang)}}</span>
+                    <span class="pr_price">&nbsp;{{price($myproduk->hargaJual)}}</span>
                     <span class="pr_add">Lihat</span>
                 </button>
             </div>

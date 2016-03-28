@@ -589,3 +589,8 @@ a.icon-pinterest:hover {
 #searchprod{float:left; margin-left:1%; width: 90% !important}#halsearch{padding-bottom: 11px;}#noresult{text-align: center; border: 0}
 .autowidth{width: auto !important}.rules{text-decoration: none; color:#F38256}.clr{clear: both}.relateprod{position: relative}
 .opsi-item{width: 140px !important}#lod{margin-left: 100%; padding-left: 10px;}
+@media screen and (max-width: 480px){
+	.flex-direction-nav { display: none; }
+	.flex-caption { width: 93% }
+	.flex-caption h3 { font-size: inherit; line-height: initial; }
+}

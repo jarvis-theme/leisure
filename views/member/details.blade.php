@@ -17,7 +17,7 @@
 					@foreach (list_order() as $item)
 					<tr>
 						<td class="align_left" width="44%">
-							<a class="pr_name" href="#">ID: {{prefixOrder().$item->kodeOrder}}</a>
+							<a class="pr_name" href="#">Kode Order: {{prefixOrder().$item->kodeOrder}}</a>
 							<span class="pr_info">Tanggal Order: {{waktu($item->tanggalOrder)}}</span><br><br>
 							<span class="price">Total: {{ price($item->total)}}</span><br><br>
 							<span class="price">No Resi: {{ $item->noResi}}</span><br><br>
@@ -153,13 +153,13 @@
 										<li>
 											<label class="required" for="login-email">Nama</label>
 											<div class="input-box">
-												<input type="text" name='nama' value='{{$user->nama}}'  class="input-text">
+												<input type="text" name="nama" value="{{$user->nama}}"  class="input-text">
 											</div>
 										</li>
 										<li>
 											<label class="required" for="login-password">Email</label>
 											<div class="input-box">
-												<input type="text" name='email' value='{{$user->email}}' class="input-text">
+												<input type="text" name="email" value="{{$user->email}}" class="input-text">
 											</div>
 										</li>
 										<li>
@@ -171,7 +171,7 @@
 										<li>
 											<label class="required" for="login-password">Note</label>
 											<div class="input-box">
-												<textarea class="note" name='catatan'>{{$user->catatan}}</textarea>
+												<textarea class="note" name="catatan">{{$user->catatan}}</textarea>
 											</div>
 										</li>
 									</ul><br/>								
@@ -183,7 +183,7 @@
 										<li>
 											<label class="required" for="login-email">Alamat</label>
 											<div class="input-box">
-												<textarea name='alamat'>{{$user->alamat}}</textarea>
+												<textarea name="alamat">{{$user->alamat}}</textarea>
 											</div>
 										</li>
 										<li>
@@ -210,7 +210,7 @@
 											<div class="clear"></div>
 											<label class="required" for="login-password">Kodepos</label>
 											<div class="input-box">
-												<input type="text" name='kodepos' value='{{$user->kodepos}}' class="input-text">
+												<input type="text" name="kodepos" value="{{$user->kodepos}}" class="input-text">
 											</div>
 										</li>
 									</ul>
@@ -229,19 +229,19 @@
 										<li>
 											<label class="required" for="login-email">Password Lama</label>
 											<div class="input-box">
-												<input type="password" value="" name='oldpassword' class="input-text">
+												<input type="password" value="" name="oldpassword" class="input-text">
 											</div>
 										</li>
 										<li>
 											<label class="required" for="login-password">Password Baru</label>
 											<div class="input-box">
-												<input type="password" name='password' class="input-text">
+												<input type="password" name="password" class="input-text">
 											</div>
 										</li>
 										<li>
 											<label class="required" for="login-password">Konfirmasi Password Baru</label>
 											<div class="input-box">
-												<input type="password" name='password_confirmation' class="input-text">
+												<input type="password" name="password_confirmation" class="input-text">
 											</div>
 										</li>
 									</ul><br/>									

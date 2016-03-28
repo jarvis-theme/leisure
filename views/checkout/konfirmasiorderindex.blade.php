@@ -10,13 +10,8 @@
                             <div id="checkout-step-login">
                                 <div class="action_buttonbar">
                                     <p>Silakan masukkan kode order yang mau anda cari!</p>
-                                    @if($checkouttype==1)
-                                    {{-- */ $konfirmasi = 'konfirmasiorder' /* --}}
-                                    @elseif($checkouttype==3)
-                                    {{-- */ $konfirmasi = 'konfirmasipreorder' /* --}}
-                                    @endif
 
-                                    {{Form::open(array('url'=>$konfirmasi,'method'=>'post','class'=>'form-inline'))}}
+                                    {{Form::open(array('url'=>'konfirmasiorder','method'=>'post','class'=>'form-inline'))}}
                                         <input type="text" class="input-large" placeholder="Kode Order" name="kodeorder" required>
                                         <button type="submit" class="btn theme"><i class="icon-check"></i> Cari Kode</button>
                                     {{Form::close()}}

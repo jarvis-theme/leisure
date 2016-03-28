@@ -49,7 +49,7 @@
 									<div class="col-2">
 										<div class="buttons-set">
 											<!-- <button onClick="parent.location='{{url('member')}}'" class="button brown_btn" type="button">&larr; Login</button> -->
-											<a class="fl_right" href="{{url('member/forgetPassword')}}">&larr; Login</a>
+											<a class="fl_right" href="{{url('member')}}">&larr; Login</a>
 											<button  class="button brown_btn" type="submit">Reset Password</button>
 										</div>
 									</div>
