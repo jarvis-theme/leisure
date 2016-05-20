@@ -1,7 +1,7 @@
 Leisure
 ------------
 
-![leisure](http://jarvis-store.com/themes/master-tema/leisure/leisure-preview.jpg)
+![leisure](https://s3-ap-southeast-1.amazonaws.com/cdn2.jarvis-store.com/img/themes/leisure/leisure-preview.jpg)
 
 Leisure adalah tema dengan menu kategori produk anda. Dengan tema warna yang bisa diatur, anda bisa menyesuaikan desain yang clean dan simple dengan produk anda.
 

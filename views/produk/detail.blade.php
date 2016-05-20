@@ -1,5 +1,5 @@
 <ul class="breadcrumb">
-    {{$breadcrumb}}
+    {{$breadcrumb}} 
 </ul>
 <div id="product_detail">
     <div class="product_leftcol centering">
@@ -106,10 +106,10 @@
         @endif
         </form>
         <div class="product_overview">
-            {{sosialShare(url(product_url($produk)))}}
+            {{sosialShare(url(product_url($produk)))}} 
         </div>
         <div class="product_overview">
-            {{pluginTrustklik()}}
+            {{ pluginComment(product_url($produk), @$produk) }} 
         </div>
     </div>
 </div>
@@ -121,14 +121,14 @@
         @foreach(other_product($produk) as $myproduk)
         <li id="relateprod">
             @if(is_outstok($myproduk))
-            {{is_outstok($myproduk)}}
+            {{is_outstok($myproduk)}} 
             @elseif(is_terlaris($myproduk))
-            {{is_terlaris($myproduk)}}
+            {{is_terlaris($myproduk)}} 
             @elseif(is_produkbaru($myproduk))
-            {{is_produkbaru($myproduk)}}
+            {{is_produkbaru($myproduk)}} 
             @endif
             <a href="{{slugProduk($myproduk)}}" class="product_image">
-                {{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}}
+                {{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}} 
             </a>
             <div class="product_info">
                 <h3><a href="{{url(product_url($myproduk))}}">{{short_description($myproduk->nama,30)}}</a></h3>
