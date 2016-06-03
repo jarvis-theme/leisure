@@ -10,14 +10,14 @@
 					<div id="borders"></div>
 				</div>
 				@endforeach
-				{{list_testimonial()->links()}}
+				{{list_testimonial()->links()}} 
 			</section>
 			<aside id="sidebar">
 				<ul class="arrow_li side_nav">
 					<li><b>Buat Testimonial</b></li>
 				</ul>
 				<form action="{{url('testimoni')}}" method="post">
-					<label>Nama</label><br><input id="testimoni" type="text" name="nama" class="input-text" required><br><br>
+					<label>Nama</label><br><input id="testimoni" type="text" name="nama" class="input-text" required autofocus><br><br>
 					<label>Testimonial</label><br><textarea id="testimoni" name="testimonial" class="textarea" required></textarea><br><br>
 					<input type="submit" class="subbutton brown_btn pull-right" value="Kirim Testimonial">
 					<br><br>

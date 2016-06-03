@@ -28,7 +28,7 @@
 											<li>
 												<label class="required" for="login-email"><em>*</em>Email Address</label>
 												<div class="input-box">
-													<input type="email" name="recoveryEmail" id="inputEmail" placeholder="Email" required>
+													<input type="email" name="recoveryEmail" id="inputEmail" placeholder="Email" required autofocus>
 												</div>
 											</li>
 										</ul>

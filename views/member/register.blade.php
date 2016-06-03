@@ -1,7 +1,7 @@
     <div class="full_page">
         <h1>REGISTRASI MEMBER</h1>
         <div id="checkout-step-login">
-            {{Form::open(array('url'=>'member','method'=>'post','class'=>'form-horizontal'))}}
+            {{Form::open(array('url'=>'member','method'=>'post','class'=>'form-horizontal'))}} 
                 <div class="col2-set">
                     <div class="col-1">
                         <fieldset>
@@ -9,7 +9,7 @@
                                 <li>
                                     <label class="required" for="login-email">Nama</label>
                                     <div class="input-box">
-                                        <input type="text" name="nama" value="{{Input::old('nama')}}" required  class="input-text">
+                                        <input type="text" name="nama" value="{{Input::old('nama')}}" class="input-text" required autofocus>
                                     </div>
                                 </li>
                                 <li>
@@ -60,21 +60,21 @@
                                 <li>
                                     <label class="required" for="login-password">Negara</label>
                                     <div class="input-box">
-                                        {{Form::select('negara',array('' => '-- Pilih Negara --') + $negara, Input::old("negara"), array('required', "style"=>"width: 100%", "name"=>"negara", "id"=>"negara", "data-rel"=>"chosen", "onchange"=>"searchProvinsi(this.value)"))}}
+                                        {{Form::select('negara',array('' => '-- Pilih Negara --') + $negara, Input::old("negara"), array('required', "style"=>"width: 100%", "name"=>"negara", "id"=>"negara", "data-rel"=>"chosen", "onchange"=>"searchProvinsi(this.value)"))}} 
                                     </div>
                                 </li>
                                 <li>
                                     <div class="clear"></div>
                                     <label class="required" for="login-password">Provinsi</label>
                                     <div class="input-box" id="provinsiPlace">
-                                        {{Form::select('provinsi',array('' => '-- Pilih Provinsi --') + $provinsi, Input::old("provinsi"),array('required', "style"=>"width: 100%", "name"=>"provinsi", "id"=>"provinsi", "data-rel"=>"chosen", "onchange"=>"searchKabupaten(this.value)"))}}
+                                        {{Form::select('provinsi',array('' => '-- Pilih Provinsi --') + $provinsi, Input::old("provinsi"), array('required', "style"=>"width: 100%", "name"=>"provinsi", "id"=>"provinsi", "data-rel"=>"chosen", "onchange"=>"searchKabupaten(this.value)"))}} 
                                     </div>
                                 </li>
                                 <li>
                                     <div class="clear"></div>
                                     <label class="required" for="login-password">Kota</label>
                                     <div class="input-box" id="kotaPlace">
-                                        {{Form::select('kota',array('' => '-- Pilih Kota --') + $kota, Input::old("kota"),array("style"=>"width: 100%;", "required", "name"=>"kota", "id"=>"kota", "data-rel"=>"chosen"))}}
+                                        {{Form::select('kota',array('' => '-- Pilih Kota --') + $kota, Input::old("kota"), array("style"=>"width: 100%;", "required", "name"=>"kota", "id"=>"kota", "data-rel"=>"chosen"))}} 
                                     </div>
                                 </li>
                                 <li>
@@ -97,6 +97,6 @@
 
                 <button type="submit" class="button brown_btn" type="button">Daftar</button>
                 <br/>
-            {{Form::close()}}
+            {{Form::close()}} 
         </div>
     </div>

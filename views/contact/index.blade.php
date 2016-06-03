@@ -16,14 +16,14 @@
 				<div></div>
 				@endif
 				<div class="block">
-					@if(isset($emailSent) && $emailSen == true)
+					@if(isset($emailSent) && $emailSent == true)
 					<p class="info">Your email was sent. Huzzah!</p>
 					@else
 					<form id="contact-us" action="{{url('kontak')}}" method="post">
 						<h3>Hubungi Kami</h3>
 						<ul id="contact_form">
 							<li>
-								<input type="text" name="namaKontak" id="contactName" class="txt requiredField" placeholder="Nama" required />
+								<input type="text" name="namaKontak" id="contactName" class="txt requiredField" placeholder="Nama" required autofocus />
 							</li>
 							<li>
 								<input type="text" name="emailKontak" id="email" class="txt requiredField email" placeholder="Email" required />

@@ -18,7 +18,7 @@
 					<div id="borders"></div>
 				</div>
 			</section>
-			<aside id="sidebar">            	                
+			<aside id="sidebar">
 				<ul class="arrow_li side_nav">
 					<li><a href="{{URL::to('produk')}}">Koleksi Produk</a></li>
 					<li><a href="{{URL::to('testimoni')}}">Testimonial</a></li>

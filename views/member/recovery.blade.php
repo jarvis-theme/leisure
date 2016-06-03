@@ -25,7 +25,7 @@
 													<li>
 														<label class="required" for="login-email"><em>*</em>Password Baru</label>
 														<div class="input-box">
-															<input type="password" name="password" id="inputPassword" placeholder="password baru" required>
+															<input type="password" name="password" id="inputPassword" placeholder="password baru" required autofocus>
 														</div>
 													</li>
 													<li>

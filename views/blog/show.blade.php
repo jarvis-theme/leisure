@@ -5,30 +5,30 @@
 				<span class="highlight_text">{{$detailblog->kategori->nama}}</span>
 				<p>
 					<span class="date">
-						<i class="icon-calendar"></i> {{date("d M Y", strtotime($detailblog->created_at))}}
+						<i class="icon-calendar"></i> {{date("d M Y", strtotime($detailblog->created_at))}} 
 						<i class="icon-tag"></i><a href="#"></a>
 					</span>
 				</p>
 				<div class="short-code-column">
-					{{$detailblog->isi}}
+					{{$detailblog->isi}} 
 				</div>
 				<div id="border-blog"></div>
 				<br>
-				{{$fbscript}}
-				{{fbcommentbox(blog_url($detailblog), '640px', '5', 'light')}}
-				<br>
 				<div class="navigate comments clearfix">
-					@if(isset($prev))
+					@if(prev_blog($detailblog))
 					<p class="pull-left">
 						<a href="{{blog_url(prev_blog($detailblog))}}" id="navigate-post">&larr; Artikel Sebelumnya</a>
 					</p>
 					@endif
-					@if(isset($next))
+					@if(next_blog($detailblog))
 					<p class="pull-right">
 						<a href="{{blog_url(next_blog($detailblog))}}" id="navigate-post">Artikel Selanjutnya &rarr;</a>
 					</p>
 					@endif
 				</div>
+				<br>
+				{{$fbscript}} 
+				{{fbcommentbox(blog_url($detailblog), '100%', '5', 'light')}} 
 			</section>
 			<aside id="sidebar">
 				<ul class="arrow_li side_nav">

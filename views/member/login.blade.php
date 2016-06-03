@@ -31,7 +31,7 @@
 													<li>
 														<label class="required" for="login-email"><em>*</em>Email</label>
 														<div class="input-box">
-															<input type="email" name="email" id="inputEmail" placeholder="Email" required>
+															<input type="email" name="email" id="inputEmail" placeholder="Email" required autofocus>
 														</div>
 													</li>
 													<li>
