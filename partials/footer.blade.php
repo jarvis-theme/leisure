@@ -6,7 +6,7 @@
                 <li><span>{{$group->nama}}</span>
                     <ul>
                         @foreach($group->link as $key=>$link) 
-                        <li><a href="{{menu_url($link)}}">{{$link->nama}}</a></li>
+                        <li><a href="{{menu_url($link)}}">{{ ucfirst($link->nama) }}</a></li>
                         @endforeach
                     </ul>
                 </li>
@@ -14,26 +14,24 @@
             </ul>
             <div class="footer_customblock">
             @if($kontak->alamat!='')
-                <!-- <span>introducing </span><br> -->
-                <div class="contact_info">Alamat : 
-                    <big><br>{{$kontak->alamat}}</big>
+                <div class="contact_info">
+                    <label>Alamat :</label>
+                    <big>{{ ucwords($kontak->alamat) }}</big>
                 </div>
-                <div class="contact_info">Telepon : 
-                    <big><br>{{$kontak->telepon}}</big>
+                <div class="contact_info">
+                    <label>Telepon :</label>
+                    <big>{{ $kontak->telepon }}</big>
                 </div>
                 @if($kontak->hp != '')
-                <div class="contact_info">SMS : 
-                    <big><br>{{$kontak->hp}}</big>
+                <div class="contact_info">
+                    <label>SMS :</label>
+                    <big>{{ $kontak->hp }}</big>
                 </div>
                 @endif
-                <div class="contact_info">Email : 
-                    <big><br><a class="mail" href="mailto:{{$kontak->email}}">{{$kontak->email}}</a></big>
+                <div class="contact_info">
+                    <label>Email :</label>
+                    <big><a class="mail" href="mailto:{{$kontak->email}}">{{ strtolower($kontak->email) }}</a></big>
                 </div>
-                @if($kontak->ym)
-                <div class="contact_info">YM : 
-                    <big><br>{{ymyahoo($kontak->ym)}}</big>
-                </div>
-                @endif
             @else 
                 <div></div>
             @endif 

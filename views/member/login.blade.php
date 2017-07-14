@@ -9,39 +9,34 @@
 							<div id="checkout-step-login">
 								<div class="col2-set">
 									<div class="col-1">
-										<h3>Pendaftaran</h3>
+										<h3><b>Pendaftaran</b></h3>
 										<p>Daftar untuk mendapatkan keuntungan :</p>
-										<ul class="ul">
+										<ul class="benefits">
 											<li>Cepat dan Mudah dalam bertransaksi</li>
 											<li>Mudah untuk mengetahui Order Histori dan Status</li>
 										</ul>
-										<div class="buttons-set">
+										<div class="buttons-set mg0">
 											<button onClick="parent.location='{{URL::to('member/create')}}'" class="button brown_btn" type="button">Daftar</button>
-											<br><br>
 										</div>
-										<br><br>
 									</div>
 									<div class="col-2 form-login">
-										<h3>Login</h3>
+										<h3><b>Login</b></h3>
 										<form class="form-horizontal" action="{{URL::to('member/login')}}" method="post">
 											<fieldset>
-												<h4>Sudah Terdaftar ?</h4>
-												<p>Silahkan login:</p>
 												<ul class="form-list">
 													<li>
 														<label class="required" for="login-email"><em>*</em>Email</label>
 														<div class="input-box">
-															<input type="email" name="email" id="inputEmail" placeholder="Email" required autofocus>
+															<input type="email" name="email" id="inputEmail" required autofocus>
 														</div>
 													</li>
 													<li>
 														<label class="required" for="login-password"><em>*</em>Password</label>
 														<div class="input-box">
-															<input type="password" name="password" id="inputPassword" placeholder="Password" required>
+															<input type="password" name="password" id="inputPassword" required>
 														</div>
 													</li>
 												</ul>
-												<br/><br/>
 												<div class="buttons-set"> 
 													<a class="fl_right" href="{{URL::to('member/forget-password')}}">Lupa password?</a>
 													<button  class="button brown_btn" type="submit">Login</button>

@@ -6,10 +6,10 @@
 	{{generate_theme_css('leisure/assets/css/simpletabs.css')}}
 	{{generate_theme_css('leisure/assets/css/short_codes.css')}}
 	@if($tema->isiCss=='')
-	{{generate_theme_css('leisure/assets/css/base.css?v=012')}}
+	{{generate_theme_css('leisure/assets/css/base.css?v=013')}}
 	
 	@else
-	{{generate_theme_css('leisure/assets/css/editbase.css?v=012')}}
+	{{generate_theme_css('leisure/assets/css/editbase.css?v=013')}}
 	@endif	
 	
 	{{generate_theme_css('leisure/assets/css/responsive.css')}}

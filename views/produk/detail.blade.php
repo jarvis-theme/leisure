@@ -6,19 +6,19 @@
         <div id="flexslider-product">
             <span class="slides">
             <a href="{{url(product_image_url($produk->gambar1,'large'))}}">
-                {{HTML::image(product_image_url($produk->gambar1,'large'), $produk->nama)}} <span class="pr_info"></span>
+                {{HTML::image(product_image_url($produk->gambar1,'large'), $produk->nama, array("onerror"=>"this.src='//d3kamn3rg2loz7.cloudfront.net/img/no-image-product.png';"))}} <span class="pr_info"></span>
             </a>
             </span>
         </div>
         <ul id="flexslider-product" class="pr_gallery">
             @if($produk->gambar2)
-            <li class="slides"><a href="{{url(product_image_url($produk->gambar2,'large'))}}">{{HTML::image(product_image_url($produk->gambar2,'thumb'), 'Gambar 1', array('width' => '95', 'heigth' => '95'))}}</a></li>
+            <li class="slides"><a href="{{url(product_image_url($produk->gambar2,'large'))}}">{{HTML::image(product_image_url($produk->gambar2,'thumb'), 'Gambar 1', array('width' => '95', 'heigth' => '95', "onerror" => "this.src='//d3kamn3rg2loz7.cloudfront.net/img/no-image-product.png';"))}}</a></li>
             @endif
             @if($produk->gambar3)
-            <li class="slides"><a href="{{url(product_image_url($produk->gambar3,'large'))}}">{{HTML::image(product_image_url($produk->gambar3,'thumb'), 'Gambar 2', array('width' => '95', 'heigth' => '95'))}}</a></li>
+            <li class="slides"><a href="{{url(product_image_url($produk->gambar3,'large'))}}">{{HTML::image(product_image_url($produk->gambar3,'thumb'), 'Gambar 2', array('width' => '95', 'heigth' => '95', "onerror" => "this.src='//d3kamn3rg2loz7.cloudfront.net/img/no-image-product.png';"))}}</a></li>
             @endif
             @if($produk->gambar4)
-            <li class="slides"><a href="{{url(product_image_url($produk->gambar4,'large'))}}">{{HTML::image(product_image_url($produk->gambar4,'thumb'), 'Gambar 3', array('width' => '95', 'heigth' => '95'))}}</a></li>
+            <li class="slides"><a href="{{url(product_image_url($produk->gambar4,'large'))}}">{{HTML::image(product_image_url($produk->gambar4,'thumb'), 'Gambar 3', array('width' => '95', 'heigth' => '95', "onerror" => "this.src='//d3kamn3rg2loz7.cloudfront.net/img/no-image-product.png';"))}}</a></li>
             @endif
         </ul>
     </div>
@@ -84,7 +84,7 @@
             <div class="size_info">
                 <div class="size_sel">
                     <label>Jumlah :</label>
-                    <input type="text" class="qty" name='qty' value="1">
+                    <input type="number" class="qty" name="qty" value="1">
                 </div>
                 @if($opsiproduk->count()>0)
                 <div id="opsiprod">
@@ -105,7 +105,7 @@
             </div>
         @endif
         </form>
-        <div class="product_overview">
+        <div class="product_overview" id="sosial-media">
             {{sosialShare(url(product_url($produk)))}} 
         </div>
         <div class="product_overview">
@@ -116,28 +116,29 @@
 
 @if(count(other_product($produk)) > 0)
 <div class="products_list products_slider">
-    <h2 class="sub_title" id="recommend">Rekomendasi Lainnya</h2>
-    <ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
+    <h2 class="sub_title centering" id="recommend">Rekomendasi Lainnya</h2>
+    <ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango centering">
+        {{--*/ $i=count(other_product($produk)) /*--}}
         @foreach(other_product($produk) as $myproduk)
-        <li id="relateprod">
+        <li id="relateprod" class="{{$i>3?'fl':''}}">
             @if(is_outstok($myproduk))
-            {{is_outstok($myproduk)}} 
-            @elseif(is_terlaris($myproduk))
-            {{is_terlaris($myproduk)}} 
+                <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/stok-badge.png" class="outstok-badge">
             @elseif(is_produkbaru($myproduk))
-            {{is_produkbaru($myproduk)}} 
+                <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/terlaris-badge.png" class="best-badge">
+            @elseif(is_terlaris($myproduk))
+                <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/new-badge.png" class="new-badge">
             @endif
             <a href="{{slugProduk($myproduk)}}" class="product_image">
-                {{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}} 
+                {{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama, array("onerror" => "this.src='//d3kamn3rg2loz7.cloudfront.net/img/no-image-product.png';"))}} 
             </a>
-            <div class="product_info">
-                <h3><a href="{{url(product_url($myproduk))}}">{{short_description($myproduk->nama,30)}}</a></h3>
+            <div class="product_info text-left">
+                <h3 class="centering"><a href="{{url(product_url($myproduk))}}">{{short_description($myproduk->nama,30)}}</a></h3>
                 <small>{{short_description($myproduk->deskripsi,100)}}</small>
             </div>
                 
             @if($setting->checkoutType!=2)
-            <div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->
-                <button onclick="window.location.href='{{slugProduk($myproduk)}}'" class="price_add" title="" type="button">
+            <div class="price_info">
+                <button onclick="window.location.href='{{slugProduk($myproduk)}}'" class="price_add fl" type="button">
                     <span class="pr_price">&nbsp;{{price($myproduk->hargaJual,$matauang)}}</span>
                     <span class="pr_add">Lihat</span>
                 </button>

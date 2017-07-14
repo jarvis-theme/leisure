@@ -1,64 +1,64 @@
 	<div class="full_page">
 		<h1>Member Area</h1>
 		<ul id="myTab" class="nav nav-tabs">
-			<li class="active"><a href="#history" data-toggle="tab">History Transaksi</a></li>
+			<li class="active"><a href="#history" data-toggle="tab">Histori Order</a></li>
 			<li><a href="#profil" data-toggle="tab">Profil</a></li>
 		</ul>
 		<div id="myTabContent" class="tab-content">
 			<div class="tab-pane active" id="history">
 			@if($setting->checkoutType==1)
-				<table class="data-table cart-table" id="shopping-cart-table" cellpadding="0" cellspacing="0">
-					<tr>
-						<th>Tentang</th>
-						<th class="align_center" width="6%"></th>
-						<th class="align_left" width="25%">Detail Order</th>
-						<th class="align_center" width="15%"></th>
-					</tr>
-					@foreach (list_order() as $item)
-					<tr>
-						<td class="align_left" width="44%">
-							<a class="pr_name" href="#">Kode Order: {{prefixOrder().$item->kodeOrder}}</a>
-							<span class="pr_info">Tanggal Order: {{waktu($item->tanggalOrder)}}</span><br><br>
-							<span class="price">Total: {{ price($item->total)}}</span><br><br>
-							<span class="price">No Resi: {{ $item->noResi}}</span><br><br>
-							<span class="price">STATUS: </span>
+				<div class="table-responsive">
+					<table class="data-table cart-table" id="shopping-cart-table" cellpadding="0" cellspacing="0">
+						<tr>
+							<th>Tentang</th>
+							<th class="align_left">Detail Order</th>
+							<th class="align_center"></th>
+						</tr>
+						@foreach (list_order() as $item)
+						<tr>
+							<td class="align_left" width="44%">
+								<a class="pr_name" href="#">Kode Order: {{prefixOrder().$item->kodeOrder}}</a>
+								<span class="pr_info">Tanggal Order: {{waktu($item->tanggalOrder)}}</span><br><br>
+								<span class="price">Total: {{ price($item->total)}}</span><br><br>
+								<span class="price">No Resi: {{ $item->noResi}}</span><br><br>
+								<span class="price">STATUS: </span>
 
-							@if($item->status==0)
-							<span class="label label-warning">Pending</span>
-							@elseif($item->status==1)
-							<span class="label label-important">Konfirmasi diterima</span>
-							@elseif($item->status==2)
-							<span class="label label-info">Pembayaran diterima</span>
-							@elseif($item->status==3)
-							<span class="label label-success">Terkirim</span>
-							@elseif($item->status==4)
-							<span class="label label-default">Batal</span>
-							@endif
-							<!-- <span class="price oranje">BARANG TERKIRIM </span> -->
-							<br><br>
-						</td>
-						<td class="align_center"><a href="#" class="edit"></a></td>
-						<td class="align_left">
-							<ul class="check_li">
-								@foreach ($item->detailorder as $detail)
-								<li>{{$detail->produk->nama}} {{$detail->opsiSkuId !=0 ? '('.$detail->opsisku["opsi1"].($detail->opsisku["opsi2"] != '' ? ' / '.$detail->opsisku["opsi2"]:'').($detail->opsisku["opsi3"] !='' ? ' / '.$detail->opsisku["opsi3"]:'').')':''}} - {{$detail->qty}}</li>
-								@endforeach
-							</ul>
-						</td>
-						@if($item->status==0)
-						<td class="align_center vline"><a href="{{URL::to('konfirmasiorder/'.$item->id)}}" class="sc-button small blue" target="_self"> Konfirmasi Pembayaran </a></td>
-						@endif
-					</tr>
-					@endforeach
-				</table>
+								@if($item->status==0)
+								<span class="label label-warning">Pending</span>
+								@elseif($item->status==1)
+								<span class="label label-important">Konfirmasi diterima</span>
+								@elseif($item->status==2)
+								<span class="label label-info">Pembayaran diterima</span>
+								@elseif($item->status==3)
+								<span class="label label-success">Terkirim</span>
+								@elseif($item->status==4)
+								<span class="label label-default">Batal</span>
+								@endif
+								<br><br>
+							</td>
+							<td class="align_left">
+								<ul class="check_li">
+									@foreach ($item->detailorder as $detail)
+									<li>{{$detail->produk->nama}} {{$detail->opsiSkuId !=0 ? '('.$detail->opsisku["opsi1"].($detail->opsisku["opsi2"] != '' ? ' / '.$detail->opsisku["opsi2"]:'').($detail->opsisku["opsi3"] !='' ? ' / '.$detail->opsisku["opsi3"]:'').')':''}} - {{$detail->qty}}</li>
+									@endforeach
+								</ul>
+							</td>
+							<td class="align_center">
+								@if($item->status==0)
+								<a href="{{URL::to('konfirmasiorder/'.$item->id)}}" class="sc-button small blue" target="_self"> Konfirmasi Pembayaran </a>
+								@endif
+							</td>
+						</tr>
+						@endforeach
+					</table>
+				</div>
 				<div>{{list_order()->links()}}</div>
 			@elseif($setting->checkoutType==2)
 				<table class="data-table cart-table" id="shopping-cart-table" cellpadding="0" cellspacing="0">
 					<tr>
 						<th>Detail Inquiry</th>
-						<th class="align_center" width="6%"></th>
-						<th class="align_left" width="25%">Detail Produk</th>
-						<th class="align_center" width="15%"></th>
+						<th class="align_left">Detail Produk</th>
+						<th class="align_center"></th>
 					</tr>
 					@foreach ($inquiry as $item)
 					<tr>
@@ -74,7 +74,6 @@
 							<span class="label label-default">Batal</span>
 							@endif
 						</td>
-						<td class="align_center"><a href="#" class="edit"></a></td>
 						<td class="align_left">
 							<ul class="check_li">
 							@foreach ($item->detailInquiry as $detail)
@@ -94,9 +93,8 @@
 				<table class="data-table cart-table" id="shopping-cart-table" cellpadding="0" cellspacing="0">
 					<tr>
 						<th>Tentang</th>
-						<th class="align_center" width="6%"></th>
-						<th class="align_left" width="25%">Detail Pre-order</th>
-						<th class="align_center" width="15%"></th>
+						<th class="align_left">Detail Pre-order</th>
+						<th class="align_center"></th>
 					</tr>
 					@foreach (list_order() as $item)
 					<tr>
@@ -123,17 +121,15 @@
 							@elseif($item->status==7)
 							<span class="label label-info">Konfirmasi Pelunasan diterima</span>
 							@endif
-							<!-- <span class="price oranje">BARANG TERKIRIM </span> -->
 							<br><br>
 						</td>
-						<td class="align_center"><a href="#" class="edit"></a></td>
 						<td class="align_left">
 							<ul class="check_li">
 								<li>{{$item->preorderdata->produk->nama}} ({{$item->opsiSkuId==0 ? 'No Opsi' : $item->opsisku->opsi1.($item->opsisku->opsi2!='' ? ' / '.$item->opsisku->opsi2:'').($item->opsisku->opsi3!='' ? ' / '.$item->opsisku->opsi3:'')}}) - {{$item->jumlah}}</li>
 							</ul>
 						</td>
 						@if($item->status < 4)	
-						<td class="align_center vline">
+						<td class="align_center">
 							<a href="{{URL::to('konfirmasipreorder/'.$item->id)}}" class="sc-button small blue" target="_self"> Konfirmasi Pembayaran </a>
 						</td>
 						@endif	
@@ -151,25 +147,25 @@
 								<fieldset>
 									<ul class="form-list">
 										<li>
-											<label class="required" for="login-email">Nama</label>
+											<label class="required">Nama</label>
 											<div class="input-box">
 												<input type="text" name="nama" value="{{$user->nama}}"  class="input-text">
 											</div>
 										</li>
 										<li>
-											<label class="required" for="login-password">Email</label>
+											<label class="required">Email</label>
 											<div class="input-box">
 												<input type="text" name="email" value="{{$user->email}}" class="input-text">
 											</div>
 										</li>
 										<li>
-											<label class="required" for="login-password">Telp / HP</label>
+											<label class="required">Telp / HP</label>
 											<div class="input-box">
-												{{Form::input('text', 'telp', $user->telp, array('class'=>'span4'))}}
+												{{Form::input('text', 'telp', $user->telp, array('class'=>'input-text'))}}
 											</div>
 										</li>
 										<li>
-											<label class="required" for="login-password">Note</label>
+											<label class="required">Note</label>
 											<div class="input-box">
 												<textarea class="note" name="catatan">{{$user->catatan}}</textarea>
 											</div>
@@ -183,13 +179,22 @@
 										<li>
 											<label class="required" for="login-email">Alamat</label>
 											<div class="input-box">
-												<textarea name="alamat">{{$user->alamat}}</textarea>
+												<textarea name="alamat" rows="5">{{$user->alamat}}</textarea>
 											</div>
 										</li>
 										<li>
 											<label class="required" for="login-password">Negara</label>
 											<div class="input-box">
-												{{Form::select('negara',array('' => '-- Pilih Negara --') + $negara , ($user ? $user->negara :(Input::old("negara")? Input::old("negara") :"")), array('required'=>'', 'id'=>'negara'))}}
+												{{--Form::select('negara',array('' => '-- Pilih Negara --') + $negara , ($user ? $user->negara :(Input::old("negara")? Input::old("negara") :"")), array('required'=>'', 'id'=>'negara'))--}}
+
+												<select name="negara" id="negara" required>
+													<option selected>-- Pilih Negara --</option>{{$user->negara}}
+													@foreach ($negara as $key=>$item)
+														@if(strtolower($item)=='indonesia')
+														<option value="1" {{ @$user->negara || Input::old('negara')==1 ? 'selected' : ''}}>{{$item}}</option>
+														@endif
+													@endforeach
+												</select>
 											</div>
 										</li>
 										<li>
@@ -218,34 +223,37 @@
 							</div>
 						</div>
 						<div class="clear"></div>
-						<div class="input-box action_buttonbar">
+						<div class="input-box action_buttonbar mt20">
 							<h4>Ubah Password?</h4>
-							<i class="oranje">Biarkan kosong jika tidak ingin mengubah password</i><br><br>
+							<i class="oranje">Biarkan kosong jika tidak ingin mengubah password</i>
+							<br><br>
 							<div class="clear"></div>
 							
 							<div class="col-1">
-								<fieldset>
-									<ul class="form-list">
-										<li>
-											<label class="required" for="login-email">Password Lama</label>
-											<div class="input-box">
-												<input type="password" value="" name="oldpassword" class="input-text">
-											</div>
-										</li>
-										<li>
-											<label class="required" for="login-password">Password Baru</label>
-											<div class="input-box">
-												<input type="password" name="password" class="input-text">
-											</div>
-										</li>
-										<li>
-											<label class="required" for="login-password">Konfirmasi Password Baru</label>
-											<div class="input-box">
-												<input type="password" name="password_confirmation" class="input-text">
-											</div>
-										</li>
-									</ul><br/>									
-								</fieldset>
+								<div class="profile-password">
+									<fieldset>
+										<ul class="form-list">
+											<li>
+												<label class="required" for="login-email">Password Lama</label>
+												<div class="input-box">
+													<input type="password" value="" name="oldpassword" class="input-text">
+												</div>
+											</li>
+											<li>
+												<label class="required" for="login-password">Password Baru</label>
+												<div class="input-box">
+													<input type="password" name="password" class="input-text">
+												</div>
+											</li>
+											<li>
+												<label class="required" for="login-password">Konfirmasi Password Baru</label>
+												<div class="input-box">
+													<input type="password" name="password_confirmation" class="input-text">
+												</div>
+											</li>
+										</ul><br/>
+									</fieldset>
+								</div>
 							</div>
 						</div>
 

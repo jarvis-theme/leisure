@@ -13,19 +13,17 @@
                         </tr>
                         <tr>
                             <td>{{ prefixOrder().$order->kodeOrder }}</td>
-                            <td class="align_center vline">{{ waktu($order->tanggalOrder) }}</td>
+                            <td class="align_center vline text-left">{{ waktu($order->tanggalOrder) }}</td>
                             <td class="align_center vline">
-                                <ul>
-                                    <li>
-                                        @foreach ($order->detailorder as $detail)
-                                            <li>{{$detail->produk->nama}} {{$detail->opsiSkuId != 0 ? ( $detail->opsisku['opsi1'] == '' && $detail->opsisku['opsi2'] == '' && $detail->opsisku['opsi3'] == '' ? '' : '('.$detail->opsisku['opsi1'].($detail->opsisku['opsi2'] != '' ? ' / '.$detail->opsisku['opsi2']:'').($detail->opsisku['opsi3'] !='' ? ' / '.$detail->opsisku['opsi3']:'').')'):''}} - {{$detail->qty}}</li>
-                                        @endforeach
-                                    </li>
+                                <ul id="confirm">
+                                    @foreach ($order->detailorder as $detail)
+                                        <li>{{$detail->produk->nama}} {{$detail->opsiSkuId != 0 ? ( $detail->opsisku['opsi1'] == '' && $detail->opsisku['opsi2'] == '' && $detail->opsisku['opsi3'] == '' ? '' : '('.$detail->opsisku['opsi1'].($detail->opsisku['opsi2'] != '' ? ' / '.$detail->opsisku['opsi2']:'').($detail->opsisku['opsi3'] !='' ? ' / '.$detail->opsisku['opsi3']:'').')'):''}} - {{$detail->qty}}</li>
+                                    @endforeach
                                 </ul>
                             </td>
-                            <td class="align_center vline">{{price($order->total)}}</td>
-                            <td class="align_center vline">{{$order->noResi}}</td>
-                            <td class="align_center vline">
+                            <td class="align_center vline text-left">{{price($order->total)}}</td>
+                            <td class="align_center vline text-left">{{$order->noResi}}</td>
+                            <td class="align_center vline text-left">
                                 @if($order->status==0)
                                 <span class="label label-warning">Pending</span>
                                 @elseif($order->status==1)
@@ -52,43 +50,45 @@
                             <h2>{{trans('content.step5.confirm_btn')." ".trans('content.step3.transfer')}}</h2>
                         </div>
                         <div id="checkout-step-login">
-                            <div class="action_buttonbar">
+                            <div class="action_buttonbar mt0" style="max-width: 330px; padding: 15px; margin: 0 auto;">
                                 <div class="well">
                                     {{Form::open(array('url'=> 'konfirmasiorder/'.$order->id, 'method'=>'put', 'class'=> 'form-horizontal'))}} 
-                                        <div class="control-group">
-                                            <label class="control-label" for="inputEmail"> Nama Pengirim</label>
-                                            <div class="controls">
-                                                <input class="span6" type="text" name="nama" value="{{Input::old('nama')}}" required autofocus>
+                                        <div class="pad10">
+                                            <div class="control-group mb10">
+                                                <label class="control-label"> Nama Pengirim</label>
+                                                <div class="controls">
+                                                    <input class="wd100" type="text" name="nama" value="{{Input::old('nama')}}" required autofocus>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="inputEmail"> No Rekening</label>
-                                            <div class="controls">
-                                                <input type="number" class="span6" name="noRekPengirim" value="{{Input::old('noRekPengirim')}}" required>
+                                            <div class="control-group mb10">
+                                                <label class="control-label"> No Rekening</label>
+                                                <div class="controls">
+                                                    <input class="wd100" type="number" name="noRekPengirim" value="{{Input::old('noRekPengirim')}}" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="inputEmail"> Rekening Tujuan</label>
-                                            <div class="controls" id="list-banks">
-                                                <select name="bank" required>
-                                                    <option value="">-- Pilih Bank Tujuan --</option>
-                                                    @foreach ($banktrans as $bank)
-                                                    <option value="{{$bank->id}}">{{$bank->bankdefault->nama}} - {{$bank->noRekening}} - a/n {{$bank->atasNama}}</option>
-                                                    @endforeach
-                                                </select>
+                                            <div class="control-group mb10">
+                                                <label class="control-label"> Rekening Tujuan</label>
+                                                <div class="input-box">
+                                                    <select class="wd100" name="bank" required>
+                                                        <option value="">-- Pilih Bank Tujuan --</option>
+                                                        @foreach ($banktrans as $bank)
+                                                        <option value="{{$bank->id}}">{{$bank->bankdefault->nama}} - {{$bank->noRekening}} - a/n {{$bank->atasNama}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="clear"></div>
                                             </div>
-                                        </div>
-                                        <br><br>
-                                        <div class="control-group">
-                                            <label class="control-label" for="inputEmail"> Jumlah</label>
-                                            <div class="controls">
-                                                <input class="span6" type="text" name="jumlah" value="{{$order->total}}" required>
+                                            <div class="control-group mb30">
+                                                <label class="control-label"> Jumlah</label>
+                                                <div class="controls">
+                                                    <input type="text" name="jumlah" value="{{ floor($order->total) }}" required>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="control-group">
-                                            <div class="controls">
-                                                <button type="submit" class="btn theme"><i class="icon-check"></i> {{trans('content.step5.confirm_btn')}}</button>
+                                            <div class="control-group mb10">
+                                                <div class="controls">
+                                                    <button type="submit" class="btn theme"><i class="icon-check"></i> {{trans('content.step5.confirm_btn')}}</button>
+                                                </div>
                                             </div>
                                         </div>
                                     {{Form::close()}} 
@@ -172,11 +172,4 @@
                     </li>
                 </ol>
             </div>
-            <!-- <div class="col_right">
-                <div class="right_promo">
-                    @foreach(vertical_banner() as $banners)
-                    <img src="{{url(banner_image_url($banners->gambar))}}" alt="Info Promo">
-                    @endforeach
-                </div>
-            </div> -->
         </div>

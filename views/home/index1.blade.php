@@ -15,10 +15,6 @@
 				</ul>
 				<ul>
 					<li class="header">Hubungi Kami</li>
-					@if($shop->ym)
-					{{ymyahoo($shop->ym)}}
-					<br>
-					@endif
 					@if($shop->telepon)
 					<span class="side-info">Telpon : <b>{{$shop->telepon}}</b></span><br>
 					@endif
@@ -59,14 +55,14 @@
 						@if($key < 3)
 						<li class="home-item">
 							@if(is_outstok($myproduk))
-							{{is_outstok($myproduk, $kiri=1)}}
+            				<img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/stok-badge.png" class="outstok-badge">
 							@elseif(is_terlaris($myproduk))
-							{{is_terlaris($myproduk, $kiri=1)}}
+                            <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/terlaris-badge.png" class="best-badge">
 							@elseif(is_produkbaru($myproduk))
-							{{is_produkbaru($myproduk, $kiri=1)}}
+                            <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/new-badge.png" class="new-badge">
 							@endif
 							<a href="{{product_url($myproduk)}}" class="product_image">
-								{{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}}
+								{{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama, array("onerror" => "this.src='//d3kamn3rg2loz7.cloudfront.net/img/no-image-product.png'"))}}
 							</a>
 							<div class="product_info">
 								<h3><a href="{{product_url($myproduk)}}">{{strtoupper(shortName($myproduk->nama,24))}}</a></h3>
@@ -93,15 +89,15 @@
 					@foreach(home_product() as $myproduk)
 					<li class="home-item">
 						@if(is_outstok($myproduk))
-						{{is_outstok($myproduk, $kiri=1)}}
+                        <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/stok-badge.png" class="outstok-badge">
 						@elseif(is_terlaris($myproduk))
-						{{is_terlaris($myproduk, $kiri=1)}}
+                        <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/terlaris-badge.png" class="best-badge">
 						@elseif(is_produkbaru($myproduk))
-						{{is_produkbaru($myproduk, $kiri=1)}}
+                        <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/new-badge.png" class="new-badge">
 						@endif
 
 						<a href="{{product_url($myproduk)}}" class="product_image">
-							{{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}}
+							{{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama, array("onerror" => "this.src='//d3kamn3rg2loz7.cloudfront.net/img/no-image-product.png'"))}}
 						</a>
 						<div class="product_info">
 							<h3><a href="{{product_url($myproduk)}}">{{strtoupper(shortName($myproduk->nama,24))}}</a></h3>

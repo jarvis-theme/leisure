@@ -2,7 +2,6 @@
 		<h1>{{$data->judul}}</h1>        
 		<div class="page_sidebar">
 			<section id="main_content">
-				<!-- <span class="highlight_text">{{--$data->up--}}</span> -->
 				<div class="short-code-column">{{$data->isi}}</div>
 			</section>
 			<aside id="sidebar">            	                

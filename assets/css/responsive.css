@@ -101,8 +101,8 @@
 	.jcarousel-skin-tango .jcarousel-item{ padding:0px 35px;}
 	.products_list{ padding-bottom:20px;}
 
-	.subscribe_block .find_us{ width:260px; margin-left:38px; border:none; padding:0px; box-shadow:none; margin-bottom:10px;}
-	.subscribe_block .subscribe_nl{ width:268px; margin-right:20px; padding-top:5px; border-top:solid 1px #A29C97;}
+	.subscribe_block .find_us{ width:260px; margin-left: 20px; border:none; padding:0px; box-shadow:none; margin-bottom:10px;}
+	.subscribe_block .subscribe_nl{ width:268px; margin-right: 0; padding-top:5px; border-top:solid 1px #A29C97; margin-left: 20px; float: left;}
 	.subscribe_block .subscribe_nl small{ display:none;}
 	.subscribe_block .subscribe_nl form{ margin-top:5px;}
 
@@ -136,7 +136,7 @@
 	#shopping-cart-table td:first-child{ width:1%;}
 	#shopping-cart-table td img{ display:none;}
 	#shopping-cart-table tr td input.qty_box{ width:16px; padding:2px;}
-	#shopping-cart-table th{ font-size:12px; padding:10px 0px;}
+	/*#shopping-cart-table th{ font-size:12px; padding:10px 0px;}*/
 	#shopping-cart-table tr td a.remove{ width:15px; height:15px;}
 	#shopping-cart-table tr td span.price{ font-size:12px; font-weight:normal;}
 	#shopping-cart-table tr td a.edit{ padding:0px 2px; font-size:10px;}
@@ -150,13 +150,12 @@
 
 	/*Checkout*/
 	.checkout_steps{ width:310px;}
-	.checkout_steps #checkout-step-login{ width:93.2%; padding:10px;}
 	.col2-set .col-1{ width:100%; padding-bottom:10px;}
 	#checkout-step-login label{ padding:3px 0px;}
 	.col_right{ display:none;}
 
 	/*Contact*/
-	.contact_page iframe{ width:99%; height:200px;}
+	.contact_page iframe{ width:99%; height:200px;margin-bottom: 30px; }
 	.contact_page address, .contact_page .block{ width:auto;}
 	.contact_page #contact_form li input[type="text"], .contact_page #contact_form li textarea{ width:300px;}
 
@@ -171,9 +170,252 @@
 	aside#sidebar{width:310px;}
 }
 
-@media screen and (max-width: 767px) {
-	.form-login {
-	    width: 100%;
-	    float: none;
+
+@media screen and (max-width: 1024px) {
+	.contact_page iframe {
+		width: 100%;
+		margin-top: 0;
+		height: 300px;
+	    margin-bottom: 30px;
 	}
+	.contact_page address { width: 100%; }
+}
+@media screen and (max-width: 960px) {
+	.products_list ul li#relateprod {
+		float: none !important;
+		margin-left: 0;
+		padding-left: 20px;
+	}
+}
+@media screen and (max-width: 767px) {
+	input[name="kodeorder"] {
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+}
+@media (min-width: 711px) and (max-width: 960px) {
+	.subscribe_block .find_us { margin-right: 0; }
+}
+@media screen and (max-width: 710px) {
+	.subscribe_block .subscribe_nl {
+		float: left;
+		margin-right: 0;
+		margin-top: 15px;
+	}
+	.header_container > header,
+	.navigation_container > nav,
+	.section_container > section {
+		width: 100%;
+	}
+	#main_content > .products_list.products_slider ul { margin: 0; }
+	#main_content > .products_list.products_slider li {
+		margin: 10px;
+		float: none;
+		width: 40%;
+	}
+	#main_content > .products_list.products_slider .product_image { height: initial; }
+	.subscribe_block .find_us { margin-right: 22px; }
+}
+@media (min-width: 601px) and (max-width: 960px) {
+	#banner_section .flexslider { height: inherit; }
+	#banner_section .flexslider .flex-direction-nav {
+		bottom: 61px;
+		position: inherit;
+	}
+	.flex-caption { height: inherit; width: 70%; }
+}
+@media (min-width: 600px) and (max-width: 960px) {
+	footer .footer_customblock {
+		display: inline-block;
+		float: none;
+		border-left: none;
+	}
+	footer .footer_customblock > div{ padding: 10px 0; }
+	.subscribe_block .subscribe_nl small { width: 100%; }
+}
+@media (min-width: 600px) and (max-width: 710px) {
+	.section_container > section > #side_nav { width: 25%; }
+	.section_container > section > #main_content { width: 73%; margin-left: 10px; }
+}
+@media screen and (max-width: 700px) {
+	#product_detail > .product_rightcol {
+		width: 100%;
+		float: none;
+		clear: both;
+	}
+	#product_detail > .product_leftcol {
+		width: inherit;
+	}
+	#product_detail > .product_leftcol > #flexslider-product {
+		max-width: 450px;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 600px) {
+	.flex-direction-nav { display: none; }
+	.flex-caption {
+		width: 100%;
+		position: inherit;
+	}
+	.flex-caption h3 {
+		font-size: inherit;
+		line-height: initial;
+	}
+	.new-badge { right: -1px; }
+	.add_to_buttons { text-align: center; }
+	.sosial-media { text-align: center; }
+	.subscribe_block .find_us{ width: 100%; margin-left: 0; }
+	.subscribe_block .find_us h3 { padding-right: 0; width: 100%; }
+	.subscribe_block .find_us .follow { padding: 10px 20px; }
+	.subscribe_block .subscribe_nl {
+		clear: left;
+		margin-left: 0;
+		width: 100%;
+	}
+	.subscribe_block .subscribe_nl form { width: 100%; }
+	.subscribe_block .subscribe-news { padding: 10px 20px; }
+	.subscribe_block .subscribe-news h3 { line-height: normal; }
+	.subscribe_block .subscribe_nl small { clear: both; }
+	.subscribe_block .subscribe_nl form .input-text { width: 78%; }
+	.subscribe_block .subscribe_nl form button { margin-left: 5px; }
+	footer .footer_links { text-align: center; }
+	footer .footer_links > li { width: 100%; }
+	.form-list li,
+	.form-list li .input-box .selector {
+		margin-bottom: 10px;
+	}
+	#checkout-step-login input,
+	#checkout-step-login textarea,
+	#checkout-step-login .col-2 input,
+	#checkout-step-login label {
+		margin-bottom: 5px;
+	}
+	#checkout-step-login .col-2 input { width: 97%; }
+	.form-list li .input-box .selector { width: 100%; }
+	.profile-password { padding: 20px 20px 10px 10px; }
+	.page_sidebar section#main_content,
+	.page_sidebar aside#sidebar {
+		width: 100%;
+	}
+	div.selector { width: 100%; }
+	#checkout-step-login form div.selector {
+		padding: 5px 0;
+	}
+	.form-login {
+		width: 100%;
+		float: none;
+		clear: both;
+		padding-top: 2em;
+	}
+	footer .footer_links > li { margin-bottom: 25px; }
+	.checkout_steps #checkout-step-login .control-group div.selector {
+		width: 100%; padding: 4px;
+	}
+	#checkout-step-login > .action_buttonbar { padding: 2em; }
+	.register-text { padding-bottom: 0; }
+	#product_detail .product_leftcol {
+		width: 100%;
+	}
+	#sosial-media { text-align: center; }
+	.product_rightcol .size_info > div {
+		margin-right: 0;
+		width: 100%;
+	}
+	#opsiprod { width: 100%; }
+	.product_rightcol .size_info > #opsiprod > .selector { width: 70%; }
+	.product_rightcol .size_info label { width: 55px; }
+	.products_list ul li#relateprod {
+		margin-left: 0;
+	}
+	header { text-align: center; }
+	.benefits { padding-bottom: 0; }
+	.section_container > section > #main_content { width: 100%; }
+	#main_content > .products_list.products_slider {
+		padding-left: 15px;
+		width: initial;
+		text-align: center;
+	}
+	.jcarousel-skin-tango .jcarousel-clip-horizontal { width: 100%; }
+	.products_list li.home-product { padding: 0; margin: 0 31px; }
+	.products_list li.home-product:first-child { margin: 0 31px; }
+}
+@media (min-width: 481px) and (max-width: 600px) {
+	#banner_section .flexslider .flex-direction-nav { bottom: 0; }
+}
+@media (min-width: 321px) and (max-width: 600px){
+	header .responsive-nav {
+		position: inherit;
+		display: inline-block !important;
+		width: initial;
+		left: initial;
+	}
+}
+@media screen and (max-width: 425px) {
+	#checkout-step-login input[name="jumlah"] { width: 180px; }
+	#main_content > .products_list.products_slider li { width: initial; }
+}
+@media screen and (max-width: 350px) {
+	.section_container > section {
+		width: 100%;
+	}
+	.checkout_steps { width: 100%; }
+	#product_detail .product_rightcol {
+		float: none;
+		clear: both;
+		margin-top: 30px;
+		width: 100%;
+	}
+}
+@media screen and (max-width: 320px) {
+	.responsive-nav {
+		position: inherit;
+		width: 100%;
+		left: inherit;
+	}
+	.responsive-nav .selector {
+		margin: 0 auto;
+		float: none;
+		padding-left: inherit;
+		width: 100%;
+	}
+	.responsive-nav .selector span { width: 100%; }
+	.responsive-nav .selector select { width: 100%; }
+	header .header_search {
+		width: 100%;
+		margin-bottom: 0;
+		padding: 0;
+		float: none;
+	}
+	header .header_search input { width: 100%; }
+	header .header_search button {
+		margin: 0;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		float: none;
+	}
+	header h1.logo { width: 100%; }
+	header, nav, section, footer, ul.sub_menu,
+	.col_left_main, #main_content {
+		width: 100%;
+	}
+	.contact_page #contact_form li input[type="text"],
+	.contact_page #contact_form li textarea {
+		width: 100%;
+	}
+	.subscribe_block .find_us {
+		margin-left: 10px;
+		width: 100%;
+	}
+	.subscribe_block .find_us h3 {
+		padding-right: 0;
+		width: 100%;
+	}
+	.subscribe_block .subscribe_nl {
+		padding-top: 0;
+		float: none;
+		width: 100%;
+	}
+	.subscribe_block .subscribe_nl form .input-text { width: 100%; }
+	.subscribe_block .subscribe_nl form button { margin: 5px 0; }
 }

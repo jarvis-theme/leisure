@@ -31,10 +31,15 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <label class="required" for="login-password">Kode Keamanan</label>
+                                    <label class="required" for="login-email">Alamat</label>
                                     <div class="input-box">
-                                        {{ HTML::image(Captcha::img(), 'Captcha') }}<br><br>
-                                        <input type="text" name="captcha" placeholder="Masukan kode yang tertera di atas" class="input-text" required>
+                                        <textarea name="alamat" required>{{Input::old("alamat")}}</textarea>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label class="required" for="login-password">Telp / HP</label>
+                                    <div class="input-box">
+                                        <input type="text" class="input-text" name="telp" value="{{Input::old('telp')}}" required>
                                     </div>
                                 </li>
                             </ul>
@@ -46,21 +51,16 @@
                         <fieldset>
                             <ul class="form-list">
                                 <li>
-                                    <label class="required" for="login-email">Alamat</label>
-                                    <div class="input-box">
-                                        <textarea name="alamat" required>{{Input::old("alamat")}}</textarea>
-                                    </div>
-                                </li>
-                                <li>
-                                    <label class="required" for="login-password">Telp / HP</label>
-                                    <div class="input-box">
-                                        <input type="text" name="telp" value="{{Input::old('telp')}}" required class="input-text">
-                                    </div>
-                                </li>
-                                <li>
                                     <label class="required" for="login-password">Negara</label>
                                     <div class="input-box">
-                                        {{Form::select('negara',array('' => '-- Pilih Negara --') + $negara, Input::old("negara"), array('required', "style"=>"width: 100%", "name"=>"negara", "id"=>"negara", "data-rel"=>"chosen", "onchange"=>"searchProvinsi(this.value)"))}} 
+                                        <select name="negara" id="negara" style="width: 100%;" data-rel="chosen" onchange="searchProvinsi(this.value)" required>
+                                            <option selected>-- Pilih Negara --</option>
+                                            @foreach ($negara as $key=>$item)
+                                                @if(strtolower($item)=='indonesia')
+                                                <option value="1" {{Input::old('negara')==1 ? 'selected' : ''}}>{{$item}}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </li>
                                 <li>
@@ -82,6 +82,13 @@
                                     <label class="required" for="login-password">Kodepos</label>
                                     <div class="input-box">
                                         <input type="number" name="kodepos" value="{{Input::old('kodepos')}}" class="input-text">
+                                    </div>
+                                </li>
+                                <li>
+                                    <label class="required" for="login-password">Kode Keamanan</label>
+                                    <div class="input-box">
+                                        {{ HTML::image(Captcha::img(), 'Captcha') }}<br><br>
+                                        <input type="text" name="captcha" placeholder="Masukan kode yang tertera di atas" class="input-text" required>
                                     </div>
                                 </li>
                             </ul>

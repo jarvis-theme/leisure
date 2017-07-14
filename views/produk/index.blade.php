@@ -45,6 +45,16 @@
                     <li><a href="{{koleksi_url($mykoleksi)}}">{{$mykoleksi->nama}}</a></li>
                     @endforeach
                 </ul>
+                @if(count(vertical_banner()) > 0)
+                <ul class="side-banner">
+                    {{--*/ $i=0; /*--}}
+                    @foreach(vertical_banner() as $item) 
+                    <a href="{{url($item->url)}}">
+                        {{HTML::image(url(banner_image_url($item->gambar)), 'Info '.$i++)}} 
+                    </a>
+                    @endforeach 
+                </ul>
+                @endif
             </div>
         </div>
 
@@ -52,7 +62,7 @@
             <div class="category_banner">
                 @foreach(horizontal_banner() as $banner)
                 <a href="{{ $banner->url }}" target="_blank">
-                    <img src="{{ URL::to(banner_image_url($banner->gambar)) }}" alt="Info Promo" width="100%"/>
+                    <img src="{{ URL::to(banner_image_url($banner->gambar)) }}" alt="Info Promo" width="100%" style="margin-bottom: 10px;" />
                 </a>
                 @endforeach
             </div>  
@@ -72,13 +82,13 @@
                 </div>
                 
                 <div class="show_no opsi-item">
-                    <label></label>
-                    
-                    <select class="itemselect" id="show" data-rel="{{URL::current()}}">
-                        <option value="0">Show Product</option>
-                        <option value="12" {{Input::get('show')==12?'selected="selected"':''}}>12 ITEMS</option>
-                        <option value="24" {{Input::get('show')==24?'selected="selected"':''}}>24 ITEMS</option>
-                    </select>
+                    <div>                    
+                        <select class="itemselect" id="show" data-rel="{{URL::current()}}">
+                            <option value="0">Show Product</option>
+                            <option value="12" {{Input::get('show')==12?'selected="selected"':''}}>12 ITEMS</option>
+                            <option value="24" {{Input::get('show')==24?'selected="selected"':''}}>24 ITEMS</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -87,22 +97,25 @@
                 <ul>
                     @foreach(list_product(Input::get('show'), @$category, @$collection) as $myproduk)
                     <li class="relateprod">
-                        @if(is_outstok($myproduk))    
-                            {{is_outstok($myproduk, $kiri=1)}}
+                        @if(is_outstok($myproduk))
+                            <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/stok-badge.png" class="outstok-badge">
                         @elseif(is_produkbaru($myproduk))
-                            {{is_produkbaru($myproduk, $kiri=1)}}
+                            <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/terlaris-badge.png" class="best-badge">
                         @elseif(is_terlaris($myproduk))
-                            {{is_terlaris($myproduk, $kiri=1)}}
+                            <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/new-badge.png" class="new-badge">
                         @endif
                         <a href="{{product_url($myproduk)}}" class="product_image">
-                            {{HTML::image(product_image_url($myproduk->gambar1, 'medium'), $myproduk->nama)}}
+                            {{HTML::image(product_image_url($myproduk->gambar1, 'medium'), $myproduk->nama, array("onerror" => "this.src='//d3kamn3rg2loz7.cloudfront.net/img/no-image-product.png';"))}}
                         </a>
                         <div class="product_info" id="detailprod">
                             <h3><a href="{{product_url($myproduk)}}">{{strtoupper($myproduk->nama)}}</a></h3>
                             <small>{{short_description($myproduk->deskripsi,200)}}</small><a class="black" href="{{product_url($myproduk)}}">Lihat Produk</a>
                         </div>
                         <div class="price_info">
-                            <button class="price_add" onclick="window.location.href='{{product_url($myproduk)}}'" type="button"><span class="pr_price">{{price($myproduk->hargaJual)}}</span><span class="pr_add">Beli</span></button>
+                            <button class="price_add" onclick="window.location.href='{{product_url($myproduk)}}'" type="button" style="float: left;">
+                                <span class="pr_price">{{price($myproduk->hargaJual)}}</span>
+                                <span class="pr_add">Beli</span>
+                            </button>
                         </div>
                     </li>
                     @endforeach
@@ -113,23 +126,26 @@
                 <ul>
                     @foreach(list_product(Input::get('show'), @$category, @$collection) as $myproduk)
                     <li class="relateprod">
-                        @if(is_outstok($myproduk))    
-                            {{is_outstok($myproduk, $kiri=1)}}
+                        @if(is_outstok($myproduk))
+                            <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/stok-badge.png" class="outstok-badge">
                         @elseif(is_produkbaru($myproduk))
-                            {{is_produkbaru($myproduk, $kiri=1)}}
+                            <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/terlaris-badge.png" class="best-badge">
                         @elseif(is_terlaris($myproduk))
-                            {{is_terlaris($myproduk, $kiri=1)}}
+                            <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/new-badge.png" class="new-badge">
                         @endif
                         <a href="{{product_url($myproduk)}}" class="product_image">
-                            {{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama)}}
+                            {{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama, array("onerror" => "this.src='//d3kamn3rg2loz7.cloudfront.net/img/no-image-product.png';"))}}
                         </a>
                         <div class="product_info">
                             <h3><a href="{{product_url($myproduk)}}">{{short_description(strtoupper($myproduk->nama), 23)}}</a></h3>
                             <small>{{short_description($myproduk->deskripsi,30)}}</small>
                         </div>
                         @if($setting->checkoutType!=2)
-                        <div class="price_info"> <!-- <a href="#">+ Add to wishlist</a> -->
-                            <button onclick="window.location.href='{{product_url($myproduk)}}'" class="price_add" type="button"><span class="pr_price"> {{price($myproduk->hargaJual)}}</span><span class="pr_add">Lihat</span></button>
+                        <div class="price_info">
+                            <button onclick="window.location.href='{{product_url($myproduk)}}'" class="price_add fl" type="button">
+                                <span class="pr_price"> {{price($myproduk->hargaJual)}}</span>
+                                <span class="pr_add">Lihat</span>
+                            </button>
                         </div>
                         @endif
                     </li>
@@ -137,7 +153,7 @@
                 </ul>
             </div>
             @endif
-            <div class="show_no" id="linkpages">
+            <div class="show_no">
                 {{list_product(Input::get('show'), @$category, @$collection)->appends(array('show' => Input::get('show')))->links()}}
             </div>
         </div>
