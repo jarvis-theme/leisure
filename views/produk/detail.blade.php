@@ -55,7 +55,7 @@
                 <div class="size_info">
                     <div class="size_sel">
                         <label>Jumlah :</label>
-                        <input type="text" class="qty" name='qty' value="1">
+                        <input type="number" class="qty" name="qty" pattern="[0-9]" title="jumlah" value="1">
                     </div>
                     @if($opsiproduk->count()>0)
                     <div id="opsiprod">
