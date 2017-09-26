@@ -483,12 +483,15 @@ a.icon-pinterest:hover {
   background-color: #808080;
 }
 
-.label-danger {
+.label-danger,
+.label-important {
   background-color: #d9534f;
 }
 
 .label-danger[href]:hover,
-.label-danger[href]:focus {
+.label-danger[href]:focus,
+.label-important[href]:hover,
+.label-important[href]:focus {
   background-color: #c9302c;
 }
 
@@ -755,3 +758,12 @@ form ul,
 .fnone { float: none; }
 .fl { float: left !important; }
 .fr { float: right !important; }
+.picmix {
+	height: 32px;
+	opacity: 0.8;
+}
+.picmix:hover { opacity: 1; }
+.midtrans {
+	padding: 9px;
+	background: #f6f6f6;
+}

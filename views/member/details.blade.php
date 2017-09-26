@@ -183,12 +183,10 @@
 											</div>
 										</li>
 										<li>
-											<label class="required" for="login-password">Negara</label>
+											<label class="required">Negara</label>
 											<div class="input-box">
-												{{--Form::select('negara',array('' => '-- Pilih Negara --') + $negara , ($user ? $user->negara :(Input::old("negara")? Input::old("negara") :"")), array('required'=>'', 'id'=>'negara'))--}}
-
 												<select name="negara" id="negara" required>
-													<option selected>-- Pilih Negara --</option>{{$user->negara}}
+													<option selected>-- Pilih Negara --</option>
 													@foreach ($negara as $key=>$item)
 														@if(strtolower($item)=='indonesia')
 														<option value="1" {{ @$user->negara || Input::old('negara')==1 ? 'selected' : ''}}>{{$item}}</option>
@@ -199,21 +197,21 @@
 										</li>
 										<li>
 											<div class="clear"></div>
-											<label class="required" for="login-password">Provinsi</label>
+											<label class="required">Provinsi</label>
 											<div class="input-box">
 												{{Form::select('provinsi',array('' => '-- Pilih Provinsi --') + $provinsi , ($user ? $user->provinsi :(Input::old("provinsi")? Input::old("provinsi") :"")),array('required'=>'','id'=>'provinsi'))}}
 											</div>
 										</li>
 										<li>
 											<div class="clear"></div>
-											<label class="required" for="login-password">Kota</label>
+											<label class="required">Kota</label>
 											<div class="input-box">
 												{{Form::select('kota',array('' => '-- Pilih Kota --') + $kota , ($user ? $user->kota :(Input::old("kota")? Input::old("kota") :"")),array('required'=>'','id'=>'kota'))}}
 											</div>
 										</li>
 										<li>
 											<div class="clear"></div>
-											<label class="required" for="login-password">Kodepos</label>
+											<label class="required">Kodepos</label>
 											<div class="input-box">
 												<input type="text" name="kodepos" value="{{$user->kodepos}}" class="input-text">
 											</div>
@@ -240,13 +238,13 @@
 												</div>
 											</li>
 											<li>
-												<label class="required" for="login-password">Password Baru</label>
+												<label class="required">Password Baru</label>
 												<div class="input-box">
 													<input type="password" name="password" class="input-text">
 												</div>
 											</li>
 											<li>
-												<label class="required" for="login-password">Konfirmasi Password Baru</label>
+												<label class="required">Konfirmasi Password Baru</label>
 												<div class="input-box">
 													<input type="password" name="password_confirmation" class="input-text">
 												</div>

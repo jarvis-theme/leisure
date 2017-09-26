@@ -353,6 +353,7 @@
 @media screen and (max-width: 425px) {
 	#checkout-step-login input[name="jumlah"] { width: 180px; }
 	#main_content > .products_list.products_slider li { width: initial; }
+	#checkout-step-login input { width: 100%; }
 }
 @media screen and (max-width: 350px) {
 	.section_container > section {

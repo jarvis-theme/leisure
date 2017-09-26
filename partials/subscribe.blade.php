@@ -20,6 +20,11 @@
             @if($sosial->ig)
                 <a class="icon-instagram" target="_blank" href="{{$sosial->ig}}" title="Instagram"></a>
             @endif
+            @if($sosial->picmix)
+                <a target="_blank" href="{{url($sosial->picmix)}}" title="Picmix">
+                    <img class="picmix" src="//d3kamn3rg2loz7.cloudfront.net/blogs/event/icon-picmix.png">
+                </a>
+            @endif 
         </div>
     </div>
     <div class="subscribe_nl" id="mc_embed_signup">
