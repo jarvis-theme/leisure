@@ -100,9 +100,9 @@
                         @if(is_outstok($myproduk))
                             <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/stok-badge.png" class="outstok-badge">
                         @elseif(is_produkbaru($myproduk))
-                            <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/terlaris-badge.png" class="best-badge">
-                        @elseif(is_terlaris($myproduk))
                             <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/new-badge.png" class="new-badge">
+                        @elseif(is_terlaris($myproduk))
+                            <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/terlaris-badge.png" class="best-badge">
                         @endif
                         <a href="{{product_url($myproduk)}}" class="product_image">
                             {{HTML::image(product_image_url($myproduk->gambar1, 'medium'), $myproduk->nama, array("onerror" => "this.src='//d3kamn3rg2loz7.cloudfront.net/img/no-image-product.png';"))}}

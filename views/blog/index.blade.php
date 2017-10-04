@@ -5,6 +5,7 @@
 				@foreach(list_blog(null,@$blog_category) as $key=>$value)
 				<a href="{{blog_url($value)}}"><span id="title-blog" class="highlight_text">{{$value->judul}}</span></a>
 				<i class="icon-calendar"></i>- {{waktuTgl($value->created_at)}} 
+				<img src="{{ imgString($value->isi) }}" />
 				<div class="short-code-column">
 					&#187; {{blogIndex($value->isi,250)}}
 					<p><a href="{{blog_url($value)}}" id="read-blog">Selengkapnya →</a></p>

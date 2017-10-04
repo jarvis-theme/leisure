@@ -53,14 +53,7 @@
                                 <li>
                                     <label class="required">Negara</label>
                                     <div class="input-box">
-                                        <select name="negara" id="negara" style="width: 100%;" data-rel="chosen" onchange="searchProvinsi(this.value)" required>
-                                            <option selected>-- Pilih Negara --</option>
-                                            @foreach ($negara as $key=>$item)
-                                                @if(strtolower($item)=='indonesia')
-                                                <option value="1" {{Input::old('negara')==1 ? 'selected' : ''}}>{{$item}}</option>
-                                                @endif
-                                            @endforeach
-                                        </select>
+                                        {{Form::select('negara', array('' => '-- Pilih Negara --') + $negara, Input::old('negara'), array('required', "id"=>"negara", "data-rel"=>"chosen", "style"=>"width: 100%;", "onchange"=>"searchProvinsi(this.value)"))}}
                                     </div>
                                 </li>
                                 <li>

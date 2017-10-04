@@ -84,7 +84,7 @@
             <div class="size_info">
                 <div class="size_sel">
                     <label>Jumlah :</label>
-                    <input type="number" class="qty" name="qty" value="1">
+                    <input type="number" class="qty" name="qty" value="1" pattern="[0-9]">
                 </div>
                 @if($opsiproduk->count()>0)
                 <div id="opsiprod">
@@ -124,9 +124,9 @@
             @if(is_outstok($myproduk))
                 <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/stok-badge.png" class="outstok-badge">
             @elseif(is_produkbaru($myproduk))
-                <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/terlaris-badge.png" class="best-badge">
-            @elseif(is_terlaris($myproduk))
                 <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/new-badge.png" class="new-badge">
+            @elseif(is_terlaris($myproduk))
+                <img src="//d3kamn3rg2loz7.cloudfront.net/assets/leisure/img/terlaris-badge.png" class="best-badge">
             @endif
             <a href="{{slugProduk($myproduk)}}" class="product_image">
                 {{HTML::image(product_image_url($myproduk->gambar1,'medium'), $myproduk->nama, array("onerror" => "this.src='//d3kamn3rg2loz7.cloudfront.net/img/no-image-product.png';"))}} 
