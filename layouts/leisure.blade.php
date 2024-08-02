@@ -8,7 +8,7 @@
     <body>
         {{ Theme::partial('header') }} 
         <div class="section_container">
-            <section>
+            <section class="max-w-7xl">
                 {{ Theme::partial('slider') }} 
                 <div class="container">
                     {{ Theme::place('content') }} 

@@ -23,8 +23,8 @@
         </ul>
     </div>
 
-    <div class="product_rightcol"> <!-- <small class="pr_type">{{$produk->nama}}</small> -->
-        <h1>{{$produk->nama}}</h1>
+    <div class="product_rightcol w-2/3"> <!-- <h1 class="pr_type">{{$produk->nama}}</h1> -->
+        <div class="font-bold text-2xl mb-4 uppercase">{{$produk->nama}}</div>
         <p class="short_dc">{{$produk->deskripsi}}</p>
         @if(@$po)
             <br>
@@ -139,7 +139,7 @@
             @if($setting->checkoutType!=2)
             <div class="price_info">
                 <button onclick="window.location.href='{{slugProduk($myproduk)}}'" class="price_add fl" type="button">
-                    <span class="pr_price">&nbsp;{{price($myproduk->hargaJual,$matauang)}}</span>
+                    <span class="pr_price"> {{price($myproduk->hargaJual,$matauang)}}</span>
                     <span class="pr_add">Lihat</span>
                 </button>
             </div>

@@ -12,7 +12,7 @@ body{
 
 /*LAYOUT*/
 .wrapper{}
-header, nav, section, footer{ width:980px; margin:0px auto;}
+header, nav, section, footer{ /*width:980px;*/ margin:0px auto;}
 .header_container,
 .navigation_container,
 .section_container,
@@ -40,7 +40,7 @@ header .header_search button{background:url(../images/search_btn.png) no-repeat 
 nav .primary_nav{ display:inline-block;margin:5px 2px 3px 0px; position:relative;}
 nav .primary_nav li{ float:left;}
 nav .primary_nav > li{ margin-right:2px;}
-nav .primary_nav > li > a{ display:block; padding: 12px 18px; line-height:100%; font-size:16px; font-weight:bold; color:#544f4b; text-decoration:none; text-transform:uppercase;}
+nav .primary_nav > li > a{ display:block; /*padding: 12px 18px;*/ line-height:100%; /*font-size:16px; font-weight:bold;*/ color:#544f4b; text-decoration:none; /*text-transform:uppercase;*/}
 .primary_nav > li > a:hover{color:#fff;}
 nav .primary_nav > li:hover > a{color:#fff;}
 nav .primary_nav li.active > a{ color:#fff;}
@@ -50,7 +50,7 @@ nav .minicart span{ color:#a29b95;}
 nav .minicart span b{font-weight:bold;}
 
 /*-----------------------------------SUBMENU*/
-ul.sub_menu{position:absolute;top:40px; left:-4000px; background-color: rgba(255, 255, 255, 0.93); background:#fff\9; padding:15px 0px; z-index:100; width:980px; box-shadow:0px 5px 6px #999;border-top:solid 3px;}
+ul.sub_menu{position:absolute;top:40px; left:-4000px; background-color: rgba(255, 255, 255, 0.93); background:#fff\9; padding:15px 0px; z-index:100; /*width:980px*/; box-shadow:0px 5px 6px #999;border-top:solid 3px;}
 nav .primary_nav > li:hover > ul{ left:0px;}
 ul.sub_menu > li{ width:210px; margin-left:30px;}
 ul.sub_menu li a{ line-height:20px; color:#544f4b; text-decoration:none;}
@@ -188,12 +188,12 @@ ul.simpleTabsNavigation li a{ background:#F3F3F3; color:#544F4B; font-weight:bol
 /*FOOTER*/
 footer{ border-top:solid 3px; padding-top:15px; }
 footer .footer_links{ display:inline-block;}
-footer .footer_links>li{ float:left; width:145px; padding:15px 0px 15px 35px; font-size:11px; }
+footer .footer_links>li{ float:left; /*width:145px;*/ padding:15px 0px 15px 35px; font-size:11px; }
 footer .footer_links>li:first-child{ padding-left:0px;}
 footer .footer_links li span{color:#34312f; font-weight:bold; display:block; padding-bottom:12px;}
 footer .footer_links li a{ color:#515151; display:block; padding:4px 0px; line-height:100%; text-decoration:none;}
 footer .footer_links li.seperator{border-right:solid 1px #d6d6d6;}
-footer .footer_customblock{ border-left:solid 1px #d6d6d6; float:right; width:272px; min-height:205px;}
+footer .footer_customblock{ border-left:solid 1px #d6d6d6; float:right; /*width: 210px;*/ min-height:205px;}
 footer .footer_customblock>div{padding:10px;}
 footer .footer_customblock .shipping_info{ line-height:22px; font-size:14px; color:#000;  border-bottom:solid 1px #d6d6d6; background:url(../images/shipping.png) no-repeat right center;}
 footer .footer_customblock .shipping_info big{ text-transform:uppercase; font-size:16px; font-weight:bold;}
@@ -202,7 +202,7 @@ footer address{ display:inline-block; width:100%; border-top:solid 1px #d6d6d6; 
 /*footer address img{ float:right;}*/
 
 /*-----------------------------------MAIN CONTENT*/
-#main_content{ width:760px; float:right; margin-top:17px;}
+#main_content{ /*width:760px;*/ float:right; margin-top:17px;}
 /*Breadcrumb*/
 ul.breadcrumb{ padding:12px 0px; display:inline-block; width:100%;}
 ul.breadcrumb li{ padding:0px 14px; font-size:11px; text-transform:uppercase; display:inline-block; list-style:none; background:url(../images/arrow.png) no-repeat -10px -3px;}
@@ -483,15 +483,12 @@ a.icon-pinterest:hover {
   background-color: #808080;
 }
 
-.label-danger,
-.label-important {
+.label-danger {
   background-color: #d9534f;
 }
 
 .label-danger[href]:hover,
-.label-danger[href]:focus,
-.label-important[href]:hover,
-.label-important[href]:focus {
+.label-danger[href]:focus {
   background-color: #c9302c;
 }
 
@@ -758,12 +755,3 @@ form ul,
 .fnone { float: none; }
 .fl { float: left !important; }
 .fr { float: right !important; }
-.picmix {
-	height: 32px;
-	opacity: 0.8;
-}
-.picmix:hover { opacity: 1; }
-.midtrans {
-	padding: 9px;
-	background: #f6f6f6;
-}

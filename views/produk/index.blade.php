@@ -58,7 +58,7 @@
             </div>
         </div>
 
-        <div id="main_content">
+        <div id="main_content" class="w-4/5">
             <div class="category_banner">
                 @foreach(horizontal_banner() as $banner)
                 <a href="{{ $banner->url }}" target="_blank">
